@@ -1,7 +1,6 @@
 ---
 title: Homepage
 lang: it
-draft: True
 date: 01-01-2013
 ---
 
