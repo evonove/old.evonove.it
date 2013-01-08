@@ -49,3 +49,10 @@ ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
+
+import acrylamid
+VERSION=acrylamid.__version__
+
+import datetime
+CURR_Y=datetime.datetime.now().year
+print CURR_Y

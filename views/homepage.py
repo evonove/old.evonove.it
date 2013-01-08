@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+import acrylamid
 from acrylamid.views.index import Index
+
 import os
 
 

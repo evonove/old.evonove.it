@@ -65,7 +65,8 @@
                     </ul>
                 </div>
             </div>
-<!-- HEADER: PRIMARY SITE NAVIGATION -->
+
+            <!-- HEADER: PRIMARY SITE NAVIGATION -->
             <div class="container">
                 <div class="navbar">
                     <div class="navbar-inner">
@@ -152,13 +153,13 @@
             </div>
         </header>
 
-<!-- MAIN CONTENT AREA -->
+        <!-- MAIN CONTENT AREA -->
         <div class="main-content">
         {%- block content -%}
         {%- endblock -%}
         </div>
 
-<!-- FOOTER STARTS HERE -->
+        <!-- FOOTER STARTS HERE -->
         <footer id="footer">
             {% block footer %}
             <div class="footer-top"></div>
@@ -167,25 +168,28 @@
                     <div class="row show-grid">
                         <div class="span12">
                             <div class="row show-grid">
-<!-- FOOTER: LOGO -->
+                                <!-- FOOTER: LOGO -->
                                 <div class="span4">
                                     <img alt="" class="footer-logo" src="img/grey_logo.png" />
-<!-- FOOTER: ADDRESS -->
+                                    <!-- FOOTER: ADDRESS -->
                                     <address class="address">
-                                        <p><i class="icon-map-marker icon-large"></i>1800 North Central Expressway</p>
-                                        <p><i>&nbsp;</i>Suite 800</p>
-                                        <p><i>&nbsp;</i>Dallas, Texas 75231</p>
-                                        <p><i class="icon-phone icon-large"></i>Phone: (800) 655-7800</p>
-                                        <p><i class="icon-print icon-large"></i>Fax: (800) 655-7800</p>
+                                        <p><i class="icon-map-marker icon-large"></i>via Fra' Filippo Longo 16</p>
+                                        <p><i>&nbsp;</i>06063 - Magione (PG)</p>
+                                        <p><i class="icon-phone icon-large"></i>Phone: (+39) 075 843667</p>
+                                        <p><i class="icon-print icon-large"></i>Fax: (+39) 075 843667</p>
                                     </address>
                                 </div>
-<!-- FOOTER: ABOUT US -->
+                                <!-- FOOTER: ABOUT US -->
                                 <div class="span4 footer-center">
                                     <h4 class="center-title">About Us</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+                                    <dl class="dl-horizontal">
+                                        <dt>Settore</dt>
+                                        <dd>Software e Infrastrutture IT.</dd>
+                                        <dt>Servizi offerti</dt>
+                                        <dd>Progettazione e sviluppo software, consulenza, formazione, coworking, workshop, stage universitari.</dd>
+                                    </dl>
                                 </div>
-<!-- FOOTER: NAVIGATION LINKS -->
+                                <!-- FOOTER: NAVIGATION LINKS -->
                                 <div class="span4 footer-right">
                                     <h4 class="center-title">Navigate</h4>
                                     <ul class="footer-navigate">
@@ -217,17 +221,18 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row show-grid">
-<!-- FOOTER: COPYRIGHT TEXT -->
+                        <!-- FOOTER: COPYRIGHT TEXT -->
                         <div class="span12">
-                            <p> bizstrap Corporate HTML Template by <a href="http://www.themeleaf.com">ThemeLeaf</a>. Copyright 2012.</p>
+                            <p> built with <a href="https://github.com/posativ/acrylamid">Acrylamid</a> v.{{conf.version}} - Copyright Evonove SRL {{conf.curr_y}}. P.I. IT03120810548</p>
                         </div>
                     </div>
                 </div>
             </div>
         {% endblock %}
         </footer>
-<!-- END FOOTER -->
-<!-- Placed at the end of the document so the pages load faster -->
+        <!-- END FOOTER -->
+
+        <!-- Placed at the end of the document so the pages load faster -->
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="{{ env.path + 'js/bootstrap.js' }}"></script>
         <script type="text/javascript" src="{{ env.path + 'js/jquery.flexslider-min.js' }}"></script>
@@ -235,7 +240,7 @@
         <script type="text/javascript" src="{{ env.path + 'js/jquery.fancybox.pack.js?v=2.1.0' }}"></script>
         <script type="text/javascript" src="{{ env.path + 'rs-plugin/js/jquery.themepunch.plugins.min.js' }}"></script>
         <script type="text/javascript" src="{{ env.path + 'rs-plugin/js/jquery.themepunch.revolution.min.js' }}"></script>
-	<script type="text/javascript" src="{{ env.path + 'js/revolution.custom.js' }}"></script>
-	<script type="text/javascript" src="{{ env.path + 'js/custom.js' }}"></script>
+	    <script type="text/javascript" src="{{ env.path + 'js/revolution.custom.js' }}"></script>
+	    <script type="text/javascript" src="{{ env.path + 'js/custom.js' }}"></script>
     </body>
 </html>

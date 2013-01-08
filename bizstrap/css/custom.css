@@ -1472,6 +1472,8 @@ input.btn {
     line-height: 22px;
     padding: 0;
     color: #898989;
+    margin-top: 5px;
+    text-align: justify;
 }
 .home-block {
     margin-top: 20px;
@@ -1494,7 +1496,7 @@ input.btn {
     display: block;
     margin-top: 5px;
 }
-.hero-list p,ul {
+.hero-list p, .hero-list ul {
     font-family: 'Open Sans',sans-serif,Arial;
     line-height: 16px;
     padding: 0;
@@ -2516,6 +2518,16 @@ div.alert {
 .footer-center p {
     color: #cbcbcb;
     padding: 12px 0 0;
+}
+.footer-center .dl-horizontal {
+    color: #cbcbcb;
+    padding: 0;
+}
+.footer-center .dl-horizontal dt {
+    width: 100px;
+}
+.footer-center .dl-horizontal dd {
+    margin-left: 120px;
 }
 .footer-navigate li {
     border-bottom: 1px solid #898989;
