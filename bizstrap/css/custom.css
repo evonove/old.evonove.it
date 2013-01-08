@@ -1188,6 +1188,15 @@ ul.socials li {
 .socials .pinterest {
     background: transparent url('../img/socials_icons.png') scroll -150px 0 no-repeat;
 }
+.socials .linkedin {
+    background: transparent url('../img/socials_icons.png') scroll -180px 0 no-repeat;
+}
+.socials .vimeo {
+    background: transparent url('../img/socials_icons.png') scroll -210px 0 no-repeat;
+}
+.socials .gplus {
+    background: transparent url('../img/socials_icons.png') scroll -240px 0 no-repeat;
+}
 .socials .flickr:hover {
     background: transparent url('../img/socials_icons.png') scroll 0 -24px no-repeat;
 }
@@ -1205,6 +1214,15 @@ ul.socials li {
 }
 .socials .pinterest:hover {
     background: transparent url('../img/socials_icons.png') scroll -150px -24px no-repeat;
+}
+.socials .linkedin:hover {
+    background: transparent url('../img/socials_icons.png') scroll -180px -24px no-repeat;
+}
+.socials .vimeo:hover {
+    background: transparent url('../img/socials_icons.png') scroll -210px -24px no-repeat;
+}
+.socials .gplus:hover {
+    background: transparent url('../img/socials_icons.png') scroll -240px -24px no-repeat;
 }
 ul.icons {
     list-style: none;

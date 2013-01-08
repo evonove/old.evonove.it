@@ -131,38 +131,9 @@
                     </div>
                 </div>
                 <hr>
-<!-- MAIN CONTENT AREA: bizstrap CUSTOM - CLIENTS LOGO BAR -->
-                <div class="main-block clients">
-                    <div class="title-wrapper">
-                        <h2>Clients</h2>
-                    </div>
-                    <div class="row show-grid">
-                        <div class="span12">
-                            <div id="clients" class="row show-grid">
-                                <div class="span2 clear-both hp-wrapper">
-                                    <img alt="" src="img/client1.jpg" />
-                                </div>
-                                <div class="span2 hp-wrapper">
-                                    <img alt="" src="img/client2.jpg" />
-                                </div>
-                                <div class="span2 hp-wrapper">
-                                    <img alt="" src="img/client3.jpg" />
-                                </div>
-                                <div class="span2 hp-wrapper">
-                                    <img alt="" src="img/client4.jpg" />
-                                </div>
-                                <div class="span2 hp-wrapper">
-                                    <img alt="" src="img/client5.jpg" />
-                                </div>
-                                <div class="span2 hp-wrapper">
-                                    <img alt="" src="img/client6.jpg" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-<!-- MAIN CONTENT AREA: bizstrap CUSTOM - RECENT TWEETS BAR -->
+
+            <!-- MAIN CONTENT AREA: bizstrap CUSTOM - RECENT TWEETS BAR -->
             <div class="recent-tweets">
                 <div class="container">
                     <div class="row show-grid">
@@ -178,18 +149,4 @@
 
 {% block footer %}
     {{ super() }}
-    {% if conf.disqus_shortname and env.type == 'index' %}
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = '{{ conf.disqus_shortname }}'; // required: replace example with your forum shortname
-            if (window.location.hostname != 'localhost') {
-                 /* * * DON'T EDIT BELOW THIS LINE * * */
-                (function () {
-                    var s = document.createElement('script'); s.async = true;
-                    s.type = 'text/javascript';
-                    s.src = '{{ env.protocol }}://' + disqus_shortname + '.disqus.com/count.js';
-                    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);}());
-            }
-        </script>
-        {% endif %}
 {% endblock %}
