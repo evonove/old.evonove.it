@@ -10,7 +10,7 @@ LANG = 'it'
 
 VIEWS = {
     '/': {'view': 'e9home', 'template': 'home.html'},
-    '/:lang/': {'view': 'e9home', 'template': 'home.html'},
+    '/:lang/': {'view': 'e9homei18n', 'template': 'home.html'},
 
     #'/:year/:slug/': {'view': 'entry'},
 
@@ -51,6 +51,3 @@ ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
-
-import datetime
-CURR_Y=datetime.datetime.now().year
