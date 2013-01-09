@@ -41,6 +41,20 @@ class E9Base(Translation):
         for t in request['translations'][:]:
             self.langs.add(t.lang)
 
+        navmenu = {}
+        for e in request['entrylist'] + request['translations']:
+            try:
+                if e.identifier == 'navmenu':
+                    navmenu[e.lang] = e
+            except AttributeError:
+                pass
+
+        def get_navmenu(lang):
+            if lang in navmenu:
+                return navmenu[lang]
+            return None
+        env.get_navmenu = get_navmenu
+
         env = Translation.context(self, env, request)
         env.current_year = datetime.now().year
         return env
@@ -49,6 +63,7 @@ class E9Base(Translation):
 class E9Home(E9Base):
     def generate(self, request):
         request['env']['entry_dict'] = self._populate_entries(request)
+        request['env']['lang'] = self.conf['lang']
         path = joinurl(self.conf['output_dir'], '/index.html')
         tt = self.env.engine.fromfile(self.template)
         html = tt.render(conf=self.conf, env=union(self.env,
@@ -62,6 +77,7 @@ class E9Homei18n(E9Base):
         for lang in self.langs:
             request['env']['entry_dict'] = self._populate_entries(request,lang)
             request['env']['path'] = '/'
+            request['env']['lang'] = lang
             path = joinurl(self.conf['output_dir'], lang, 'index.html')
             tt = self.env.engine.fromfile(self.template)
             html = tt.render(conf=self.conf, env=union(self.env,
