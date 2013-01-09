@@ -41,19 +41,25 @@ class E9Base(Translation):
         for t in request['translations'][:]:
             self.langs.add(t.lang)
 
-        navmenu = {}
+        globals = {
+            'navmenu': dict(),
+            'footer_about': dict()
+        }
+
         for e in request['entrylist'] + request['translations']:
             try:
                 if e.identifier == 'navmenu':
-                    navmenu[e.lang] = e
+                    globals['navmenu'][e.lang] = e
+                elif e.identifier == 'footer_about':
+                    globals['footer_about'][e.lang] = e
             except AttributeError:
                 pass
 
-        def get_navmenu(lang):
-            if lang in navmenu:
-                return navmenu[lang]
+        def get_globals(elem, lang):
+            if elem in globals and lang in globals[elem]:
+                return globals[elem][lang]
             return None
-        env.get_navmenu = get_navmenu
+        env.get_globals = get_globals
 
         env = Translation.context(self, env, request)
         env.current_year = datetime.now().year

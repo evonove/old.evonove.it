@@ -74,7 +74,7 @@
                             <div class="buttons-container">
                             </div>
                             <div class="nav-collapse">
-                            {{ env.get_navmenu(env.lang).content }}
+                            {{ env.get_globals('navmenu', env.lang).content }}
                             </div>
                         </div>
                     </div>
@@ -110,13 +110,7 @@
                                 </div>
                                 <!-- FOOTER: ABOUT US -->
                                 <div class="span4 footer-center">
-                                    <h4 class="center-title">About Us</h4>
-                                    <dl class="dl-horizontal">
-                                        <dt>Settore</dt>
-                                        <dd>Software e Infrastrutture IT.</dd>
-                                        <dt>Servizi offerti</dt>
-                                        <dd>Progettazione e sviluppo software, consulenza, formazione, coworking, workshop, stage universitari.</dd>
-                                    </dl>
+                                    {{ env.get_globals('footer_about', env.lang).content }}
                                 </div>
                                 <!-- FOOTER: NAVIGATION LINKS -->
                                 <div class="span4 footer-right">

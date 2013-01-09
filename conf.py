@@ -45,7 +45,7 @@ VIEWS = {
     #                  'view': 'entry'}
 }
 
-FILTERS = ['rst', 'hyphenate', 'h1']
+FILTERS = ['rst', 'h1']
 THEME = 'bizstrap'
 ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%d.%m.%Y, %H:%M'
