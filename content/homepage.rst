@@ -1,7 +1,9 @@
 ---
-title: Homepage
+title: Homepage Italiano
 lang: it
 date: 01-01-2013
+slug: homepage
+identifier: homepage
 ---
 
 Say Hello to Evonove!

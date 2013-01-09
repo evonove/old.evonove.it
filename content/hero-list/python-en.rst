@@ -5,12 +5,12 @@ draft: True
 date: 01-01-2013
 image: /img/hero_python.png
 identifier: hero-python
-lang: it
+lang: en
 ---
 
 Python
 ------
-TODO TODO
+English TODO
 
 - Django
 - Flask

@@ -3,7 +3,7 @@ title: Workshop
 lang: it
 draft: True
 date: 01-01-2013
-image: img/slider04.png
+image: /img/slider04.png
 ---
 
 .. class:: small
