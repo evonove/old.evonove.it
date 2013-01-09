@@ -6,9 +6,11 @@ SITENAME = 'Evonove - Software'
 WWW_ROOT = 'http://evonove.it/'
 AUTHOR = 'staff'
 EMAIL = 'info@evonove.it'
+LANG = 'it'
 
 VIEWS = {
-    '/': {'view': 'homepage', 'template': 'home.html'},
+    '/': {'view': 'e9home', 'template': 'home.html'},
+    '/:lang/': {'view': 'e9home', 'template': 'home.html'},
 
     #'/:year/:slug/': {'view': 'entry'},
 
@@ -50,9 +52,5 @@ DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
 
-import acrylamid
-VERSION=acrylamid.__version__
-
 import datetime
 CURR_Y=datetime.datetime.now().year
-print CURR_Y
