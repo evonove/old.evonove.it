@@ -3,7 +3,7 @@
     <head>
         {% block head -%}
         <!--  SEO STUFF START HERE -->
-        <title>{% block title %}{% endblock %}</title>
+        <title>{{env.fava}}{% block title %}{% endblock %}</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
@@ -223,7 +223,7 @@
                     <div class="row show-grid">
                         <!-- FOOTER: COPYRIGHT TEXT -->
                         <div class="span12">
-                            <p> built with <a href="https://github.com/posativ/acrylamid">Acrylamid</a> v.{{conf.version}} - Copyright Evonove SRL {{conf.curr_y}}. P.I. IT03120810548</p>
+                            <p> built with <a href="https://github.com/posativ/acrylamid">Acrylamid</a> v.{{env.version}} - Copyright Evonove SRL {{env.current_year}}. P.I. IT03120810548</p>
                         </div>
                     </div>
                 </div>

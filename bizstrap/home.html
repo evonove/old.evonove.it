@@ -16,7 +16,7 @@
         <div class="bannercontainer" >
             <div class="banner" >
                 <ul>
-                    {% for banner in env.banners %}
+                    {% for banner in env.entry_dict.banners %}
                     <li class="slide2" data-transition="slideleft" data-slotamount="10"  data-masterspeed="300">
                         <img alt="" src="{{banner.props.image}}" />
                         <div class="caption sft carousel-caption" data-x="472" data-y="69" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none;">
@@ -46,7 +46,7 @@
                 <div class="row">
                     <!-- MAIN CONTENT AREA: REDESIGN CUSTOM - HERO BLOCK 1 (TEXT BLOCK)] -->
                     <div class="span6 home-block hero-block-1">
-                        {{ env.homepage_entry.content}}
+                        {{ env.entry_dict.homepage.content}}
                     </div>
 
                     <!-- MAIN CONTENT AREA: SPACER BETWEEN HERO BLOCK 1 AND HEREO BLOCK 2 -->
@@ -55,7 +55,7 @@
                     <!-- MAIN CONTENT AREA: bizstrap CUSTOM - HERO BLOCK 2 -->
                     <div class="span5 home-block">
                         <div class="grey-box hero-block-2">
-                            {{ env.callout.content }}
+                            {{ env.entry_dict.callout.content }}
                         </div>
                     </div>
                 </div>
@@ -68,10 +68,10 @@
             <div class="span12">
                 <!-- MAIN CONTENT AREA: bizstrap CUSTOM - HERO LIST -->
                 <div class="row show-grid hero-list">
-                    {% for e in env.hero_list %}
+                    {% for e in env.entry_dict.hero_list %}
                     <div class="span3">
                             <div class="image-wrapper">
-                                <img alt="" src="img/ruler.png" />
+                                <img alt="" src="{{e.props.image}}" />
                             </div>
                         {{ e.content }}
                     </div>
