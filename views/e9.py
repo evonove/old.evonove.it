@@ -43,7 +43,8 @@ class E9Base(Translation):
 
         globals = {
             'navmenu': dict(),
-            'footer_about': dict()
+            'footer_about': dict(),
+            'footer_navmenu': dict()
         }
 
         for e in request['entrylist'] + request['translations']:
@@ -52,6 +53,8 @@ class E9Base(Translation):
                     globals['navmenu'][e.lang] = e
                 elif e.identifier == 'footer_about':
                     globals['footer_about'][e.lang] = e
+                elif e.identifier == 'footer_navmenu':
+                    globals['footer_navmenu'][e.lang] = e
             except AttributeError:
                 pass
 
