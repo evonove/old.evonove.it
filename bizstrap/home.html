@@ -142,8 +142,9 @@
 
         <hr>
 
+        {% if env.lang == 'it' %}
+        <!-- NEWSLETTER - For the italian site only -->
         <div class="main-block testimonials">
-            <!-- MAIN CONTENT AREA: bizstrap CUSTOM - HERO BLOCK 3 -->
             <div class="row show-grid">
                 <div class="span12 grey-box">
                     <div class="hero-block3">
@@ -151,12 +152,12 @@
                             <div class="span9">
                                 <div class="hero-content-3">
                                     <h2>Iscriviti alla newsletter</h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Integer sed arcu massa.</p>
+                                    <p>Tieniti informato circa le nostre iniziative: workshop gratuiti, corsi, eventi di interesse.</p>
                                 </div>
                             </div>
                             <div class="span3">
                                 <div class="tour-btn">
-                                    <a href="#" class="btn btn-warning">Buy Now</a>
+                                    <a href="#" class="btn btn-warning">Iscriviti Ora</a>
                                 </div>
                             </div>
                         </div>
@@ -164,6 +165,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
 
 
 <!-- MAIN CONTENT AREA: bizstrap CUSTOM - RECENT POSTS BLOACK (ORIGINALLY DESIGNED FOR HOME PAGE) -->
