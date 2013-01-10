@@ -7,7 +7,7 @@ identifier: callout
 draft: True
 ---
 
-.. |callout| image:: /img/release_icon.png
+.. |callout| image:: /img/tofu_logo.png
 
 `Tofu, file storage made easy <http://tofu.st/>`_
 =================================================
@@ -18,5 +18,5 @@ effective action boxes.
 
 .. raw:: html
 
-    <a href="#" class="btn btn-warning"><i class="icon-shopping-cart"></i>Crea subito un account</a>
+    <a href="#" class="btn btn-warning"><i class="icon-shopping-cart"></i>Get an account now</a>
 

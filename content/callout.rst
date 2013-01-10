@@ -8,7 +8,7 @@ slug: callout
 draft: True
 ---
 
-.. |callout| image:: /img/release_icon.png
+.. |callout| image:: /img/tofu_logo.png
 
 `Tofu, file storage per tutti <http://tofu.st/>`_
 =================================================
