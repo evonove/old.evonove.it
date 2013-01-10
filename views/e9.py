@@ -24,14 +24,24 @@ class E9Base(Translation):
             return  entry
 
     def _populate_entries(self, request, lang=None):
-        entry_dict = {}
+        entry_dict = {
+            'hero_list': [],
+            'banners': [],
+            'expertise': {},
+        }
+
         for e in request['entrylist']:
             if lang:
                 e = self._entry_for_lang(request, lang, e)
             if 'banners' in e.filename.split(os.path.sep):
-                entry_dict.setdefault('banners', []).append(e)
+                entry_dict['banners'].append(e)
             elif 'hero-list' in e.filename.split(os.path.sep):
-                entry_dict.setdefault('hero_list', []).append(e)
+                entry_dict['hero_list'].append(e)
+            elif 'expertise' in e.filename.split(os.path.sep):
+                try:
+                    entry_dict['expertise'][e.frontpage] = e
+                except KeyError:
+                    pass
             else:
                 entry_dict[e.slug] = e
 
