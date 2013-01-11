@@ -30,7 +30,7 @@ class E9Base(Translation):
             'expertise': {},
         }
 
-        for e in request['entrylist']:
+        for e in request['entrylist']+request['pages']:
             if lang:
                 e = self._entry_for_lang(request, lang, e)
             if 'banners' in e.filename.split(os.path.sep):
