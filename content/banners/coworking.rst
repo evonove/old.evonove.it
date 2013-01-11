@@ -3,7 +3,7 @@ title: Coworking
 lang: it
 draft: True
 date: 01-01-2013
-image: /img/slider02.png
+image: http://placehold.it/940x400/ff7f00
 ---
 
 .. class:: small

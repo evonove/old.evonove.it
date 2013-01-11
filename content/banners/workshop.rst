@@ -3,7 +3,7 @@ title: Workshop
 lang: it
 draft: True
 date: 01-01-2013
-image: /img/slider04.png
+image: http://placehold.it/940x400/E8117F
 ---
 
 .. class:: small

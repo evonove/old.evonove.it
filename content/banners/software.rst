@@ -3,7 +3,7 @@ title: Software
 lang: it
 draft: True
 date: 01-01-2013
-image: /img/slider01.png
+image: http://placehold.it/940x400/7fff00
 ---
 
 .. class:: small
