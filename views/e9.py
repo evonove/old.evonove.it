@@ -25,9 +25,12 @@ class E9Base(Translation):
             return  entry
 
     def context(self, env, request):
-        for t in request['translations'][:]:
+        env = Translation.context(self, env, request)
+        print 'qui',len(request['translations'])
+        for t in request['translations']:
             self.langs.add(t.lang)
         self.langs.add(self.conf.lang)
+        print self.langs
 
         globals = {
             'navmenu': dict(),
@@ -52,7 +55,7 @@ class E9Base(Translation):
             return None
         env.get_globals = get_globals
 
-        env = Translation.context(self, env, request)
+
         env.current_year = datetime.now().year
         return env
 
@@ -93,23 +96,17 @@ class E9Home(E9Base):
         return entry_dict
 
     def generate(self, request):
-        request['env']['entry_dict'] = self._populate_entries(request)
-        request['env']['lang'] = self.conf['lang']
-        path = joinurl(self.conf['output_dir'], '/index.html')
-        tt = self.env.engine.fromfile(self.template)
-        html = tt.render(conf=self.conf, env=union(self.env,
-            type=self.__class__.__name__.lower()))
-
-        yield html, path
-
-
-class E9Homei18n(E9Home):
-    def generate(self, request):
         for lang in self.langs:
+            print lang
             request['env']['entry_dict'] = self._populate_entries(request,lang)
-            request['env']['path'] = '/'
             request['env']['lang'] = lang
-            path = joinurl(self.conf['output_dir'], lang, 'index.html')
+            if lang != self.conf.lang:
+                request['env']['path'] = '/'
+                path = joinurl(self.conf['output_dir'], lang, 'index.html')
+                print path
+            else:
+                path = joinurl(self.conf['output_dir'], 'index.html')
+
             tt = self.env.engine.fromfile(self.template)
             html = tt.render(conf=self.conf, env=union(self.env,
                 type=self.__class__.__name__.lower()))
@@ -157,12 +154,9 @@ class E9Page(E9Base):
                 if path.endswith('/'):
                     path = joinurl(path, 'index.html')
 
-                #request['env']['entry_dict'] = self._populate_entries(request,lang)
                 request['env']['path'] = '/'
                 request['env']['lang'] = lang
-                #path = joinurl(self.conf['output_dir'], lang, 'index.html')
 
-                print self.path,lang,route
                 tt = self.env.engine.fromfile(self.template)
                 html = tt.render(conf=self.conf, entry=entry, env=union(self.env,
                     type=self.__class__.__name__.lower(), route=route))

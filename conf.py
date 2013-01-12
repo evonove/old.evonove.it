@@ -9,8 +9,7 @@ EMAIL = 'info@evonove.it'
 LANG = 'it'
 
 VIEWS = {
-    '/': {'view': 'e9home', 'template': 'home.html'},
-    '/:lang/': {'view': 'e9homei18n', 'template': 'home.html'},
+    '/:lang/': {'view': 'e9home', 'template': 'home.html'},
 
     #'/:year/:slug/': {'view': 'entry'},
 
