@@ -31,7 +31,7 @@ VIEWS = {
     # Here are some more examples
 
     # # '/:slug/' is a slugified url of your static page's title
-    '/:slug/': {'view': 'page'}
+    '/:slug/:lang/': {'view': 'e9page'}
 
     # # '/atom/full/' will give you a _complete_ feed of all your entries
     # '/atom/full/': {'filters': 'h2', 'view': 'atom', 'num_entries': 1000},
@@ -45,6 +45,7 @@ VIEWS = {
     #                  'view': 'entry'}
 }
 
+PAGE_PERMALINK = '/:slug/:lang/'
 FILTERS = ['rst', 'h1']
 THEME = 'bizstrap'
 ENGINE = 'acrylamid.templates.jinja2.Environment'

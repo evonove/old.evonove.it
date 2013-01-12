@@ -24,7 +24,7 @@ filters: jinja2
             </a>
             <ul class="dropdown-menu">
                 {% for banner in env.entry_dict.banners %}
-                <li><a href="{{banner.permalink}}">{{banner.title}}</a></li>
+                <li><a href="{{ banner.permalink }}">{{banner.title}}</a></li>
                 {% endfor %}
             </ul>
         </li>
