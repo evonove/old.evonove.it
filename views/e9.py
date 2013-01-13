@@ -5,6 +5,8 @@ from acrylamid.helpers import union, joinurl, expand
 import os
 from datetime import datetime
 
+class TranslationNotFound(Exception):
+    pass
 
 def entry_filename(entry):
     return entry.filename.split(os.path.sep)[-1]
@@ -16,21 +18,17 @@ class E9Base(Translation):
         self.langs = set()
 
     def _entry_for_lang(self, request, lang, entry):
-        try:
-            for t in request['translations']:
-                if t.identifier == entry.identifier and t.lang == lang:
-                    return t
-            return entry
-        except (AttributeError, KeyError):
-            return  entry
+        for t in request['translations']:
+            if t.identifier == entry.identifier and t.lang == lang:
+                return t
+        raise TranslationNotFound()
 
     def context(self, env, request):
         env = Translation.context(self, env, request)
-        print 'qui',len(request['translations'])
+
         for t in request['translations']:
             self.langs.add(t.lang)
         self.langs.add(self.conf.lang)
-        print self.langs
 
         globals = {
             'navmenu': dict(),
@@ -78,11 +76,13 @@ class E9Home(E9Base):
             lang = self.conf.lang
 
         for e in request['entrylist'] + request['pages']:
-            e = self._entry_for_lang(request, lang, e)
+            try:
+                e = self._entry_for_lang(request, lang, e)
+            except TranslationNotFound:
+                pass
             e = self._clean_permalink(e)
             if 'banners' in e.filename.split(os.path.sep):
                 entry_dict['banners'].append(e)
-                print e.permalink
             elif 'hero-list' in e.filename.split(os.path.sep):
                 entry_dict['hero_list'].append(e)
             elif 'expertise' in e.filename.split(os.path.sep):
@@ -97,13 +97,11 @@ class E9Home(E9Base):
 
     def generate(self, request):
         for lang in self.langs:
-            print lang
             request['env']['entry_dict'] = self._populate_entries(request,lang)
             request['env']['lang'] = lang
             if lang != self.conf.lang:
                 request['env']['path'] = '/'
                 path = joinurl(self.conf['output_dir'], lang, 'index.html')
-                print path
             else:
                 path = joinurl(self.conf['output_dir'], 'index.html')
 
@@ -140,7 +138,11 @@ class E9Page(E9Base):
     def generate(self, request):
         for lang in self.langs:
             for entry in request['pages']:
-                entry = self._entry_for_lang(request, lang, entry)
+                try:
+                    entry = self._entry_for_lang(request, lang, entry)
+                except TranslationNotFound:
+                    continue
+
                 path = ''
                 route = expand(self.path, entry)
                 if entry.hasproperty('permalink'):
