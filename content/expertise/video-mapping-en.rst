@@ -1,7 +1,7 @@
 ---
 title: Videomapping
-tagline: Diamo vita alle superfici
-lang: it
+tagline: Living surfaces
+lang: en
 type: page
 date: 01-01-2013
 image: http://placehold.it/220x340
@@ -13,4 +13,4 @@ frontpage: 1
 Videomapping
 ------------
 
-TODO descrizione
+TODO description

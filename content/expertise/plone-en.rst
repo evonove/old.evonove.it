@@ -1,7 +1,7 @@
 ---
 title: Plone CMS
-tagline: Il CMS definitivo. Speriamo.
-lang: it
+tagline: Hopefully the killer CMS.
+lang: en
 type: page
 date: 01-01-2013
 image: http://placehold.it/220x160
@@ -13,4 +13,4 @@ frontpage: 4
 Plone
 -----
 
-TODO descrizione
+TODO description

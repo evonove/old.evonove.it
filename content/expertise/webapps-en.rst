@@ -1,7 +1,7 @@
 ---
 title: Rich Web Applications
 tagline: HTML5, Javascript, Love
-lang: it
+lang: en
 type: page
 date: 01-01-2013
 image: http://placehold.it/220x160
@@ -10,7 +10,7 @@ identifier: rich_web_apps
 frontpage: 3
 ---
 
-Rich Web Apps
+Rich Web Apps!
 -------------
 
 TODO descrizione

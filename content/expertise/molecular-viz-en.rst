@@ -1,7 +1,7 @@
 ---
 title: Molecular Visualization
-tagline: Soluzioni open source
-lang: it
+tagline: Open Source Solutions
+lang: en
 type: page
 date: 01-01-2013
 image: http://placehold.it/460x160
@@ -13,4 +13,4 @@ frontpage: 2
 Molecular Visualization
 -----------------------
 
-TODO descrizione
+TODO description
