@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row show-grid">
+            <div class="span12">
+                <div class="row show-grid clear-both">
+                    <!-- BEGIN LEFT-SIDEBAR -->
+                    <div id="left-sidebar" class="span3 sidebar">
+                        <!-- LEFT-SIDEBAR: SIDEBAR NAVIGATION -->
+                        <div class="side-nav sidebar-block">
+                            <h2>{% block navtitle%}{% endblock %}</h2>
+                            {% block nav %}{% endblock %}
+                        </div>
+                    </div>
+                    <!-- END LEFT-SIDEBAR -->
+
+                    <!-- BEGIN ARTICLE CONTENT AREA -->
+                    <div class="span9 main-column two-columns-left">
+                        <article>
+                            <h1>{% block pagetitle %}{% endblock %}</h1>
+                            {% block mainimage %}{% endblock %}
+                            {% block pagecontent %}{% endblock %}
+                        </article>
+                    <!-- END ARTICLE CONTENT AREA -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

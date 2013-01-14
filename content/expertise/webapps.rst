@@ -1,5 +1,5 @@
 ---
-title: Rich Web Applications
+title: Applicazioni Web Super
 tagline: HTML5, Javascript, Love
 lang: it
 type: page
@@ -11,7 +11,7 @@ frontpage: 3
 permalink: /expertise/webapps/
 ---
 
-Rich Web Apps
--------------
+Applicazioni Web Super
+----------------------
 
 TODO descrizione
