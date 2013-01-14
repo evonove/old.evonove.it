@@ -23,6 +23,13 @@ class E9Base(Translation):
                 return t
         raise TranslationNotFound()
 
+    def _strip_current_lang(self, url):
+        toks = url.split('/')
+        if self.conf.lang in toks:
+            toks.remove(self.conf.lang)
+        url = '/'.join(toks)
+        return url
+
     def context(self, env, request):
         env = Translation.context(self, env, request)
 
@@ -59,13 +66,6 @@ class E9Base(Translation):
 
 
 class E9Home(E9Base):
-    def _clean_permalink(self, entry):
-        toks = entry.permalink.split('/')
-        if self.conf.lang in toks:
-            toks.remove(self.conf.lang)
-        entry.permalink = '/'.join(toks)
-        return entry
-
     def _populate_entries(self, request, lang=None):
         entry_dict = {
             'hero_list': [],
@@ -80,7 +80,7 @@ class E9Home(E9Base):
                 e = self._entry_for_lang(request, lang, e)
             except TranslationNotFound:
                 pass
-            e = self._clean_permalink(e)
+            e.permalink = self._strip_current_lang(e.permalink)
             if 'banners' in e.filename.split(os.path.sep):
                 entry_dict['banners'].append(e)
             elif 'hero-list' in e.filename.split(os.path.sep):
@@ -136,19 +136,23 @@ class E9Page(E9Base):
         return env
 
     def generate(self, request):
+        f = request['conf']['views']['/:slug/:lang/']['if']
         for lang in self.langs:
             for entry in request['pages']:
+                if not entry.context.condition(entry):
+                    continue
                 try:
                     entry = self._entry_for_lang(request, lang, entry)
                 except TranslationNotFound:
-                    continue
+                    pass
 
                 path = ''
                 route = expand(self.path, entry)
                 if entry.hasproperty('permalink'):
                     path = joinurl(self.conf['output_dir'], entry.permalink)
                 elif lang == self.conf.lang:
-                    path = joinurl(self.conf['output_dir'], entry.slug, '/')
+                    dest = self._strip_current_lang(expand(self.path, entry))
+                    path = joinurl(self.conf['output_dir'], dest, '/')
                     entry.permalink = entry.permalink[:-3]
                 else:
                     path = joinurl(self.conf['output_dir'], expand(self.path, entry))
@@ -164,3 +168,13 @@ class E9Page(E9Base):
                     type=self.__class__.__name__.lower(), route=route))
 
                 yield html, path
+
+
+class ExpertisePage(E9Page):
+    def generate(self, request):
+        for key in ('pages', 'translations'):
+            for e in request[key][:]:
+                if not 'expertise' in e.filename.split(os.path.sep):
+                    request[key].remove(e)
+
+        return E9Page.generate(self, request)

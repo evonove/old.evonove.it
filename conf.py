@@ -30,7 +30,8 @@ VIEWS = {
     # Here are some more examples
 
     # # '/:slug/' is a slugified url of your static page's title
-    '/:slug/:lang/': {'view': 'e9page'}
+    '/:slug/:lang/': {'view': 'e9page', 'if': lambda e: all(x not in e.filename for x in ('expertise',))},
+    '/expertise/:slug/:lang/': {'view': 'expertisepage', 'template': 'page_leftcol.html'},
 
     # # '/atom/full/' will give you a _complete_ feed of all your entries
     # '/atom/full/': {'filters': 'h2', 'view': 'atom', 'num_entries': 1000},
