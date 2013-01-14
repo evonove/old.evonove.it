@@ -8,6 +8,7 @@ image: http://placehold.it/220x160
 image_link: http://placehold.it/1024x768.jpg
 identifier: rich_web_apps
 frontpage: 3
+permalink: /expertise/webapps/en/
 ---
 
 Rich Web Apps!

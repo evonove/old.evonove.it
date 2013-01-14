@@ -8,6 +8,7 @@ image: http://placehold.it/220x340
 image_link: /img/img05.jpg
 identifier: videomapping
 frontpage: 1
+permalink: /expertise/videomapping/
 ---
 
 Videomapping

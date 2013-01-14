@@ -3,6 +3,7 @@ title: Navigation Menu
 lang: en
 date: 01-01-2013
 slug: navmenu
+draft: yes
 identifier: navmenu
 filters: jinja2
 ---
