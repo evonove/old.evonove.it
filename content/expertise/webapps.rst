@@ -9,9 +9,17 @@ image_link: http://placehold.it/1024x768.jpg
 identifier: rich_web_apps
 frontpage: 3
 permalink: /expertise/webapps/
+filters: jinja2
 ---
 
 Applicazioni Web Super
 ----------------------
 
+.. raw:: html
+
+    <img alt="" src="http://placehold.it/710x160" class="img-polaroid" />
+
+
 TODO descrizione
+
+{{ lipsum(n=2, html=False) }}

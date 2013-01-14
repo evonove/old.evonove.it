@@ -1,0 +1,23 @@
+{% extends "left_column.html" %}
+{% block title %}{{ conf.sitename }}{% endblock %}
+
+{% block head %}
+    {{- super() }}
+    {%- if entry is defined %}
+    <meta name="description" content="{{ entry.description | e }}" />
+    <meta name="keywords" content="{{ entry.tags | join(', ') }}" />
+    {%- endif -%}
+{% endblock %}
+
+{% block navtitle%}Expertise{% endblock %}
+
+{% block nav %}
+    <ul>
+        {% for e in env.expertiselist %}
+        <li class="{% if e == entry %}active{% endif %}"><a href="{{ e.permalink }}">{{ e.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block pagetitle %}{{ entry.title }}{% endblock %}
+{% block pagecontent %}{{ entry.content }}{% endblock %}

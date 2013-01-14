@@ -17,24 +17,7 @@
             <div class="banner" >
                 <ul>
                     {% for banner in env.entry_dict.banners %}
-                    <li class="slide2" data-transition="slideleft" data-slotamount="10"  data-masterspeed="300">
-                        <img alt="" src="{{banner.props.image}}" />
-                        <div class="caption sft carousel-caption" data-x="472" data-y="69" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none;">
-                            <p class="middle">{{banner.title}}</p>
-                        </div>
-                        <div class="caption sfr carousel-caption" data-x="462" data-y="107" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-                            <p class="big">20% of all web</p>
-                        </div>
-                        <div class="caption sfl carousel-caption" data-x="462" data-y="156" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-                            <p class="big">traffic today is from</p>
-                        </div>
-                        <div class="caption sfl carousel-caption" data-x="462" data-y="205" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-                            <p class="big">mobile devices</p>
-                        </div>
-                        <div class="caption sfb carousel-caption" data-x="474" data-y="262" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none; width: 436px;">
                             {{banner.content}}
-                        </div>
-                    </li>
                     {% endfor %}
                 </ul>
                 <div class="tp-bannertimer"></div>

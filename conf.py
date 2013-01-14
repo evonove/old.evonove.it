@@ -9,7 +9,10 @@ EMAIL = 'info@evonove.it'
 LANG = 'it'
 
 VIEWS = {
-    '/:lang/': {'view': 'e9home', 'template': 'home.html'},
+    '/:lang/': {
+        'view': 'e9home',
+        'template': 'home.html'
+    },
 
     #'/:year/:slug/': {'view': 'entry'},
 
@@ -30,8 +33,15 @@ VIEWS = {
     # Here are some more examples
 
     # # '/:slug/' is a slugified url of your static page's title
-    '/:slug/:lang/': {'view': 'e9page', 'if': lambda e: all(x not in e.filename for x in ('expertise',))},
-    '/expertise/:slug/:lang/': {'view': 'expertisepage', 'template': 'page_expertise.html'},
+    '/:slug/:lang/': {
+        'view': 'e9page',
+        'if': lambda e: all(x not in e.filename for x in ('expertise',)),
+        'template': 'page_expertise.html'
+    },
+    '/expertise/:slug/:lang/': {
+        'view': 'expertisepage',
+        'template': 'page_expertise.html'
+    },
 
     # # '/atom/full/' will give you a _complete_ feed of all your entries
     # '/atom/full/': {'filters': 'h2', 'view': 'atom', 'num_entries': 1000},
