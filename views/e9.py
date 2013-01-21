@@ -11,10 +11,6 @@ class TranslationNotFound(Exception):
     pass
 
 
-def entry_filename(entry):
-    return entry.filename.split(os.path.sep)[-1]
-
-
 def entry_for_lang(request, lang, entry):
     for t in request['translations']:
         if t.identifier == entry.identifier and t.lang == lang:
