@@ -4,7 +4,7 @@ lang: en
 draft: True
 date: 01-01-2013
 image: http://placehold.it/940x400/7fff00
-identifier: software
+identifier: banner_software
 ---
 
 .. raw:: html

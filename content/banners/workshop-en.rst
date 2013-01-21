@@ -4,7 +4,7 @@ lang: en
 draft: True
 date: 01-01-2013
 image: http://placehold.it/940x400/E8117F
-identifier: workshop
+identifier: banner_workshop
 ---
 
 .. raw:: html

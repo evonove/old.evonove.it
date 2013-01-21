@@ -51,7 +51,7 @@ filters: jinja2
         </li>
 
         <li class="single">
-            <a href="contact_us.html">
+            <a href="contacts/">
                 CONTATTI<i>get in touch</i>
             </a>
         </li>

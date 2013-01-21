@@ -1,6 +1,4 @@
 # -*- encoding: utf-8 -*-
-# This is your configuration file.  Please write valid python!
-# See http://posativ.org/acrylamid/conf.py.html
 
 SITENAME = 'Evonove - Software'
 WWW_ROOT = 'http://evonove.it/'
@@ -33,11 +31,17 @@ VIEWS = {
     # Here are some more examples
 
     # # '/:slug/' is a slugified url of your static page's title
-    '/:slug/:lang/': {
-        'view': 'e9page',
-        'if': lambda e: all(x not in e.filename for x in ('expertise',)),
-        'template': 'page_expertise.html'
+#    '/:slug/:lang/': {
+#        'view': 'e9page',
+#        'if': lambda e: all(x not in e.filename for x in ('expertise',)),
+#        'template': 'page_expertise.html'
+#    },
+
+    '/activities/:slug/:lang/': {
+        'view': 'basepage',
+        'template': 'base_page.html'
     },
+
     '/expertise/:slug/:lang/': {
         'view': 'expertisepage',
         'template': 'page_expertise.html'

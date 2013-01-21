@@ -74,7 +74,7 @@
                             <div class="buttons-container">
                             </div>
                             <div class="nav-collapse">
-                            {{ env.get_globals('navmenu', env.lang).content }}
+                            {{ env.navmenu[env.lang].content }}
                             </div>
                         </div>
                     </div>
@@ -123,11 +123,11 @@
                                 </div>
                                 <!-- FOOTER: ABOUT US -->
                                 <div class="span4 footer-center">
-                                    {{ env.get_globals('footer_about', env.lang).content }}
+                                    {{ env.footer_about[env.lang].content }}
                                 </div>
                                 <!-- FOOTER: NAVIGATION LINKS -->
                                 <div class="span4 footer-right">
-                                    {{ env.get_globals('footer_navmenu', env.lang).content }}
+                                    {{ env.footer_navmenu[env.lang].content }}
                                 </div>
                             </div>
                         </div>
