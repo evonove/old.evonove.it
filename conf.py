@@ -38,7 +38,7 @@ VIEWS = {
 #    },
 
     '/activities/:slug/:lang/': {
-        'view': 'basepage',
+        'view': 'activitiespage',
         'template': 'base_page.html'
     },
 
