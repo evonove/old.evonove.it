@@ -35,12 +35,10 @@ class E9Jinja2(Filter):
             would return a wrong result for 'it' language code
 
             """
-            print url
             toks = url.split('/')
             if conf.lang in toks:
                 toks.remove(conf.lang)
             url = '/'.join(toks)
-            print url
             return url
 
         self.conf = conf
