@@ -30,8 +30,10 @@ class E9Base(Base):
             env['langs'] = set()
         Base.__init__(self, conf, env, **kwargs)
 
-    def _strip_current_lang(self, url):
-        """Strip the part of the url containing language code.
+    def _strip_default_lang(self, url):
+        """Strip the part of the url containing default language code. In this
+        way, default lang will not have postfix in urls (e.g. blog/ instead of
+        /blog/it/)
 
         NOTICE: this approach is very silly since it does not check against the
         real path of the view - e.g. a legit path like /path/to/it/:lang:/
@@ -90,6 +92,8 @@ class E9Base(Base):
 
         # other global futilities...
         env.current_year = datetime.now().year
+
+
         self.env = env
 
         return env
@@ -124,7 +128,7 @@ class PageBase(E9Base):
         for lang in self.env.langs:
             for entry in self._get_page_list(request, lang):
                 path = ''
-                route = self._strip_current_lang(expand(self.path, entry))
+                route = self._strip_default_lang(expand(self.path, entry))
 
                 if entry.hasproperty('permalink'):
                     path = joinurl(self.conf['output_dir'], entry.permalink)
@@ -202,8 +206,9 @@ class E9Home(PageBase):
         pages = []
         entry_dict = {
             'hero_list': [],
-            'banners': [],
+            'activities': [],
             'expertise': {},
+            'banners': [],
         }
         for entry in request['pages'] + request['entrylist']:
             if not entry.context.condition(entry):
@@ -217,6 +222,8 @@ class E9Home(PageBase):
             try:
                 if 'banners' in e.filename.split(os.path.sep):
                     entry_dict['banners'].append(e)
+                elif 'activities' in e.filename.split(os.path.sep):
+                    entry_dict['activities'].append(e)
                 elif 'hero-list' in e.filename.split(os.path.sep):
                     entry_dict['hero_list'].append(e)
                 elif 'expertise' in e.filename.split(os.path.sep):

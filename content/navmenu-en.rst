@@ -5,7 +5,7 @@ date: 01-01-2013
 slug: navmenu
 draft: yes
 identifier: navmenu
-filters: jinja2
+filters: E9Jinja2
 ---
 
 .. raw:: html
@@ -24,8 +24,8 @@ filters: jinja2
                 ACTIVITIES<i>what we do</i>
             </a>
             <ul class="dropdown-menu">
-                {% for banner in env.entry_dict.banners %}
-                <li><a href="{{ banner.permalink }}">{{banner.title}}</a></li>
+                {% for a in env.entry_dict.activities %}
+                <li><a href="{{ a.permalink|strip_default_lang }}">{{a.title}}</a></li>
                 {% endfor %}
             </ul>
         </li>
