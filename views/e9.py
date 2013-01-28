@@ -3,12 +3,18 @@ from collections import defaultdict
 from acrylamid import AcrylamidException
 from acrylamid.views.entry import Base
 from acrylamid.helpers import union, joinurl, expand
+from acrylamid.utils import Struct, HashableList, hash as acr_hash
 import os
 from datetime import datetime
 
 
 class TranslationNotFound(Exception):
     pass
+
+
+class HashableSet(set):
+    def __hash__(self):
+        return acr_hash(*self)
 
 
 def entry_for_lang(request, lang, entry):
@@ -25,10 +31,11 @@ class E9Base(Base):
     the global context (e.g. menubar, footer, etc...)
 
     """
-    def __init__(self, conf, env, **kwargs):
+    def init(self, conf, env, template='main.html'):
         if not 'langs' in env:
-            env['langs'] = set()
-        Base.__init__(self, conf, env, **kwargs)
+            env['langs'] = HashableSet()
+        self.conf = conf
+        Base.init(self, conf, env)
 
     def _strip_default_lang(self, url):
         """Strip the part of the url containing default language code. In this
@@ -46,7 +53,7 @@ class E9Base(Base):
         url = '/'.join(toks)
         return url
 
-    def context(self, env, request):
+    def context(self, conf, env, request):
         """This method fills up translations variable in the request (like
         Translation class in Acrylamid), creates a languages list based on the
         request contents and fill the context with common data needed by every
@@ -75,14 +82,14 @@ class E9Base(Base):
                     request['translations'].append(entry)
 
         globals = {
-            'navmenu':dict(),
-            'footer_about':dict(),
-            'footer_navmenu':dict(),
+            'navmenu':Struct(),
+            'footer_about':Struct(),
+            'footer_navmenu':Struct(),
         }
 
-        for e in request['entrylist']+request['pages']+request['translations']:
+        for e in request['entrylist']+request['pages']+request['translations']+request['drafts']:
             try:
-                globals[e.identifier][e.lang] = e
+                globals[e.props.identifier][e.props.lang] = e
             except (KeyError, AttributeError):
                 continue
 
@@ -119,13 +126,16 @@ class PageBase(E9Base):
             if not entry.context.condition(entry):
                 continue
             try:
-                pages.append(entry_for_lang(request, lang, entry))
+                p = entry_for_lang(request, lang, entry)
+                if not p.hasproperty('permalink'):
+                    p.permalink = self._strip_default_lang(expand(self.path, p))
+                pages.append(p)
             except TranslationNotFound:
                 pages.append(entry)
         return pages
 
-    def generate(self, request):
-        for lang in self.env.langs:
+    def generate(self, conf, env, request):
+        for lang in env.langs:
             for entry in self._get_page_list(request, lang):
                 path = ''
                 route = self._strip_default_lang(expand(self.path, entry))
@@ -143,8 +153,8 @@ class PageBase(E9Base):
                 request['env']['path'] = '/'
                 request['env']['lang'] = lang
 
-                tt = self.env.engine.fromfile(self.template)
-                html = tt.render(conf=self.conf, entry=entry, env=union(self.env,
+                tt = env.engine.fromfile(self.template)
+                html = tt.render(conf=conf, entry=entry, env=union(env,
                     type=self.__class__.__name__.lower(), route=route))
 
                 yield html, path
@@ -156,7 +166,7 @@ class ActivitiesPage(PageBase):
         for entry in request['pages']:
             if not 'activities' in entry.filename.split(os.path.sep):
                 continue
-            if not entry.context.condition(entry):
+            if entry.context.condition and not entry.context.condition(entry):
                 continue
             try:
                 pages.append(entry_for_lang(request, lang, entry))
@@ -173,11 +183,11 @@ class ExpertisePage(PageBase):
 
     """
     def _get_page_list(self, request, lang):
-        pages = []
+        pages = HashableList()
         for entry in request['pages']:
             if not 'expertise' in entry.filename.split(os.path.sep):
                 continue
-            if not entry.context.condition(entry):
+            if entry.context.condition and not entry.context.condition(entry):
                 continue
             try:
                 pages.append(entry_for_lang(request, lang, entry))
@@ -204,14 +214,14 @@ class E9Home(PageBase):
 
     def _get_page_list(self, request, lang):
         pages = []
-        entry_dict = {
-            'hero_list': [],
-            'activities': [],
-            'expertise': {},
-            'banners': [],
-        }
+        entry_dict = Struct({
+            'hero_list': HashableList(),
+            'activities': HashableList(),
+            'expertise': Struct(),
+            'banners': HashableList(),
+        })
         for entry in request['pages'] + request['entrylist']:
-            if not entry.context.condition(entry):
+            if entry.context.condition and not entry.context.condition(entry):
                 continue
 
             try:

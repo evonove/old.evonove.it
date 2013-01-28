@@ -18,8 +18,6 @@ class E9Jinja2(Filter):
 
     def init(self, conf, env, *args):
 
-        print 'fava'
-
         def system(cmd, stdin=None):
             try:
                 return defaultsystem(cmd, stdin, shell=True).strip()
@@ -63,7 +61,6 @@ class E9Jinja2(Filter):
                 self.jinja2_env.filters[module.__name__ + '.' + name] = getattr(module, name)
 
     def transform(self, content, entry):
-
         try:
             tt = self.jinja2_env.from_string(content)
             return tt.render(conf=self.conf, env=self.env, entry=entry)
