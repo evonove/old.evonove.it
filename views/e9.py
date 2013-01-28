@@ -19,7 +19,7 @@ class HashableSet(set):
 
 def entry_for_lang(request, lang, entry):
     for t in request['translations']:
-        if t.identifier == entry.identifier and t.lang == lang:
+        if t.props.identifier == entry.props.identifier and t.props.lang == lang:
             return t
     raise TranslationNotFound()
 
@@ -35,7 +35,7 @@ class E9Base(Base):
         if not 'langs' in env:
             env['langs'] = HashableSet()
         self.conf = conf
-        Base.init(self, conf, env)
+        Base.init(self, conf, env, template)
 
     def _strip_default_lang(self, url):
         """Strip the part of the url containing default language code. In this
@@ -64,19 +64,19 @@ class E9Base(Base):
             return env
 
         translations = defaultdict(list)
-        for key in ('pages', 'entrylist'):
+        for key in ('pages', 'entrylist', 'drafts'):
             for entry in request[key][:]:
                 if not entry.hasproperty('identifier'):
                     continue
 
                 # check for duplicated identifiers
-                for t in translations[entry.identifier]:
-                    if entry.identifier == t.identifier and entry.lang == t.lang:
-                        raise AcrylamidException("{}: Identifier '{}' already set for entry {}".format(entry, entry.identifier, t))
+                for t in translations[entry.props.identifier]:
+                    if entry.props.identifier == t.props.identifier and entry.props.lang == t.props.lang:
+                        raise AcrylamidException("{}: Identifier '{}' already set for entry {}".format(entry, entry.props.identifier, t))
 
-                translations[entry.identifier].append(entry)
-                env.langs.add(entry.lang)
-                if entry.lang != self.conf.lang:
+                translations[entry.props.identifier].append(entry)
+                env.langs.add(entry.props.lang)
+                if entry.props.lang != self.conf.lang:
                     # remove from original entrylist
                     request[key].remove(entry)
                     request['translations'].append(entry)
@@ -220,7 +220,7 @@ class E9Home(PageBase):
             'expertise': Struct(),
             'banners': HashableList(),
         })
-        for entry in request['pages'] + request['entrylist']:
+        for entry in request['pages'] + request['entrylist'] + request['drafts']:
             if entry.context.condition and not entry.context.condition(entry):
                 continue
 
@@ -240,9 +240,8 @@ class E9Home(PageBase):
                     entry_dict['expertise'][e.frontpage] = e
                 else:
                     entry_dict[e.slug] = e
-                    if entry.identifier == 'homepage':
+                    if entry.props.identifier == 'homepage':
                         pages.append(e)
-
             except KeyError:
                 pass
 
