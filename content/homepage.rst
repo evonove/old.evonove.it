@@ -1,6 +1,7 @@
 ---
 title: Homepage Italiano
 lang: it
+draft: true
 date: 01-01-2013
 slug: homepage
 identifier: homepage

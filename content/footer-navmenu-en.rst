@@ -1,6 +1,7 @@
 ---
 title: Footer Navigation
 lang: en
+draft: true
 date: 01-01-2013
 slug: footer_navmenu
 identifier: footer_navmenu

@@ -1,6 +1,7 @@
 ---
 title: English Homepage
 lang: en
+draft: true
 date: 01-01-2013
 slug: homepage
 identifier: homepage

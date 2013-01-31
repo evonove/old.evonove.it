@@ -12,7 +12,7 @@ VIEWS = {
         'template': 'home.html'
     },
 
-    #'/:year/:slug/': {'view': 'entry'},
+    '/:year/:slug/:lang/': {'view': 'entry'},
 
     #'/tag/:name/': {'filters': 'summarize', 'view':'tag', 'pagination': '/tag/:name/:num'},
 
