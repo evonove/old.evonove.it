@@ -8,7 +8,7 @@ identifier: footer_about
 
 .. raw:: html
 
-    <h3 class="center-title">About Us</h3>
+    <h3 class="center-title">About E9</h3>
     <dl class="dl-horizontal">
         <dt>Settore</dt>
         <dd>Software e Infrastrutture IT.</dd>
