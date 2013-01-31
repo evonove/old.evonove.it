@@ -1,5 +1,7 @@
 /*Custom CSS*/
 
+.top-buffer { margin-top:30px; }
+
 /*Custom Landscapes Start*/
 
 .tweets-slide .slides li p{ color: #fff; padding: 0; margin: 0;}
