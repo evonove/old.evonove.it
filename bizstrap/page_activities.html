@@ -9,12 +9,12 @@
     {%- endif -%}
 {% endblock %}
 
-{% set title = {'en': 'Expertise', 'it': 'Specializzazioni'} %}
+{% set title = {'en': 'Activities', 'it': 'Attivita'} %}
 {% block navtitle%}{{ title[env.lang] }}{% endblock %}
 
 {% block nav %}
     <ul>
-        {% for e in env.expertiselist %}
+        {% for e in env.activitylist %}
         <li class="{% if e == entry %}active{% endif %}"><a href="{{ e.permalink }}">{{ e.title }}</a></li>
         {% endfor %}
     </ul>

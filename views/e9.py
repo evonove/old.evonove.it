@@ -121,9 +121,9 @@ class PageBase(E9Base):
         language
 
         """
-        pages = []
+        pages = HashableList()
         for entry in request['pages']:
-            if not entry.context.condition(entry):
+            if entry.context.condition and not entry.context.condition(entry):
                 continue
             try:
                 p = entry_for_lang(request, lang, entry)
@@ -162,7 +162,7 @@ class PageBase(E9Base):
 
 class ActivitiesPage(PageBase):
     def _get_page_list(self, request, lang):
-        pages = []
+        pages = HashableList()
         for entry in request['pages']:
             if not 'activities' in entry.filename.split(os.path.sep):
                 continue
@@ -172,6 +172,9 @@ class ActivitiesPage(PageBase):
                 pages.append(entry_for_lang(request, lang, entry))
             except TranslationNotFound:
                 pages.append(entry)
+
+        request['env']['activitylist'] = pages
+
         return pages
 
 

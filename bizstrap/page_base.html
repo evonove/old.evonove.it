@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row show-grid">
+            <div class="span12">
+                <div class="row show-grid clear-both">
+                    <!-- BEGIN ARTICLE CONTENT AREA -->
+                    <div class="span12 main-column">
+                        <article>
+                            <h1>{% block pagetitle %}{{entry.title}}{% endblock %}</h1>
+                            {% block pagecontent %}{{entry.content}}{% endblock %}
+                        </article>
+                    <!-- END ARTICLE CONTENT AREA -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

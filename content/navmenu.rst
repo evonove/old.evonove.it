@@ -51,7 +51,7 @@ filters: E9Jinja2
         </li>
 
         <li class="single">
-            <a href="contacts/">
+            <a href="/contatti/">
                 CONTATTI<i>get in touch</i>
             </a>
         </li>

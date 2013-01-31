@@ -31,15 +31,15 @@ VIEWS = {
     # Here are some more examples
 
     # # '/:slug/' is a slugified url of your static page's title
-#    '/:slug/:lang/': {
-#        'view': 'e9page',
-#        'if': lambda e: all(x not in e.filename for x in ('expertise',)),
-#        'template': 'page_expertise.html'
-#    },
+    '/:slug/:lang/': {
+        'view': 'pagebase',
+        'if': lambda e: all(x not in e.filename for x in ('expertise','activities')),
+        'template': 'page_base.html'
+    },
 
     '/activities/:slug/:lang/': {
         'view': 'activitiespage',
-        'template': 'base_page.html'
+        'template': 'page_activities.html'
     },
 
     '/expertise/:slug/:lang/': {
