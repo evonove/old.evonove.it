@@ -12,7 +12,10 @@ VIEWS = {
         'template': 'home.html'
     },
 
-    '/:year/:slug/:lang/': {'view': 'entry'},
+    '/:year/:slug/:lang/': {
+        'view': 'entry',
+        'template': 'entry.html',
+    },
 
     #'/tag/:name/': {'filters': 'summarize', 'view':'tag', 'pagination': '/tag/:name/:num'},
 
@@ -24,7 +27,11 @@ VIEWS = {
     #'/atom/': {'filters': ['h2', 'nohyphenate'], 'view': 'atom'},
     #'/rss/': {'filters': ['h2', 'nohyphenate'], 'view': 'rss'},
 
-    #'/articles/': {'view': 'articles'},
+    '/blog/:lang/': {
+        'view': 'e9index',
+        'template': 'blog.html',
+        'pagination': '/blog/page/:num/:lang/'
+    },
 
     #'/sitemap.xml': {'view': 'sitemap'},
 

@@ -2,9 +2,10 @@
 from collections import defaultdict
 from acrylamid import AcrylamidException
 from acrylamid.views.entry import Base
-from acrylamid.helpers import union, joinurl, expand
+from acrylamid.helpers import union, joinurl, event, paginate, expand, link
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
 import os
+from os.path import isfile
 from datetime import datetime
 
 
@@ -104,6 +105,65 @@ class E9Base(Base):
         self.env = env
 
         return env
+
+
+class E9Index(E9Base):
+    @property
+    def type(self):
+        return None
+
+    def init(self, conf, env, template='main.html', items_per_page=5, pagination='/page/:num/'):
+        self.items_per_page = items_per_page
+        self.pagination = pagination
+        self.filters.append('relative')
+        E9Base.init(self, conf, env, template)
+
+    def generate(self, conf, env, data):
+        for lang in env.langs:
+            ipp = self.items_per_page
+            tt = env.engine.fromfile(self.template)
+
+            entrylist = []
+            for entry in data['entrylist']:
+                try:
+                    e = entry_for_lang(data, lang, entry)
+                    entrylist.append(e)
+                except TranslationNotFound:
+                    entrylist.append(entry)
+
+            paginator = paginate(entrylist, ipp, self.path, conf.default_orphans)
+            route = self.path
+
+            for (next, curr, prev), entries, modified in paginator:
+                # curr = current page, next = newer pages, prev = older pages
+
+                next = None if next is None \
+                    else link(u'« Next', self.path.rstrip('/')) if next == 1 \
+                        else link(u'« Next', expand(self.pagination, {'num': next,'lang': lang}))
+                if next:
+                    next.href = self._strip_default_lang(next.href)
+
+                curr = link(curr, self.path) if curr == 1 \
+                    else link(expand(self.pagination, {'num': curr,'lang': lang}))
+                curr.href = self._strip_default_lang(curr.href)
+
+                prev = None if prev is None \
+                   else link(u'Previous »', expand(self.pagination, {'num': prev,'lang': lang}))
+                if prev:
+                    prev.href = self._strip_default_lang(prev.href)
+
+                path = joinurl(conf['output_dir'], expand(curr.href, {'lang': lang}), 'index.html')
+                path = self._strip_default_lang(path)
+                env['lang'] = lang
+
+                if isfile(path) and not (modified or tt.modified or env.modified or conf.modified):
+                    event.skip(path)
+                    continue
+
+                html = tt.render(conf=conf, env=union(env, entrylist=entries,
+                                      type='index', prev=prev, curr=curr, next=next,
+                                      items_per_page=ipp, num_entries=len(entrylist), route=route))
+                yield html, path
 
 
 class PageBase(E9Base):
