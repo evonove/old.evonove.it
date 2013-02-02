@@ -45,7 +45,7 @@ filters: E9Jinja2
         {% endif %}
 
         <li class="single">
-            <a class="single" href="#menu4">
+            <a class="single" href="/blog/">
                 BLOG<i>evonove techies</i>
             </a>
         </li>
