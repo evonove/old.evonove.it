@@ -4,6 +4,8 @@ from acrylamid.filters import Filter
 from acrylamid.helpers import system as defaultsystem
 from acrylamid.errors import AcrylamidException
 
+import locale
+
 from jinja2 import Environment, TemplateError
 
 

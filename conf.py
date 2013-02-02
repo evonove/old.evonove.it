@@ -30,7 +30,7 @@ VIEWS = {
     '/blog/:lang/': {
         'view': 'e9index',
         'template': 'blog.html',
-        'pagination': '/blog/page/:num/:lang/'
+        'pagination': '/blog/page/:num/:lang/',
     },
 
     #'/sitemap.xml': {'view': 'sitemap'},
@@ -67,10 +67,10 @@ VIEWS = {
 }
 
 PAGE_PERMALINK = '/:slug/:lang/'
-FILTERS = ['rst', 'h1']
 THEME = 'bizstrap'
 ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
 FILTERS_DIR = 'filters'
+FILTERS = ['rst', 'h1']

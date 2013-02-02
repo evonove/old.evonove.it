@@ -4,7 +4,7 @@ from acrylamid import AcrylamidException
 from acrylamid.views.entry import Base
 from acrylamid.helpers import union, joinurl, event, paginate, expand, link
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
-import os
+import os,locale
 from os.path import isfile
 from datetime import datetime
 
@@ -25,6 +25,12 @@ def entry_for_lang(request, lang, entry):
     raise TranslationNotFound()
 
 
+def date_format(date, lang):
+    locales = {'it':'it_IT', 'en':'en_US'}
+    locale.setlocale(locale.LC_TIME, locales.get(lang, 'en_US'))
+    return date.strftime('%d %b %Y')
+
+
 class E9Base(Base):
     """Base class for views in this site.
 
@@ -36,6 +42,7 @@ class E9Base(Base):
         if not 'langs' in env:
             env['langs'] = HashableSet()
         self.conf = conf
+        env.engine.jinja2.filters['date_format'] = date_format
         Base.init(self, conf, env, template)
 
     def _strip_default_lang(self, url):
