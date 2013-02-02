@@ -5,7 +5,7 @@ date: 01-01-2013
 slug: navmenu
 draft: yes
 identifier: navmenu
-filters: E9Jinja2
+filters: [E9Jinja2,nointro]
 ---
 
 .. raw:: html

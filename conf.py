@@ -31,6 +31,7 @@ VIEWS = {
         'view': 'e9index',
         'template': 'blog.html',
         'pagination': '/blog/page/:num/:lang/',
+        'filters': 'intro',
     },
 
     #'/sitemap.xml': {'view': 'sitemap'},
@@ -74,3 +75,4 @@ STATIC = ['static']
 VIEWS_DIR = 'views'
 FILTERS_DIR = 'filters'
 FILTERS = ['rst', 'h1']
+INTRO_LINK= ''

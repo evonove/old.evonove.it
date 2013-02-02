@@ -11,16 +11,26 @@
                         {% for entry in env.entrylist %}
                         <div class="post-item">
                             <h2>{{ entry.title }}</h2>
-                            <img alt="" src="img/blog04.jpg" />
-                            <p class="post-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravi</p>
-                            <a class="post-more" href="#">Continue Reading&nbsp;&raquo;</a>
+                            {% if entry.image %}
+                            <div style="float:left;margin-right:15px;">
+                            <img alt="" src="{{entry.image}}" class="img-rounded thumbnail"/>
+                            </div>
+                            {% endif %}
+                            <div class="post-description justified">
+                                {{entry.content}}
+                            </div>
+                            {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
+                            <a class="post-more" href="#">{{continue[env.lang]}}&nbsp;&raquo;</a>
                             <div class="post-item-panel">
                                 <ul>
                                     <li class="date">
                                       <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p></li>
                                     <li><p><i class="icon-user"></i>{{ entry.author }}</p></li>
-                                    <li><p><i class="icon-tags"></i><a href="">marketing</a>, <a href="">SEO</a></p></li>
-                                    <li class="comments"><p><i class="icon-comments-alt"></i><span>2 comments</span></p></li>
+                                    <li><p><i class="icon-tags"></i>
+                                    {% for tag in entry.tags%}
+                                        <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}
+                                    {% endfor %}
+                                    </p></li>
                                 </ul>
                             </div>
                         </div>
@@ -80,29 +90,14 @@
                             </ul>
                         </div>
 
-
-                        <div class="comments-widget sidebar-block">
-                            <h2>Recent Comments</h2>
+                        <div class="tags-widget sidebar-block">
+                            <h2>Tags</h2>
                             <ul>
-                                <li>
-                                    <p>noname on <a href="#">More Icons Added
-                                            to WP Theme</a></p>
-                                </li>
-                                <li>
-                                    <p>noname on <a href="#">More Icons Added
-                                            to WP Theme</a></p>
-                                </li>
-                                <li>
-                                    <p>admin on <a href="#">reDesign WP Theme
-                                            now available on ThemeForest</a></p></li>
-                                <li>
-                                    <p>helloworld on <a href="#">reDesign WP
-                                            Theme now available on ThemeForest</a></p>
-                                </li>
-                                <li>
-                                    <p>noname on <a href="#">More Icons Added
-                                            to WP Theme</a></p>
-                                </li>
+                                <li><p><i class="icon-tags"></i><a href="#">blog</a></p></li>
+                                <li><p><i class="icon-tags"></i><a href="#">photo</a></p></li>
+                                <li><p><i class="icon-tags"></i><a href="#">news</a></p></li>
+                                <li><p><i class="icon-tags"></i><a href="#">business</a></p></li>
+                                <li><p><i class="icon-tags"></i><a href="#">commercial</a></p></li>
                             </ul>
                         </div>
                     </div>
