@@ -73,6 +73,5 @@ ENGINE = 'acrylamid.templates.jinja2.Environment'
 DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
-FILTERS_DIR = 'filters'
 FILTERS = ['rst', 'h1']
 INTRO_LINK= ''

@@ -27,20 +27,6 @@ class E9Jinja2(Filter):
                 log.warn('%s: %s' % (e.__class__.__name__, e.args[0]))
                 return e.args[0]
 
-        def strip_default_lang(url):
-            """Strip the part of the url containing language code.
-
-            NOTICE: this approach is very silly since it does not check against the
-            real path of the view - e.g. a legit path like /path/to/it/:lang:/
-            would return a wrong result for 'it' language code
-
-            """
-            toks = url.split('/')
-            if conf.lang in toks:
-                toks.remove(conf.lang)
-            url = '/'.join(toks)
-            return url
-
         self.conf = conf
         self.env = env
 
@@ -53,7 +39,6 @@ class E9Jinja2(Filter):
         self.jinja2_env.filters.update({
             'time': time, 'datetime': datetime, 'urllib': urllib,
             })
-        self.jinja2_env.filters['strip_default_lang'] = strip_default_lang
 
         for module in (time, datetime, urllib):
             for name in dir(module):

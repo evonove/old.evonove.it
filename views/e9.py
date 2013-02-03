@@ -31,6 +31,21 @@ def date_format(date, lang):
     return date.strftime('%d %b %Y')
 
 
+def strip_default_lang(url,conf):
+    """Strip the part of the url containing language code.
+
+    NOTICE: this approach is very silly since it does not check against the
+    real path of the view - e.g. a legit path like /path/to/it/:lang:/
+    would return a wrong result for 'it' language code
+
+    """
+    toks = url.split('/')
+    if conf.lang in toks:
+        toks.remove(conf.lang)
+    url = '/'.join(toks)
+    return url
+
+
 class E9Base(Base):
     """Base class for views in this site.
 
@@ -43,6 +58,7 @@ class E9Base(Base):
             env['langs'] = HashableSet()
         self.conf = conf
         env.engine.jinja2.filters['date_format'] = date_format
+        env.engine.jinja2.filters['strip_default_lang'] = strip_default_lang
         Base.init(self, conf, env, template)
 
     def _strip_default_lang(self, url):
@@ -90,7 +106,6 @@ class E9Base(Base):
                     request['translations'].append(entry)
 
         globals = {
-            'navmenu':Struct(),
             'footer_about':Struct(),
             'footer_navmenu':Struct(),
         }
@@ -162,6 +177,7 @@ class E9Index(E9Base):
                 path = joinurl(conf['output_dir'], expand(curr.href, {'lang': lang}), 'index.html')
                 path = self._strip_default_lang(path)
                 env['lang'] = lang
+                env['active_route'] = route
 
                 if isfile(path) and not (modified or tt.modified or env.modified or conf.modified):
                     event.skip(path)
@@ -219,6 +235,7 @@ class PageBase(E9Base):
 
                 request['env']['path'] = '/'
                 request['env']['lang'] = lang
+                request['env']['active_route'] = route
 
                 tt = env.engine.fromfile(self.template)
                 html = tt.render(conf=conf, entry=entry, env=union(env,
@@ -277,10 +294,6 @@ class E9Home(PageBase):
 
     """
     priority = 100.0
-
-    @property
-    def type(self):
-        return 'pages'
 
     def _get_page_list(self, request, lang):
         pages = []

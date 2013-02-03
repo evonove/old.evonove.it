@@ -74,7 +74,52 @@
                             <div class="buttons-container">
                             </div>
                             <div class="nav-collapse">
-                            {{ env.navmenu[env.lang].content }}
+
+                                <ul class="nav nav-pills">
+                                    <li class="single{% if env.active_route=='/' %} active{% endif %}">
+                                        <a href="/">
+                                            HOME<i>pagina principale</i>
+                                        </a>
+                                    </li>
+
+                                    {% if env.entry_dict.activities %}
+                                    <li class="dropdown{% if env.active_route.startswith('/activities') %} active{% endif %}">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+                                            ATTIVITA'<i>cosa facciamo</i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            {% for a in env.entry_dict.activities %}
+                                            <li><a href="{{a.permalink|strip_default_lang(conf)}}">{{a.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if env.entry_dict.expertise %}
+                                    <li class="dropdown{% if env.active_route.startswith('/expertise') %} active{% endif %}">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+                                            SPECIALIZZAZIONI<i>cosa sappiamo fare</i>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            {% for e in env.entry_dict.expertise.values() %}
+                                            <li><a href="{{e.permalink}}">{{e.title}}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% endif %}
+
+                                    <li class="single{% if env.active_route.startswith('/blog') %} active{% endif %}">
+                                        <a class="single" href="/blog/">
+                                            BLOG<i>evonove techies</i>
+                                        </a>
+                                    </li>
+
+                                    <li class="single{% if env.active_route=='/contacts/' %} active{% endif %}">
+                                        <a href="/contacts/">
+                                            CONTATTI<i>get in touch</i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
