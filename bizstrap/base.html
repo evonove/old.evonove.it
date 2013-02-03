@@ -78,14 +78,16 @@
                                 <ul class="nav nav-pills">
                                     <li class="single{% if env.active_route=='/' %} active{% endif %}">
                                         <a href="/">
-                                            HOME<i>pagina principale</i>
+                                            HOME<i>127.0.0.1</i>
                                         </a>
                                     </li>
 
                                     {% if env.entry_dict.activities %}
+                                    {% set title = {'en': 'ACTIVITIES', 'it': "ATTIVITA'"} %}
+                                    {% set subtitle = {'en': 'what we do', 'it': 'cosa facciamo'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/activities') %} active{% endif %}">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-                                            ATTIVITA'<i>cosa facciamo</i>
+                                            {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
                                         </a>
                                         <ul class="dropdown-menu">
                                             {% for a in env.entry_dict.activities %}
@@ -96,9 +98,11 @@
                                     {% endif %}
 
                                     {% if env.entry_dict.expertise %}
+                                    {% set title = {'en': 'EXPERTISE', 'it': "SPECIALIZZAZIONI"} %}
+                                    {% set subtitle = {'en': 'what we can do', 'it': 'cosa sappiamo fare'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/expertise') %} active{% endif %}">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-                                            SPECIALIZZAZIONI<i>cosa sappiamo fare</i>
+                                            {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
                                         </a>
                                         <ul class="dropdown-menu">
                                             {% for e in env.entry_dict.expertise.values() %}
@@ -110,13 +114,14 @@
 
                                     <li class="single{% if env.active_route.startswith('/blog') %} active{% endif %}">
                                         <a class="single" href="/blog/">
-                                            BLOG<i>evonove techies</i>
+                                            BLOG<i>e9 techies</i>
                                         </a>
                                     </li>
 
+                                    {% set title = {'en': 'CONTACTS', 'it': "CONTATTI"} %}
                                     <li class="single{% if env.active_route=='/contacts/' %} active{% endif %}">
                                         <a href="/contacts/">
-                                            CONTATTI<i>get in touch</i>
+                                            {{title[env.lang]}}<i>get in touch</i>
                                         </a>
                                     </li>
                                 </ul>
