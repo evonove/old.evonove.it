@@ -5,6 +5,7 @@ draft: true
 date: 01-01-2013
 slug: footer_about
 identifier: footer_about
+filters: nointro
 ---
 
 .. raw:: html
