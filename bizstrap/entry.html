@@ -11,10 +11,14 @@
                         <div class="post-item-panel">
                             <ul>
                                 <li class="date">
-                                  <p><i class="icon-calendar"></i>July 08, 2012</p></li>
-                                <li><p><i class="icon-user"></i>by Admin</p></li>
-                                <li><p><i class="icon-tags"></i><a href="">business</a>, <a href="">SEO</a></p></li>
-                                <li class="comments"><p><i class="icon-comments-alt"></i><span>2 comments</span></p></li>
+                                    <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
+                                </li>
+                                <li><p><i class="icon-user"></i>{{ entry.author }}</p></li>
+                                <li><p><i class="icon-tags"></i>
+                                {% for tag in entry.tags%}
+                                    <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}
+                                {% endfor %}
+                                </p></li>
                             </ul>
                         </div>
                         <div class="post-socials">

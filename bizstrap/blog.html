@@ -10,7 +10,7 @@
                         <!-- BEGIN POSTS -->
                         {% for entry in env.entrylist %}
                         <div class="post-item">
-                            <h2>{{ entry.title }}</h2>
+                            <h2><a href="{{entry.permalink}}">{{ entry.title }}</a></h2>
                             {% if entry.image %}
                             <div style="float:left;margin-right:15px;">
                             <img alt="" src="{{entry.image}}" class="img-rounded thumbnail"/>
@@ -24,7 +24,8 @@
                             <div class="post-item-panel">
                                 <ul>
                                     <li class="date">
-                                      <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p></li>
+                                        <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
+                                    </li>
                                     <li><p><i class="icon-user"></i>{{ entry.author }}</p></li>
                                     <li><p><i class="icon-tags"></i>
                                     {% for tag in entry.tags%}
