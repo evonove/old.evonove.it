@@ -94,11 +94,9 @@
                         <div class="tags-widget sidebar-block">
                             <h2>Tags</h2>
                             <ul>
-                                <li><p><i class="icon-tags"></i><a href="#">blog</a></p></li>
-                                <li><p><i class="icon-tags"></i><a href="#">photo</a></p></li>
-                                <li><p><i class="icon-tags"></i><a href="#">news</a></p></li>
-                                <li><p><i class="icon-tags"></i><a href="#">business</a></p></li>
-                                <li><p><i class="icon-tags"></i><a href="#">commercial</a></p></li>
+                                {% for t in env.tags %}
+                                <li><p><i class="icon-tags"></i><a href="#">{{t}}</a></p></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

@@ -89,9 +89,14 @@ class E9Base(View):
         if len(request['translations']):
             return env
 
+        tags = HashableSet()
         translations = defaultdict(list)
         for key in ('pages', 'entrylist', 'drafts'):
             for entry in request[key][:]:
+                if entry.hasproperty('tags'):
+                    for t in entry.props.tags:
+                        tags.add(t)
+
                 if not entry.hasproperty('identifier'):
                     continue
 
@@ -124,6 +129,7 @@ class E9Base(View):
 
         # other global futilities...
         env.current_year = datetime.now().year
+        env.tags = tags
 
         self.env = env
 
