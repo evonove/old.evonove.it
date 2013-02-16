@@ -155,3 +155,10 @@ Project code, war package and Jetty configuration: https://bitbucket.org/evonove
 Amazon EC2 public AMI: **ami-e82c209c**
 
 References
+
+- http://webtide.intalio.com/
+- http://wiki.eclipse.org/Jetty
+- http://chromium.org/spdy
+- http://djangoproject.org
+- http://packages.python.org/django-jython/
+- http://code.google.com/p/mod-spdy/
