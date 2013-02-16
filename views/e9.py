@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 from collections import defaultdict
 from acrylamid import AcrylamidException
-from acrylamid.views.entry import Base
+from acrylamid.views.entry import View
 from acrylamid.helpers import union, joinurl, event, paginate, expand, link
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
+from acrylamid.refs import modified, references
 import os,locale
 from os.path import isfile
 from datetime import datetime
+from acrylamid import refs
 
 
 class TranslationNotFound(Exception):
@@ -46,7 +48,7 @@ def strip_default_lang(url,conf):
     return url
 
 
-class E9Base(Base):
+class E9Base(View):
     """Base class for views in this site.
 
     The view collects common data needed to *every* site page and push it in
@@ -57,9 +59,9 @@ class E9Base(Base):
         if not 'langs' in env:
             env['langs'] = HashableSet()
         self.conf = conf
+        self.template = template
         env.engine.jinja2.filters['date_format'] = date_format
         env.engine.jinja2.filters['strip_default_lang'] = strip_default_lang
-        Base.init(self, conf, env, template)
 
     def _strip_default_lang(self, url):
         """Strip the part of the url containing default language code. In this
@@ -105,28 +107,98 @@ class E9Base(Base):
                     request[key].remove(entry)
                     request['translations'].append(entry)
 
-        globals = {
-            'footer_about':Struct(),
-            'footer_navmenu':Struct(),
+        _globals = {
+            'footer_about': Struct(),
+            'footer_navmenu': Struct(),
         }
 
         for e in request['entrylist']+request['pages']+request['translations']+request['drafts']:
             try:
-                globals[e.props.identifier][e.props.lang] = e
+                _globals[e.props.identifier][e.props.lang] = e
             except (KeyError, AttributeError):
                 continue
 
         # inject globals into the env
-        for k,v in globals.iteritems():
+        for k,v in _globals.iteritems():
             env[k] = v
 
         # other global futilities...
         env.current_year = datetime.now().year
 
-
         self.env = env
 
         return env
+
+    def generate(self, conf, env, data):
+        for lang in env.langs:
+            entrylist = []
+            for entry in data[self.type]:
+                try:
+                    e = entry_for_lang(data, lang, entry)
+                    entrylist.append(e)
+                except TranslationNotFound:
+                    entrylist.append(entry)
+
+            unmodified = not env.modified and not conf.modified
+
+            for i, entry in enumerate(entrylist):
+                route = self._strip_default_lang(expand(self.path, entry))
+                if entry.hasproperty('permalink'):
+                    path = joinurl(conf['output_dir'], entry.permalink)
+                elif lang == self.conf.lang:
+                    path = joinurl(self.conf['output_dir'], route, '/')
+                    entry.permalink = route
+                else:
+                    path = joinurl(self.conf['output_dir'],
+                                   expand(self.path, entry))
+                    entry.permalink = route
+
+                if path.endswith('/'):
+                    path = joinurl(path, 'index.html')
+
+                next, prev = self.next(entrylist, i), self.prev(entrylist, i)
+                env['lang'] = lang
+                env['active_route'] = route
+
+                # per-entry template
+                tt = env.engine.fromfile(entry.props.get('layout', self.template))
+
+                if all([isfile(path), unmodified, not tt.modified, not entry.modified,
+                        not modified(*references(entry))]):
+                    event.skip(self.name, path)
+                    continue
+
+                html = tt.render(conf=conf, entry=entry, env=union(env,
+                                                                   entrylist=[entry],
+                                                                   type=self.__class__.__name__.lower(),
+                                                                   prev=prev, next=next,
+                                                                   route=expand(
+                                                                       self.path,
+                                                                       entry)))
+
+                yield html, path
+
+
+class E9Entry(E9Base):
+    @property
+    def type(self):
+        return 'entrylist'
+
+    def next(self, entrylist, i):
+
+        if i == 0:
+            return None
+
+        refs.append(entrylist[i], entrylist[i - 1])
+        return link(entrylist[i-1].title, entrylist[i-1].permalink)
+
+    def prev(self, entrylist, i):
+
+        if i == len(entrylist) - 1:
+            return None
+
+        refs.append(entrylist[i], entrylist[i + 1])
+        return link(entrylist[i+1].title, entrylist[i+1].permalink)
 
 
 class E9Index(E9Base):

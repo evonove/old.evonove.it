@@ -12,8 +12,8 @@ VIEWS = {
         'template': 'home.html'
     },
 
-    '/:year/:slug/:lang/': {
-        'view': 'entry',
+    '/blog/:year/:slug/:lang/': {
+        'view': 'e9entry',
         'template': 'entry.html',
     },
 

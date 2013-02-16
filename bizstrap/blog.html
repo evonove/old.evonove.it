@@ -20,7 +20,7 @@
                                 {{entry.content}}
                             </div>
                             {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
-                            <a class="post-more" href="#">{{continue[env.lang]}}&nbsp;&raquo;</a>
+                            <a class="post-more" href="{{entry.permalink}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
                             <div class="post-item-panel">
                                 <ul>
                                     <li class="date">
