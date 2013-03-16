@@ -2611,3 +2611,9 @@ div.alert {
 .vg { color: #19177C } /* Name.Variable.Global */
 .vi { color: #19177C } /* Name.Variable.Instance */
 .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
