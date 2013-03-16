@@ -1830,6 +1830,7 @@ input.btn {
     margin-top: 10px;
     overflow: hidden;
     padding: 10px 10px 0;
+    clear: both;
 }
 .post-item-panel ul {
     list-style: none;
