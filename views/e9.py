@@ -237,9 +237,13 @@ class E9Index(E9Base):
             for (next, curr, prev), entries, modified in paginator:
                 # curr = current page, next = newer pages, prev = older pages
 
-                next = None if next is None \
-                    else link(u'« Next', self.path.rstrip('/')) if next == 1 \
-                        else link(u'« Next', expand(self.pagination, {'num': next,'lang': lang}))
+                if next is None:
+                    pass
+                elif next == 1:
+                    next = link(u'« Next', expand(self.path.rstrip('/'), {'lang':lang}))
+                else:
+                    next = link(u'« Next', expand(self.pagination, {'num': next,'lang': lang}))
+
                 if next:
                     next.href = self._strip_default_lang(next.href)
 
