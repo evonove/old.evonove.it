@@ -27,7 +27,7 @@
         <!--[if lte IE 8]>
             <link rel="stylesheet" type="text/css" href="{{ env.path + 'css/IE-fix.css' }}" />
         <![endif]-->
-
+        <link rel="icon" type="image/png" href="{{ env.path + 'img/favicon.ico' }}">
         {% if 'sitemap' in env.views -%}
         <link href="{{ env.views.sitemap.path }}" type="application/xml" rel="sitemap" title="Sitemap">
         {%- endif%}
