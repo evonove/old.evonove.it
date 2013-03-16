@@ -67,6 +67,12 @@ VIEWS = {
     #                  'view': 'entry'}
 }
 
+DEPLOYMENT = {
+    "ls": "ls $OUTPUT_DIR",
+    "echo": "echo '$OUTPUT_DIR'",
+    "default": "rsync -av --delete $OUTPUT_DIR evonove@evonove.it:~/webapps/evostatic"
+}
+
 PAGE_PERMALINK = '/:slug/:lang/'
 THEME = 'bizstrap'
 ENGINE = 'acrylamid.templates.jinja2.Environment'
