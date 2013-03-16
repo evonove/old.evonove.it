@@ -13,7 +13,9 @@ draft: True
 `Tofu, file storage per tutti <http://tofu.st/>`_
 =================================================
 
-|callout| Vai con Tofu!
+|callout| Tofu è la soluzione di file storaging su cloud costruita da Evonove
+su specifica dei propri clienti. Puoi provare il servizio gratuitamente ed
+usufruire di uno spazio di 1Gb per i tuoi file personali.
 
 .. raw:: html
 

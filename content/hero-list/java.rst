@@ -9,8 +9,4 @@ identifier: hero-java
 
 Java
 ----
-TODO TODO
-
-- JSF
-- Hibernate
-- Apache Softwares
+Sviluppo orientato al web ed al mobile

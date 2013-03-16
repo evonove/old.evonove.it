@@ -10,9 +10,4 @@ lang: it
 
 Python
 ------
-TODO TODO
-
-- Django
-- Flask
-- SQLAlchemy
-- Buildout
+Il nostro coltellino svizzero.

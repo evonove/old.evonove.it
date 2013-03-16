@@ -10,8 +10,4 @@ lang: en
 
 Javascript
 ----------
-English TODO
-
-- jQuery
-- EmberJS
-- Node
+Frontend developers on the way!

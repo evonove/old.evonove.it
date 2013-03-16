@@ -10,8 +10,4 @@ lang: en
 
 Java
 ----
-English TODO
-
-- JSF
-- Hibernate
-- Apache Softwares
+Web and Mobile development done right.

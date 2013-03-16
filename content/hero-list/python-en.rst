@@ -10,9 +10,4 @@ lang: en
 
 Python
 ------
-English TODO
-
-- Django
-- Flask
-- SQLAlchemy
-- Buildout
+Our personal Swiss Army knife.

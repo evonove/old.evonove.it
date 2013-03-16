@@ -10,8 +10,4 @@ lang: it
 
 Javascript
 ----------
-TODO TODO
-
-- jQuery
-- EmberJS
-- Node
+Sviluppo frontend.

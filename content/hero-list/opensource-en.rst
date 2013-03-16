@@ -10,8 +10,4 @@ lang: en
 
 Opensource
 ----------
-English TODO
-
-- Qt Framework
-- Android
-- Plone CMS
+100% Open solutions.

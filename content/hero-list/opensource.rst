@@ -10,8 +10,4 @@ lang: it
 
 Opensource
 ----------
-TODO TODO
-
-- Qt Framework
-- Android
-- Plone CMS
+Soluzioni 100% Open!

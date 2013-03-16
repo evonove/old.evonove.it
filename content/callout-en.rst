@@ -12,9 +12,9 @@ draft: True
 `Tofu, file storage made easy <http://tofu.st/>`_
 =================================================
 
-|callout| Great web pages utilize effective calls to action to grab the attention of the
-intended audience. bizstrap allows you to quickly and easily create highly
-effective action boxes.
+|callout| Tofu is a file storage solution based on evonove's own customers
+requirements. You can try the service and get 1Gb of disk space for your personal
+files, for free.
 
 .. raw:: html
 
