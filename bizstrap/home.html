@@ -154,49 +154,25 @@
         <!-- MAIN CONTENT AREA: bizstrap CUSTOM - RECENT POSTS BLOACK (ORIGINALLY DESIGNED FOR HOME PAGE) -->
         <div class="main-block block-posts">
             <div class="title-wrapper">
-                <h2>Recent Posts</h2><a href="#" class="all">Visit the full blog&nbsp;&raquo;</a>
+                <h2>Recent Posts</h2><a href="/blog/{{env.lang|strip_default_lang(conf)}}" class="all">Visit the full blog&nbsp;&raquo;</a>
             </div>
             <div class="row show-grid clear-both">
-                        <div class="span12">
-                            <div class="row show-grid">
-                                <div class="span3">
-                                    <a class="block-post-img" href="#">
-                                        <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
-                                    </a>
-                                    <a class="block-post-title" href="#">Time Management for Designers</a>
-                                    <p class="block-post-date">July 25, 2012</p>
-                                    <p class="block-post-content">Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
-                                    <a class="block-post-more" href="#">Read more&nbsp;&raquo;</a>
-                                </div>
-                                <div class="span3">
-                                    <a class="block-post-img" href="#">
-                                        <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
-                                    </a>
-                                    <a class="block-post-title" href="#">Designing for Mobile Devices</a>
-                                    <p class="block-post-date">July 15, 2012</p>
-                                    <p class="block-post-content">Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
-                                    <a class="block-post-more" href="#">Read more&nbsp;&raquo;</a>
-                                </div>
-                                <div class="span3">
-                                    <a class="block-post-img" href="#">
-                                        <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
-                                    </a>
-                                    <a class="block-post-title" href="#">What's New in Silicon Valley</a>
-                                    <p class="block-post-date">July 10, 2012</p>
-                                    <p class="block-post-content">Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
-                                    <a class="block-post-more" href="#">Read more&nbsp;&raquo;</a>
-                                </div>
-                                <div class="span3 last">
-                                    <a class="block-post-img" href="#">
-                                        <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
-                                    </a>
-                                    <a class="block-post-title" href="#">Effective SEO for Site Managers</a>
-                                    <p class="block-post-date">July 8, 2012</p>
-                                    <p class="block-post-content">Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
-                                    <a class="block-post-more" href="#">Read more&nbsp;&raquo;</a>
-                                </div>
-                            </div>
+                <div class="span12">
+                    <div class="row show-grid">
+                        {% for entry in env.latest %}
+                        <div class="span3 {%if loop.last %}last{% endif %}">
+                            <a class="block-post-img" href="#">
+                                <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
+                            </a>
+                            <a class="block-post-title" href="/blog/{{entry.permalink}}">{{ entry.title }}</a>
+                            <p class="block-post-date">{{ entry.date|date_format(env.lang) }}</p>
+                            <p class="block-post-content">{{entry.content|truncate}}</p>
+                            {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
+                            <a class="block-post-more" href="/blog/{{entry.permalink}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
                         </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
 

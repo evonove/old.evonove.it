@@ -379,6 +379,7 @@ class E9Home(PageBase):
 
     def _get_page_list(self, request, lang):
         pages = []
+        latest_from_blog = []
         entry_dict = Struct({
             'hero_list': HashableList(),
             'activities': HashableList(),
@@ -407,8 +408,17 @@ class E9Home(PageBase):
                     entry_dict[e.slug] = e
                     if entry.props.identifier == 'homepage':
                         pages.append(e)
+
             except KeyError:
                 pass
 
+        for entry in request['entrylist']:
+            try:
+                latest_from_blog.append(entry_for_lang(request, lang, entry))
+            except TranslationNotFound:
+                latest_from_blog.append(entry)
+
+
         request['env']['entry_dict'] = entry_dict
+        request['env']['latest'] = HashableList(latest_from_blog[:4])
         return pages

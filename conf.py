@@ -9,7 +9,7 @@ LANG = 'it'
 VIEWS = {
     '/:lang/': {
         'view': 'e9home',
-        'template': 'home.html'
+        'template': 'home.html',
     },
 
     '/blog/:year/:slug/:lang/': {
