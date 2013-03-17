@@ -162,7 +162,11 @@
                         {% for entry in env.latest %}
                         <div class="span3 {%if loop.last %}last{% endif %}">
                             <a class="block-post-img" href="#">
-                                <img alt="" src="http://placehold.it/220x160" class="img-rounded" />
+                                {% if entry.image %}
+                                <div class="img-rounded" style="background-image: url('{{entry.image}}');"></div>​
+                                {% else %}
+                                <img alt="" src="{{ env.path + 'img/placeholder_220_160.png' }}" class="img-rounded" />
+                                {% endif %}
                             </a>
                             <a class="block-post-title" href="/blog/{{entry.permalink}}">{{ entry.title }}</a>
                             <p class="block-post-date">{{ entry.date|date_format(env.lang) }}</p>
