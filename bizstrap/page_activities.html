@@ -9,8 +9,8 @@
     {%- endif -%}
 {% endblock %}
 
-{% set title = {'en': 'Activities', 'it': 'Attivita'} %}
-{% block navtitle%}{{ title[env.lang] }}{% endblock %}
+{% set ntitle = {'en': 'Activities', 'it': 'Attività'} %}
+{% block navtitle%}{{ ntitle[env.lang] }}{% endblock %}
 
 {% block nav %}
     <ul>
