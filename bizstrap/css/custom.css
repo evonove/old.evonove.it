@@ -2618,6 +2618,11 @@ div.alert {
     margin-right: auto;
 }
 
+.block-post-img {
+    width: 220px;
+    height: 160px;
+}
+
 .block-post-img div {
     width: 220px;
     height: 160px;
