@@ -6,7 +6,7 @@ identifier: django-jetty-spdy-blazing-fast
 slug: django-jetty-spdy-blazing-fast
 author: Emanuele Palazzetti
 tags: [python]
-image: http://placehold.it/150x150
+image: /img/2012/chromium.png
 intro.maxparagraphs: 3
 ---
 
