@@ -2625,3 +2625,12 @@ div.alert {
     background-size: cover;
     background-position: center;
 }
+
+.author-widget img {
+    float:left;
+    margin: 5px;
+}
+
+.author-widget p {
+    padding: 0;
+}
