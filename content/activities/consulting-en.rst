@@ -1,10 +1,10 @@
 ---
-title: Coworking
-lang: it
+title: Consulting
+lang: en
 type: page
 date: 01-01-2013
 image: http://placehold.it/460x160
 image_link: http://placehold.it/1024x768.jpg
-identifier: coworking
-permalink: /activities/coworking/
+identifier: consulting
+permalink: /activities/consulting/en/
 ---
