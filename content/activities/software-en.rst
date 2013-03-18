@@ -8,3 +8,13 @@ image_link: http://placehold.it/1024x768.jpg
 identifier: software
 permalink: /activities/software/en/
 ---
+
+Evonove has experience in the field of software development, ranging from
+software requirements and design, coding, testing and deployment.
+
+Our techology solutions are entirely based on Open Source softwares and tools,
+which guarantees high quality code, a worldwide code contribution from the
+community and no license fees. We actively contribute to the development of
+open source products as well as releasing some of our softwares with open
+licenses.
+
