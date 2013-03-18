@@ -17,11 +17,16 @@ class TranslationNotFound(Exception):
 
 
 class HashableSet(set):
+    """Useful to remove duplicates"""
     def __hash__(self):
         return acr_hash(*self)
 
 
 def entry_for_lang(request, lang, entry):
+    """Returns an entry translated in the language passed, otherwise raises an
+    exception
+
+    """
     for t in request['translations']:
         if t.props.identifier == entry.props.identifier and t.props.lang == lang:
             return t
@@ -29,6 +34,9 @@ def entry_for_lang(request, lang, entry):
 
 
 def date_format(date, lang):
+    """Format dates according to the passed language
+
+    """
     locales = {'it':'it_IT', 'en':'en_US'}
     locale.setlocale(locale.LC_TIME, locales.get(lang, 'en_US'))
     return date.strftime('%d %b %Y')
@@ -174,6 +182,9 @@ class E9Base(View):
 
 
 class E9Entry(E9Base):
+    """A view to generate single blog posts
+
+    """
     @property
     def type(self):
         return 'entrylist'
@@ -318,6 +329,12 @@ class PageBase(E9Base):
 
 
 class ActivitiesPage(PageBase):
+    """Renders the page type "Activity"
+
+    Load contents from activities folder, we expect all valid contents are of
+    page type
+
+    """
     def _get_page_list(self, request, lang):
         pages = HashableList()
         for entry in request['pages']:
@@ -336,7 +353,7 @@ class ActivitiesPage(PageBase):
 
 
 class ExpertisePage(PageBase):
-    """Renders the page "Expertise"
+    """Renders the page type "Expertise"
 
     Load contents from expertise folder, we expect all valid contents are of
     page type
@@ -408,7 +425,6 @@ class E9Home(PageBase):
                 latest_from_blog.append(entry_for_lang(request, lang, entry))
             except TranslationNotFound:
                 latest_from_blog.append(entry)
-
 
         request['env']['entry_dict'] = entry_dict
         request['env']['latest'] = HashableList(latest_from_blog[:4])
