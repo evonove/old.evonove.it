@@ -5,7 +5,8 @@ from acrylamid.views.entry import View
 from acrylamid.helpers import union, joinurl, event, paginate, expand, link
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
 from acrylamid.refs import modified, references
-import os,locale
+import os
+import locale
 from os.path import isfile
 from datetime import datetime
 from acrylamid import refs
@@ -101,6 +102,7 @@ class E9Base(View):
         _globals = {
             'footer_about': Struct(),
             'footer_navmenu': Struct(),
+            'license': Struct(),
         }
 
         for e in request['entrylist']+request['pages']+request['translations']+request['drafts']:
