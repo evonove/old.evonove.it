@@ -196,6 +196,9 @@ class E9Entry(E9Base):
 
 
 class E9Index(E9Base):
+    """This view generated the blog index page, with pagination
+
+    """
     @property
     def type(self):
         return None
