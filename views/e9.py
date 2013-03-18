@@ -34,7 +34,9 @@ def date_format(date, lang):
 
 
 def strip_default_lang(url,conf):
-    """Strip the part of the url containing language code.
+    """Strip the part of the url containing default language code. In this
+    way, default lang will not have postfix in urls (e.g. blog/ instead of
+    /blog/it/)
 
     NOTICE: this approach is very silly since it does not check against the
     real path of the view - e.g. a legit path like /path/to/it/:lang:/
@@ -62,22 +64,6 @@ class E9Base(View):
         self.template = template
         env.engine.jinja2.filters['date_format'] = date_format
         env.engine.jinja2.filters['strip_default_lang'] = strip_default_lang
-
-    def _strip_default_lang(self, url):
-        """Strip the part of the url containing default language code. In this
-        way, default lang will not have postfix in urls (e.g. blog/ instead of
-        /blog/it/)
-
-        NOTICE: this approach is very silly since it does not check against the
-        real path of the view - e.g. a legit path like /path/to/it/:lang:/
-        would return a wrong result for 'it' language code
-
-        """
-        toks = url.split('/')
-        if self.conf.lang in toks:
-            toks.remove(self.conf.lang)
-        url = '/'.join(toks)
-        return url
 
     def context(self, conf, env, request):
         """This method fills up translations variable in the request (like
@@ -148,7 +134,7 @@ class E9Base(View):
             unmodified = not env.modified and not conf.modified
 
             for i, entry in enumerate(entrylist):
-                route = self._strip_default_lang(expand(self.path, entry))
+                route = strip_default_lang(expand(self.path, entry), self.conf)
                 if entry.hasproperty('permalink'):
                     path = joinurl(conf['output_dir'], entry.permalink)
                 elif lang == self.conf.lang:
@@ -245,19 +231,19 @@ class E9Index(E9Base):
                     next = link(u'« Next', expand(self.pagination, {'num': next,'lang': lang}))
 
                 if next:
-                    next.href = self._strip_default_lang(next.href)
+                    next.href = strip_default_lang(next.href, self.conf)
 
                 curr = link(curr, self.path) if curr == 1 \
                     else link(expand(self.pagination, {'num': curr,'lang': lang}))
-                curr.href = self._strip_default_lang(curr.href)
+                curr.href = strip_default_lang(curr.href, self.conf)
 
                 prev = None if prev is None \
                    else link(u'Previous »', expand(self.pagination, {'num': prev,'lang': lang}))
                 if prev:
-                    prev.href = self._strip_default_lang(prev.href)
+                    prev.href = strip_default_lang(prev.href, self.conf)
 
                 path = joinurl(conf['output_dir'], expand(curr.href, {'lang': lang}), 'index.html')
-                path = self._strip_default_lang(path)
+                path = strip_default_lang(path, self.conf)
                 env['lang'] = lang
                 env['active_route'] = route
 
@@ -293,7 +279,7 @@ class PageBase(E9Base):
             try:
                 p = entry_for_lang(request, lang, entry)
                 if not p.hasproperty('permalink'):
-                    p.permalink = self._strip_default_lang(expand(self.path, p))
+                    p.permalink = strip_default_lang(expand(self.path, p), self.conf)
                 pages.append(p)
             except TranslationNotFound:
                 pages.append(entry)
@@ -303,7 +289,7 @@ class PageBase(E9Base):
         for lang in env.langs:
             for entry in self._get_page_list(request, lang):
                 path = ''
-                route = self._strip_default_lang(expand(self.path, entry))
+                route = strip_default_lang(expand(self.path, entry), self.conf)
 
                 if entry.hasproperty('permalink'):
                     path = joinurl(self.conf['output_dir'], entry.permalink)
