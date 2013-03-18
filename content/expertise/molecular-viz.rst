@@ -4,8 +4,8 @@ tagline: Soluzioni open source
 lang: it
 type: page
 date: 01-01-2013
-image: http://placehold.it/460x160
-image_link: http://placehold.it/1024x768.jpg
+image: /img/pymol.png
+image_link: /img/pymol.png
 identifier: molecular_viz
 frontpage: 2
 permalink: /expertise/molecular-viz/
