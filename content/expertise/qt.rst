@@ -4,8 +4,8 @@ tagline: Applicazioni portabili
 lang: it
 type: page
 date: 01-01-2013
-image: http://placehold.it/460x160
-image_link: http://placehold.it/1024x768.jpg
+image: /img/qt.png
+image_link: /img/qt.png
 identifier: qt
 frontpage: 5
 permalink: /expertise/qt/
