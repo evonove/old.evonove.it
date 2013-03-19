@@ -7,7 +7,6 @@ from acrylamid.utils import Struct, HashableList, hash as acr_hash
 from acrylamid.refs import modified, references
 import os
 import locale
-from conf import GRAVATAR_404,GRAVATAR_SIZE
 from hashlib import md5
 from os.path import isfile
 from datetime import datetime
@@ -194,6 +193,9 @@ class E9Entry(E9Base):
         return 'entrylist'
 
     def context(self, conf, env, request):
+        GRAVATAR_404 = conf['gravatar_404']
+        GRAVATAR_SIZE = conf['gravatar_size']
+
         env = E9Base.context(self, conf, env, request)
 
         env['authors'] = Struct()
