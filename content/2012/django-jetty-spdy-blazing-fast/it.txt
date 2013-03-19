@@ -4,7 +4,7 @@ title: Django + Jetty + SPDY = blazing fast!
 date: 28.12.2012, 17:04
 identifier: django-jetty-spdy-blazing-fast
 slug: django-jetty-spdy-blazing-fast
-author: Emanuele Palazzetti
+author: palazzem
 tags: [python]
 image: /img/2012/chromium.png
 intro.maxparagraphs: 3

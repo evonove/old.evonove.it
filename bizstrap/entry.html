@@ -13,7 +13,7 @@
                                 <li class="date">
                                     <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
                                 </li>
-                                <li><p><i class="icon-user"></i>{{ entry.author }}</p></li>
+                                <li><p><i class="icon-user"></i>{{ env.authors[entry.author].title }}</p></li>
                                 <li><p><i class="icon-tags"></i>
                                 {% for tag in entry.tags%}
                                     <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}
@@ -38,9 +38,9 @@
                     </div>
                     <div id="right-sidebar" class="span3 sidebar">
                         <div class="author-widget sidebar-block">
-                            <h2>{{ entry.author }}</h2>
-                            <img alt="" src="/img/placeholder_60_60.png" />
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat. Pellentesque viverra vehicula sem ut volutpat.</p>
+                            <h2>{{ env.authors[entry.author].title }}</h2>
+                            <img alt="" src="{{ env.authors[entry.author].gravatar }}" />
+                            <p>{{ env.authors[entry.author].content }}</p>
                         </div>
                         <div class="text-widget sidebar-block">
                             <h2>{{ env.license[env.lang].title }}</h2>

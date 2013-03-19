@@ -81,3 +81,7 @@ STATIC = ['static']
 VIEWS_DIR = 'views'
 FILTERS = ['rst', 'h1']
 INTRO_LINK= ''
+
+# Custom configuration
+GRAVATAR_404 = 'http://beta.evonove.it/img/placeholder_60_60.png'
+GRAVATAR_SIZE = 60

@@ -7,6 +7,8 @@ from acrylamid.utils import Struct, HashableList, hash as acr_hash
 from acrylamid.refs import modified, references
 import os
 import locale
+from conf import GRAVATAR_404,GRAVATAR_SIZE
+from hashlib import md5
 from os.path import isfile
 from datetime import datetime
 from acrylamid import refs
@@ -188,6 +190,17 @@ class E9Entry(E9Base):
     @property
     def type(self):
         return 'entrylist'
+
+    def context(self, conf, env, request):
+        env = E9Base.context(self, conf, env, request)
+
+        env['authors'] = Struct()
+        for draft in request['drafts']:
+            if 'authors' in draft.filename.split(os.path.sep):
+                draft.props['gravatar'] = 'http://www.gravatar.com/avatar/%s?s=%s&d=%s' % (md5(draft.props['email']).hexdigest(), GRAVATAR_SIZE, GRAVATAR_404)
+                env.authors[draft.identifier] = draft
+
+        return env
 
     def next(self, entrylist, i):
 
