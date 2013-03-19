@@ -9,7 +9,7 @@ identifier: software
 permalink: /activities/software/
 ---
 
-.. image:: /img/code.png
+.. image:: /img/code.jpg
     :alt: code
     :class: bordered-img quote-right
 
