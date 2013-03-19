@@ -4,8 +4,8 @@ tagline: Hopefully the killer CMS.
 lang: en
 type: page
 date: 01-01-2013
-image: http://placehold.it/220x160
-image_link: http://placehold.it/1024x768.jpg
+image: /img/plone-logo.png
+image_link: /img/plone-logo.png
 identifier: plone
 frontpage: 4
 permalink: /expertise/plone-cms/en/

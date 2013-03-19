@@ -26,21 +26,21 @@ Here follow some of the technologies in use at Evonove.
 
 .. class:: span2
 
-    Sviluppo personalizzato
+    Custom development
      - Ambienti JEE
      - Ambienti Linux
      - Ambiente MinGW
 
 .. class:: span2
 
-    Tecnologie Java
+    Java Technologies
      - JSF
      - Hibernate
      - Apache Softwares
 
 .. class:: span2
 
-    Tecnologie Python
+    Python Technologies
      - SQLAlchemy
      - Django
      - GeoDjango
@@ -48,7 +48,7 @@ Here follow some of the technologies in use at Evonove.
 
 .. class:: span2
 
-    Tecnologie Opensource
+    Open Source
      - Qt framework
      - jQuery library
      - Wordpress
