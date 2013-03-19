@@ -1,6 +1,6 @@
 ---
 title: Emanuele Palazzetti
-lang: it
+lang: en
 identifier: palazzem
 slug: palazzem
 date: 01-01-2013
@@ -8,4 +8,4 @@ draft: True
 email: emanuele.palazzetti@evonove.it
 ---
 
-Inserisci una descrizione
+Insert a bio

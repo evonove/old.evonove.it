@@ -195,10 +195,12 @@ class E9Entry(E9Base):
         env = E9Base.context(self, conf, env, request)
 
         env['authors'] = Struct()
-        for draft in request['drafts']:
+        for draft in request['drafts'] + request['translations']:
             if 'authors' in draft.filename.split(os.path.sep):
                 draft.props['gravatar'] = 'http://www.gravatar.com/avatar/%s?s=%s&d=%s' % (md5(draft.props['email']).hexdigest(), GRAVATAR_SIZE, GRAVATAR_404)
-                env.authors[draft.identifier] = draft
+                if not draft.props.identifier in env.authors:
+                    env.authors[draft.props.identifier] = Struct()
+                env.authors[draft.props.identifier][draft.props.lang] = draft
 
         return env
 
