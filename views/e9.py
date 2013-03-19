@@ -37,8 +37,8 @@ def date_format(date, lang):
     """Format dates according to the passed language
 
     """
-    locales = {'it':'it_IT', 'en':'en_US'}
-    locale.setlocale(locale.LC_TIME, locales.get(lang, 'en_US'))
+    locales = {'it':'it_IT.utf8', 'en':'en_US.utf8'}
+    locale.setlocale(locale.LC_TIME, locales.get(lang, 'en_US.utf8'))
     return date.strftime('%d %b %Y')
 
 
