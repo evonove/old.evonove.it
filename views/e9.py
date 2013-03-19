@@ -38,10 +38,16 @@ def date_format(date, lang):
     """Format dates according to the passed language
 
     """
-    locales = dict()
-    for l in ('it', 'en'):
-        locales[l] = locale.locale_alias[l]
-    locale.setlocale(locale.LC_TIME, locales.get(lang, 'en_US.utf8'))
+    locales = {
+        'it': ['it_IT', 'it_IT.utf8'],
+        'en': ['en_US', 'en_US.utf8']
+    }
+    for loc in locales.get(lang, ['']):
+        try:
+            locale.setlocale(locale.LC_TIME, loc)
+        except:
+            locale.setlocale(locale.LC_TIME, '')
+            
     return date.strftime('%d %b %Y')
 
 
