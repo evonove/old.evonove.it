@@ -29,6 +29,9 @@ def entry_for_lang(request, lang, entry):
     exception
 
     """
+    if entry.props.lang == lang:
+        return entry
+
     for t in request['translations']:
         if t.props.identifier == entry.props.identifier and t.props.lang == lang:
             return t
@@ -246,7 +249,7 @@ class E9Index(E9Base):
                     e = entry_for_lang(data, lang, entry)
                     entrylist.append(e)
                 except TranslationNotFound:
-                    entrylist.append(entry)
+                    pass#entrylist.append(entry)
 
             paginator = paginate(entrylist, ipp, self.path, conf.default_orphans)
             route = self.path
