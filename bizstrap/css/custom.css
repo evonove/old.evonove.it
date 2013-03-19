@@ -2437,10 +2437,10 @@ div.alert {
     background-color: #000000;
 }
 .bannercontainer .slide2 .big {
-    background-color: #2671AC;
+    background-color: #3ab3b6;
 }
 .bannercontainer .slide3 .big {
-    background-color: #2671AC;
+    background-color: #3ab3b6;
     padding-bottom: 4px;
 }
 .bannercontainer .small {
@@ -2639,4 +2639,8 @@ div.alert {
 
 .author-widget p {
     padding: 0;
+}
+
+.bottom-block a {
+    color: #2c8688;
 }
