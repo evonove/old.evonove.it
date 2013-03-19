@@ -25,33 +25,50 @@ licenza. Contribuiamo attivamente al miglioramento ed allo sviluppo di software
 Open Source esistente oltre che rilasciare con licenze Open alcuni dei nostri
 prodotti.
 
-Di seguito una panoramica delle primcipali tecnologie in uso presso Evonove.
+Di seguito una panoramica delle principali tecnologie in uso presso Evonove.
 
-.. class:: span2
+.. raw:: html
 
-    Sviluppo personalizzato
-     - Ambienti JEE
-     - Ambienti Linux
-     - Ambiente MinGW
+    <div class="row showgrid">
 
-.. class:: span2
+.. class:: span
 
-    Tecnologie Java
-     - JSF
-     - Hibernate
-     - Apache Softwares
+    Backend development
+        - Django
+        - Flask
+        - Google App Engine
+        - JBoss Seam
 
-.. class:: span2
+.. class:: span
 
-    Tecnologie Python
-     - SQLAlchemy
-     - Django
-     - GeoDjango
-     - Buildout
+    Mobile development
+        - Android
+        - Qt
+        - Mobile Web
 
-.. class:: span2
+.. class:: span
 
-    Tecnologie Opensource
-     - Qt framework
-     - jQuery library
-     - Wordpress
+    Rich User Interface
+        - Qt quick
+        - HTML5 + CSS3
+        - jQuery
+        - EmberJS
+        - YUI
+
+.. class:: span
+
+    Database technologies
+        - Postgres
+        - MySql
+        - Sqlite
+        - SQLAlchemy
+        - Hibernate
+
+.. raw:: html
+
+    </div>
+
+
+Gestiamo il rapporto con il Cliente in totale trasparenza, tutte le fasi del
+lavoro di sviluppo, il codice, il time tracker, l'issue tracker possono essere
+seguite e monitorate attraverso appositi strumenti.

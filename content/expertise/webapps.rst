@@ -1,5 +1,5 @@
 ---
-title: Applicazioni Web Super
+title: Applicazioni Web
 tagline: HTML5, Javascript, Love
 lang: it
 type: page
@@ -12,14 +12,3 @@ permalink: /expertise/webapps/
 filters: jinja2
 ---
 
-Applicazioni Web Super
-----------------------
-
-.. raw:: html
-
-    <img alt="" src="http://placehold.it/710x160" class="img-polaroid" />
-
-
-TODO descrizione
-
-{{ lipsum(n=2, html=False) }}

@@ -22,33 +22,48 @@ community and no license fees. We actively contribute to the development of
 open source products as well as releasing some of our softwares with open
 licenses.
 
-Here follow some of the technologies in use at Evonove.
+Here follow some of the technologies currentrly in use at Evonove.
 
-.. class:: span2
+.. raw:: html
 
-    Custom development
-     - Ambienti JEE
-     - Ambienti Linux
-     - Ambiente MinGW
+    <div class="row showgrid">
 
-.. class:: span2
+.. class:: span
 
-    Java Technologies
-     - JSF
-     - Hibernate
-     - Apache Softwares
+    Backend development
+        - Django
+        - Flask
+        - Google App Engine
+        - JBoss Seam
 
-.. class:: span2
+.. class:: span
 
-    Python Technologies
-     - SQLAlchemy
-     - Django
-     - GeoDjango
-     - Buildout
+    Mobile development
+        - Android
+        - Qt
+        - Mobile Web
 
-.. class:: span2
+.. class:: span
 
-    Open Source
-     - Qt framework
-     - jQuery library
-     - Wordpress
+    Rich User Interface
+        - Qt quick
+        - HTML5 + CSS3
+        - jQuery
+        - EmberJS
+        - YUI
+
+.. class:: span
+
+    Database technologies
+        - Postgres
+        - MySql
+        - Sqlite
+        - SQLAlchemy
+        - Hibernate
+
+.. raw:: html
+
+    </div>
+
+We like to work transparently with our Customers, who can monitor every step of
+the development process: code, time tracker, issue tracker.
