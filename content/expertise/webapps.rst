@@ -4,8 +4,8 @@ tagline: HTML5, Javascript, Love
 lang: it
 type: page
 date: 01-01-2013
-image: http://placehold.it/220x160
-image_link: http://placehold.it/1024x768.jpg
+image: /img/HTML5_Black.png
+image_link: /img/HTML5_Black.png
 identifier: rich_web_apps
 frontpage: 3
 permalink: /expertise/webapps/
