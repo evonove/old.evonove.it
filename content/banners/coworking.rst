@@ -3,14 +3,14 @@ title: Coworking
 lang: it
 draft: True
 date: 01-01-2013
-image: http://placehold.it/940x400/ff7f00
+image: /img/tuttle_activity.jpg
 identifier: banner_coworking
 ---
 
 .. raw:: html
 
     <li class="slide2" data-transition="slideleft" data-slotamount="10"  data-masterspeed="300">
-        <img alt="" src="http://placehold.it/940x400/ff7f00" />
+        <img alt="" src="/img/tuttle_activity.jpg" />
         <div class="caption sft carousel-caption" data-x="472" data-y="69" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none;">
             <p class="middle">Coworking</p>
         </div>
