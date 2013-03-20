@@ -113,14 +113,14 @@
                                     {% endif %}
 
                                     <li class="single{% if env.active_route.startswith('/blog') %} active{% endif %}">
-                                        <a class="single" href="/blog/">
+                                        <a class="single" href="/blog/{{env.lang | strip_default_lang(conf)}}">
                                             BLOG<i>e9 techies</i>
                                         </a>
                                     </li>
 
                                     {% set title = {'en': 'CONTACTS', 'it': "CONTATTI"} %}
                                     <li class="single{% if env.active_route=='/contacts/' %} active{% endif %}">
-                                        <a href="/contacts/">
+                                        <a href="/contacts/{{env.lang | strip_default_lang(conf)}}">
                                             {{title[env.lang]}}<i>get in touch</i>
                                         </a>
                                     </li>

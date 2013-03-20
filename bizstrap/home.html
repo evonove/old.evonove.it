@@ -168,11 +168,12 @@
                                 <img alt="" src="{{ env.path + 'img/placeholder_220_160.png' }}" class="img-rounded" />
                                 {% endif %}
                             </a>
-                            <a class="block-post-title" href="/blog/{{entry.permalink}}">{{ entry.title }}</a>
+                            {% set href = entry.permalink + env.lang | strip_default_lang(conf) %}
+                            <a class="block-post-title" href="/blog{{href}}">{{ entry.title }}</a>
                             <p class="block-post-date">{{ entry.date|date_format(env.lang) }}</p>
                             <p class="block-post-content">{{entry.content|truncate}}</p>
                             {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
-                            <a class="block-post-more" href="/blog/{{entry.permalink}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
+                            <a class="block-post-more" href="/blog{{href}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
                         </div>
                         {% endfor %}
                     </div>

@@ -418,7 +418,6 @@ class E9Home(PageBase):
     def _get_page_list(self, request, lang):
         pages = []
         latest_from_blog = []
-        entry_dict = Struct()
         for entry in request['pages'] + request['drafts']:
             if entry.context.condition and not entry.context.condition(entry):
                 continue
