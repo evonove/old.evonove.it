@@ -35,6 +35,7 @@ Here follow some of the technologies currentrly in use at Evonove.
         - Flask
         - Google App Engine
         - JBoss Seam
+        - Plone CMS
 
 .. class:: span
 

@@ -38,6 +38,7 @@ Di seguito una panoramica delle principali tecnologie in uso presso Evonove.
         - Flask
         - Google App Engine
         - JBoss Seam
+        - Plone CMS
 
 .. class:: span
 
