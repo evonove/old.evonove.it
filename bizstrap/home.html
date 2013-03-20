@@ -16,8 +16,8 @@
         <div class="bannercontainer" >
             <div class="banner" >
                 <ul>
-                    {% for banner in env.entry_dict.banners %}
-                            {{banner.content}}
+                    {% for banner in env.banners[env.lang] %}
+                        {{banner.content}}
                     {% endfor %}
                 </ul>
                 <div class="tp-bannertimer"></div>
@@ -29,7 +29,7 @@
                 <div class="row">
                     <!-- MAIN CONTENT AREA: REDESIGN CUSTOM - HERO BLOCK 1 (TEXT BLOCK)] -->
                     <div class="span6 home-block hero-block-1">
-                        {{ env.entry_dict.homepage.content}}
+                        {{ entry.content}}
                     </div>
 
                     <!-- MAIN CONTENT AREA: SPACER BETWEEN HERO BLOCK 1 AND HEREO BLOCK 2 -->
@@ -38,7 +38,7 @@
                     <!-- MAIN CONTENT AREA: bizstrap CUSTOM - HERO BLOCK 2 -->
                     <div class="span5 home-block">
                         <div class="grey-box hero-block-2">
-                            {{ env.entry_dict.callout.content }}
+                            {{ env.callout.content }}
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
             <div class="span12">
                 <!-- MAIN CONTENT AREA: bizstrap CUSTOM - HERO LIST -->
                 <div class="row show-grid hero-list">
-                    {% for e in env.entry_dict.hero_list %}
+                    {% for e in env.hero_list %}
                     <div class="span3">
                             <div class="image-wrapper">
                                 <img alt="" src="{{e.props.image}}" />
@@ -72,7 +72,7 @@
             <div class="clear-both"></div>
             <div id="home_responsive" class="row show-grid isotope" style="position: relative; overflow: hidden; height: 360px;">
                 <!-- Expertise 1 -->
-                {% set e=env.entry_dict.expertise.1 %}
+                {% set e=env.expertise[env.lang][1] %}
                 <div class="span3 tall hp-wrapper isotope-item">
                     <a class="fancy" href="{{ e.props.image_link }}"><img alt="" class="hover-shade" src="img/220_2_hover.png"></a>
                     <a class="top-link" href="#"><img alt="" style="width: 220px; height: 340px;" src="{{ e.props.image }}"></a>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
                 <!-- Expertise 2 -->
-                {% set e=env.entry_dict.expertise.2 %}
+                {% set e=env.expertise[env.lang][2] %}
                 <div class="span6 middle hp-wrapper isotope-item">
                     <a class="fancy" href="{{ e.props.image_link }}"><img alt="" class="hover-shade" src="img/460_hover.png"></a>
                     <a class="top-link" href="#"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>
@@ -92,7 +92,7 @@
                     </div>
                 </div>
                 <!-- Expertise 3 -->
-                {% set e=env.entry_dict.expertise.3 %}
+                {% set e=env.expertise[env.lang][3] %}
                 <div class="span3 small hp-wrapper isotope-item">
                     <a class="fancy" href="{{ e.props.image_link }}"><img alt="" class="hover-shade" src="img/220_1_hover.png"></a>
                     <a class="top-link" href="#"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>
@@ -102,7 +102,7 @@
                     </div>
                 </div>
                 <!-- Expertise 4 -->
-                {% set e=env.entry_dict.expertise.4 %}
+                {% set e=env.expertise[env.lang][4] %}
                 <div class="span3 small hp-wrapper isotope-item">
                     <a class="fancy" href="{{ e.props.image_link }}"><img alt="" class="hover-shade" src="img/220_1_hover.png"></a>
                     <a class="top-link" href="#"><img alt="" style="width: 220px; height: 160px;" src="{{ e.props.image }}"></a>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <!-- Expertise 5 -->
-                {% set e=env.entry_dict.expertise.5 %}
+                {% set e=env.expertise[env.lang][5] %}
                 <div class="span6 middle hp-wrapper isotope-item">
                     <a class="fancy" href="{{ e.props.image_link }}"><img alt="" class="hover-shade" src="img/460_hover.png"></a>
                     <a class="top-link" href="#"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>

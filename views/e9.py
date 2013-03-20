@@ -119,21 +119,23 @@ class E9Base(View):
                     request[key].remove(entry)
                     request['translations'].append(entry)
 
-        _globals = {
-            'footer_about': Struct(),
-            'footer_navmenu': Struct(),
-            'license': Struct(),
-        }
+        global_entries = ('footer_about', 'footer_navmenu', 'license')
 
         for e in request['entrylist']+request['pages']+request['translations']+request['drafts']:
-            try:
-                _globals[e.props.identifier][e.props.lang] = e
-            except (KeyError, AttributeError):
-                continue
-
-        # inject globals into the env
-        for k,v in _globals.iteritems():
-            env[k] = v
+            if e.props.identifier in global_entries:
+                env.setdefault(e.props.identifier, Struct())[e.props.lang] = e
+            elif 'banners' in e.filename.split(os.path.sep):
+                typedict = env.setdefault('banners', Struct())
+                entries = typedict.setdefault(e.props.lang, HashableList())
+                entries.append(e)
+            elif 'activities' in e.filename.split(os.path.sep):
+                typedict = env.setdefault('activities', Struct())
+                entries = typedict.setdefault(e.props.lang, HashableList())
+                entries.append(e)
+            elif 'expertise' in e.filename.split(os.path.sep):
+                typedict = env.setdefault('expertise', Struct())
+                entries = typedict.setdefault(e.props.lang, Struct())
+                entries[e.frontpage] = e
 
         # other global futilities...
         env.current_year = datetime.now().year
@@ -416,13 +418,8 @@ class E9Home(PageBase):
     def _get_page_list(self, request, lang):
         pages = []
         latest_from_blog = []
-        entry_dict = Struct({
-            'hero_list': HashableList(),
-            'activities': HashableList(),
-            'expertise': Struct(),
-            'banners': HashableList(),
-        })
-        for entry in request['pages'] + request['entrylist'] + request['drafts']:
+        entry_dict = Struct()
+        for entry in request['pages'] + request['drafts']:
             if entry.context.condition and not entry.context.condition(entry):
                 continue
 
@@ -431,22 +428,15 @@ class E9Home(PageBase):
             except TranslationNotFound:
                 e = entry
 
-            try:
-                if 'banners' in e.filename.split(os.path.sep):
-                    entry_dict['banners'].append(e)
-                elif 'activities' in e.filename.split(os.path.sep):
-                    entry_dict['activities'].append(e)
-                elif 'hero-list' in e.filename.split(os.path.sep):
-                    entry_dict['hero_list'].append(e)
-                elif 'expertise' in e.filename.split(os.path.sep):
-                    entry_dict['expertise'][e.frontpage] = e
-                else:
-                    entry_dict[e.slug] = e
-                    if entry.props.identifier == 'homepage':
-                        pages.append(e)
-
-            except KeyError:
-                pass
+            ident = e.props.identifier
+            if ident == 'homepage':
+                pages.append(e)
+            elif ident == 'callout':
+                request['env']['callout'] = e
+            elif 'hero-list' in e.filename.split(os.path.sep):
+                env = request['env']
+                entries = env.setdefault('hero-list', HashableList())
+                entries.append(e)
 
         for entry in request['entrylist']:
             try:
@@ -454,6 +444,5 @@ class E9Home(PageBase):
             except TranslationNotFound:
                 latest_from_blog.append(entry)
 
-        request['env']['entry_dict'] = entry_dict
         request['env']['latest'] = HashableList(latest_from_blog[:4])
         return pages

@@ -82,7 +82,7 @@
                                         </a>
                                     </li>
 
-                                    {% if env.entry_dict.activities %}
+                                    {% if env.activities[env.lang] %}
                                     {% set title = {'en': 'ACTIVITIES', 'it': "ATTIVITA'"} %}
                                     {% set subtitle = {'en': 'what we do', 'it': 'cosa facciamo'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/activities') %} active{% endif %}">
@@ -90,14 +90,14 @@
                                             {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            {% for a in env.entry_dict.activities %}
+                                            {% for a in env.activities[env.lang] %}
                                             <li><a href="{{a.permalink|strip_default_lang(conf)}}">{{a.title}}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>
                                     {% endif %}
 
-                                    {% if env.entry_dict.expertise %}
+                                    {% if env.expertise[env.lang] %}
                                     {% set title = {'en': 'EXPERTISE', 'it': "SPECIALIZZAZIONI"} %}
                                     {% set subtitle = {'en': 'what we can do', 'it': 'cosa sappiamo fare'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/expertise') %} active{% endif %}">
@@ -105,7 +105,7 @@
                                             {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            {% for e in env.entry_dict.expertise.values() %}
+                                            {% for e in env.expertise[env.lang].values() %}
                                             <li><a href="{{e.permalink}}">{{e.title}}</a></li>
                                             {% endfor %}
                                         </ul>
