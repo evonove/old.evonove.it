@@ -121,21 +121,19 @@ class E9Base(View):
 
         global_entries = ('footer_about', 'footer_navmenu', 'license')
 
+        env.banners = Struct({l: HashableList() for l in env.langs})
+        env.activities = Struct({l: HashableList() for l in env.langs})
+        env.expertise = Struct({l: Struct() for l in env.langs})
+
         for e in request['entrylist']+request['pages']+request['translations']+request['drafts']:
             if e.props.identifier in global_entries:
                 env.setdefault(e.props.identifier, Struct())[e.props.lang] = e
             elif 'banners' in e.filename.split(os.path.sep):
-                typedict = env.setdefault('banners', Struct())
-                entries = typedict.setdefault(e.props.lang, HashableList())
-                entries.append(e)
+                env['banners'][e.props.lang].append(e)
             elif 'activities' in e.filename.split(os.path.sep):
-                typedict = env.setdefault('activities', Struct())
-                entries = typedict.setdefault(e.props.lang, HashableList())
-                entries.append(e)
+                env['activities'][e.props.lang].append(e)
             elif 'expertise' in e.filename.split(os.path.sep):
-                typedict = env.setdefault('expertise', Struct())
-                entries = typedict.setdefault(e.props.lang, Struct())
-                entries[e.frontpage] = e
+                env['expertise'][e.props.lang][e.frontpage] = e
 
         # other global futilities...
         env.current_year = datetime.now().year
