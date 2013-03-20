@@ -2644,3 +2644,11 @@ div.alert {
 .bottom-block a {
     color: #2c8688;
 }
+
+ul.langlinks {
+    overflow: visible;
+}
+
+ul.langlinks a {
+    width: auto;
+}
