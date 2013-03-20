@@ -19,5 +19,5 @@ usufruire di uno spazio di 1Gb per i tuoi file personali.
 
 .. raw:: html
 
-    <a href="#" class="btn btn-warning"><i class="icon-shopping-cart"></i>Crea subito un account</a>
+    <a href="http://tofu.st" target="_blank" class="btn btn-warning"><i class="icon-shopping-cart"></i>Crea subito un account</a>
 

@@ -18,5 +18,5 @@ files, for free.
 
 .. raw:: html
 
-    <a href="#" class="btn btn-warning"><i class="icon-shopping-cart"></i>Get an account now</a>
+    <a href="http://tofu.st" target="_blank" class="btn btn-warning"><i class="icon-shopping-cart"></i>Get an account now</a>
 
