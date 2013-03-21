@@ -1,6 +1,6 @@
 ---
 title: Coworking
-lang: it
+lang: en
 draft: True
 date: 01-01-2013
 image: /img/tuttle_activity.jpg
@@ -12,10 +12,10 @@ identifier: banner_coworking
     <li class="slide2" data-transition="slideleft" data-slotamount="10"  data-masterspeed="300">
         <img alt="" src="/img/tuttle_activity.jpg" />
         <div class="caption sft carousel-caption" data-x="472" data-y="69" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none;">
-            <p class="middle">Tuttle</p>
+            <p class="middle">Coworking</p>
         </div>
         <div class="caption sfr carousel-caption" data-x="462" data-y="107" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-            <p class="big">Gestione Agile</p>
+            <p class="big">AAA</p>
         </div>
         <div class="caption sfl carousel-caption" data-x="462" data-y="156" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
             <p class="big">di lavorare</p>
