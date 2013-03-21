@@ -416,6 +416,7 @@ class E9Home(PageBase):
     def _get_page_list(self, request, lang):
         pages = []
         latest_from_blog = []
+        hero_list = HashableList()
         for entry in request['pages'] + request['drafts']:
             if entry.context.condition and not entry.context.condition(entry):
                 continue
@@ -431,9 +432,7 @@ class E9Home(PageBase):
             elif ident == 'callout':
                 request['env']['callout'] = e
             elif 'hero-list' in e.filename.split(os.path.sep):
-                env = request['env']
-                entries = env.setdefault('hero-list', HashableList())
-                entries.append(e)
+                hero_list.append(e)
 
         for entry in request['entrylist']:
             try:
@@ -441,5 +440,6 @@ class E9Home(PageBase):
             except TranslationNotFound:
                 latest_from_blog.append(entry)
 
+        request['env']['hero_list'] = hero_list
         request['env']['latest'] = HashableList(latest_from_blog[:4])
         return pages
