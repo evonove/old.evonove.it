@@ -12,19 +12,41 @@ permalink: /expertise/webapps/
 filters: jinja2
 ---
 
-Evonove realizza moderne applicazioni web utilizzando tecnologie upstream e di nuova generazione, sfruttando le brillanti feature della specifica HTML5 per ottenere applicativi efficenti e "responsive", adatti sia al mondo desktop che a quello dei dispositivi "mobile".
+Realizziamo moderne applicazioni web utilizzando tecnologie upstream e di
+nuova generazione, sfruttando le caratteristiche della specifica HTML5 per
+ottenere applicativi efficenti e "responsive", adatti sia al mondo desktop che
+a quello dei dispositivi *mobile*.
 
-Backend java
+Backend Java
 ============
-Nel panorama tecnologico caratterizzato da una vasta gamma di framework Java, **Seam** spicca per un approccio inedito al paradigma MVC. Rispettando le specifica EJB3, Seam favorisce la scelta delle annotazioni rispetto a descrittori XML, mantenendo l'uso dei consolidati strumenti di sviluppo web come JSF, JPA/Hibernate e JAAS. Seam è un web framework e un collante tra varie tecnologie. Offre funzionalità integrate che rendono lo sviluppo delle applicazione web più accessibile, attraente e immediato. Seam è un autoframework: scrivi il modello, esegui il deploy dell'applicazione.
+Nel panorama tecnologico caratterizzato da una vasta gamma di framework Java,
+abbiamo scelto di lavorare con **Seam** per il suo approccio inedito al
+paradigma MVC. Rispettando le specifica EJB3, Seam favorisce la scelta delle
+annotazioni rispetto a descrittori XML, mantenendo l'uso dei consolidati
+strumenti di sviluppo web come JSF, JPA/Hibernate e JAAS. Seam è un web
+framework che fa da collante tra varie tecnologie che rendono lo sviluppo di
+applicazioni web stile CRUD facile, attraente ed immediato. Ci piace definire
+Seam come l'*autoframework*: tu scrivi il modello, lui fa il resto.
 
-Backend python
+Backend Python
 ==============
-**Flask** è un micro-framework opensource che utilizziamo come backend nel caso di servizi web "lightweight" o che offrono un API REST.
-Per applicazioni più corpose la nostra scelta va su **Django**, un web-framework full stack 
-**Plone** è un CMS (Content Management System) Open Source di livello Enterprise, ideale per realizzare intranet, sistemi di gestione documentale e portali web complessi.
+Quando si tratta di costruire applicazioni web lightweight o servizi che offrano
+solamente API REST utilizziamo **Flask**, un micro-framework opensource estremamente
+flessibile che si sposa benissimo con lo sviluppo agile.
+
+Per applicazioni più complesse la nostra preferenza va a **Django**,
+un web-framework full stack che offre un'ampia gamma di strumenti in grado di
+soddisfare praticamente qualsiasi requisito tecnologico.
+
+Nel caso di intranet, sistemi di gestione documentale o portali web che richiedano
+una gestione di utenti e permessi sofisticata utilizziamo **Plone**, un CMS
+(Content Management System) Open Source di livello Enterprise particolarmente
+indicato in questi casi.
 
 Frontend
 ========
-Per offrire applicazioni al passo coi tempi il riferimento è il *living standard* **HTML5**.
-Dove ci è richiesto di massimizzare l'efficenza dell'applicazione mettiamo in campo un Javascript MVC framework all'avanguardia quale **EmberJS** o **AngularJS** in combinazione con un applicazione backend RESTful.
+Per offrire applicazioni al passo coi tempi sia dal punto di vista funzionale
+che da quello estetico il nostro riferimento è il living standard **HTML5**.
+Dove ci è richiesto di massimizzare l'efficenza dell'applicazione mettiamo in
+campo framework Javascript MVC all'avanguardia come **EmberJS** o **AngularJS**
+in combinazione con un backend RESTful.
