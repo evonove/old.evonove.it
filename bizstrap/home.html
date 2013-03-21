@@ -161,14 +161,14 @@
                     <div class="row show-grid">
                         {% for entry in env.latest %}
                         <div class="span3 {%if loop.last %}last{% endif %}">
-                            <a class="block-post-img" href="#">
+                            {% set href = entry.permalink + env.lang | strip_default_lang(conf) %}
+                            <a class="block-post-img" href="/blog{{href}}">
                                 {% if entry.image %}
                                 <div class="img-rounded" style="background-image: url('{{entry.image}}');"></div>​
                                 {% else %}
                                 <img alt="" src="{{ env.path + 'img/placeholder_220_160.png' }}" class="img-rounded" />
                                 {% endif %}
                             </a>
-                            {% set href = entry.permalink + env.lang | strip_default_lang(conf) %}
                             <a class="block-post-title" href="/blog{{href}}">{{ entry.title }}</a>
                             <p class="block-post-date">{{ entry.date|date_format(env.lang) }}</p>
                             <p class="block-post-content">{{entry.content|truncate}}</p>
