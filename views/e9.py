@@ -438,7 +438,7 @@ class E9Home(PageBase):
             try:
                 latest_from_blog.append(entry_for_lang(request, lang, entry))
             except TranslationNotFound:
-                latest_from_blog.append(entry)
+                pass
 
         request['env']['hero_list'] = hero_list
         request['env']['latest'] = HashableList(latest_from_blog[:4])
