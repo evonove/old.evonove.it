@@ -11,15 +11,14 @@ frontpage: 4
 permalink: /expertise/plone-cms/
 ---
 
-Plone è un CMS (Content Management System) Open Source di livello Enterprise,
-ideale per realizzare intranet, sistemi di gestione documentale e portali web
-complessi. Plone offre agli utenti meno esperti un'interfaccia per la gestione
-dei contenuti semplice da usare mentre gli amministratori possono usufruire di
-potenti strumenti per la  gestione di utenti, gruppi e worflow.
+Plone is an Enterprise-level Web Content Management System which is perfectly
+suitable for building intranets, DMS and complex web portals. It allows
+non-technical people to easily create and manage content through a simple user
+interface and  provides administrators with a powerful set of workflow
+and group management tools.
 
-Plone è il CMS più sicuro in ambito Open Source secondo CVE e può essere integrato
-con sistemi come Active Directory e LDAP.
+Plone is the most secure CMS on the open source market (source: CVE) and it can
+integrate existing services lile Active Directory and LDAP.
 
-Evonove fornisce servizi di consulenza, sviluppo di prodotti custom e realizza
-template grafici per la piattaforma Plone.
-
+We can develop custom products, graphical themes and we can offer generic support
+for the Plone platform.
