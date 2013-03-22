@@ -1,6 +1,6 @@
 ---
 title: Plone CMS
-tagline: Il CMS definitivo. Speriamo.
+tagline: Il CMS per l'enterprise.
 lang: it
 type: page
 date: 01-01-2013

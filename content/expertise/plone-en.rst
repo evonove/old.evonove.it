@@ -1,6 +1,6 @@
 ---
 title: Plone CMS
-tagline: Hopefully the killer CMS.
+tagline: CMS for the enterprise.
 lang: en
 type: page
 date: 01-01-2013
