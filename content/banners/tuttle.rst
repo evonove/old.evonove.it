@@ -15,16 +15,16 @@ identifier: banner_coworking
             <p class="middle">Tuttle</p>
         </div>
         <div class="caption sfr carousel-caption" data-x="462" data-y="107" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-            <p class="big">Gestione Agile</p>
+            <p class="big">Tieni traccia</p>
         </div>
         <div class="caption sfl carousel-caption" data-x="462" data-y="156" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-            <p class="big">di lavorare</p>
+            <p class="big">del tuo lavoro</p>
         </div>
         <div class="caption sfl carousel-caption" data-x="462" data-y="205" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background: none;">
-            <p class="big">in un posto amichevole</p>
+            <p class="big">senza stress</p>
         </div>
         <div class="caption sfb carousel-caption" data-x="474" data-y="262" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background: none; width: 436px;">
-            <p class="small">L'opportunità di condividere parte dello spazio in cui lo staff di Evonove lavora stabilmente.</p>
+            <p class="small">Il tuo Timesheet e Timetracker di quartiere</p>
         </div>
     </li>
 
