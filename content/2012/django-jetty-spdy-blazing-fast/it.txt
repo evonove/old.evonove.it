@@ -133,13 +133,6 @@ definisce il numero massimo di risorse da associare alla risorsa principale.
 Oltre questo numero le risorse saranno inviate secondo il protocollo SPDY senza push.
 Abilitata questa configurazione Django sarà servito in modalità SPDY-PUSH.
 
-Di seguito sono disponibili i collegamenti ad una istanza su Amazon EC2
-configurata per servire una vista Django con 196 risorse associate:
-
-**SPDY** https://ec2-54-246-47-182.eu-west-1.compute.amazonaws.com
-
-**or not SPDY?** http://ec2-54-246-47-182.eu-west-1.compute.amazonaws.com
-
 Tirando le somme
 ----------------
 
@@ -152,14 +145,13 @@ pagina Django servita da Jetty:
 - SPDY/3 (with push): **1,55 secondi**
 
 I valori raccolti interessano dei test preliminari eseguiti in locale con un
-roundtrip delay di 100 millisecondi e non sono dei benchmark su dei casi d'uso
+roundtrip delay di 200ms e non sono dei benchmark su dei casi d'uso
 reale.
 
 Codice sorgente
 ---------------
 
 Progetto, package war e configurazione Jetty: https://bitbucket.org/evonove/django-spdy/
-Amazon EC2 AMI pubblica: ami-e82c209c
 
 Riferimenti
 
