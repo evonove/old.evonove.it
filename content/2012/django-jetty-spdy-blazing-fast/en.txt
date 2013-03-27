@@ -128,15 +128,9 @@ resources of a main request;
 define the maximum associated resources of a main request that can be pushed.
 Over this cap the remaining resources are sent using SPDY without push.
 After this configuration Django will be served using SPDY-PUSH feature.
-Below there are two links to an Amazon EC2 instance that is configured to serve
-a Django view with 196 associated resources.
-
-**SPDY** https://ec2-54-246-47-182.eu-west-1.compute.amazonaws.com
-
-**or not SPDY?** http://ec2-54-246-47-182.eu-west-1.compute.amazonaws.com
 
 To sum up!
------------
+----------
 
 Even if this view is optimized to emphasize SPDY potentiality, below we list
 the average load time of this Django page served by Jetty:
@@ -145,14 +139,13 @@ the average load time of this Django page served by Jetty:
 - SPDY/3: **1,71 seconds**
 - SPDY/3 (with push): **1,55 seconds**
 
-Collected values refer to a preliminary test run locally with a 100 ms round
+Collected values refer to a preliminary test run locally with a 200ms round
 trip delay and it isn't a benchmark of real use cases.
 
 Source code
 -----------
 
 Project code, war package and Jetty configuration: https://bitbucket.org/evonove/django-spdy/
-Amazon EC2 public AMI: **ami-e82c209c**
 
 References
 
