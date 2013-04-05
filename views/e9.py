@@ -226,7 +226,7 @@ class E9Entry(E9Base):
         env['authors'] = Struct()
         for draft in request['drafts'] + request['translations']:
             if 'authors' in draft.filename.split(os.path.sep):
-                draft.props['gravatar'] = 'http://www.gravatar.com/avatar/%s?s=%s&d=%s' % (md5(draft.props['email']).hexdigest(), GRAVATAR_SIZE, GRAVATAR_404)
+                draft.props['gravatar'] = 'https://www.gravatar.com/avatar/%s?s=%s&d=%s' % (md5(draft.props['email']).hexdigest(), GRAVATAR_SIZE, GRAVATAR_404)
                 if not draft.props.identifier in env.authors:
                     env.authors[draft.props.identifier] = Struct()
                 env.authors[draft.props.identifier][draft.props.lang] = draft
