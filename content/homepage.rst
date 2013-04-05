@@ -1,5 +1,5 @@
 ---
-title: Homepage Italiano
+title: Home
 lang: it
 draft: true
 date: 01-01-2013

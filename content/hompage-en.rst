@@ -1,5 +1,5 @@
 ---
-title: English Homepage
+title: Home
 lang: en
 draft: true
 date: 01-01-2013
