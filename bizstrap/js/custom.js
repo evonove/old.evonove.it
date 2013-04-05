@@ -195,7 +195,7 @@ $cjq(document).ready(function(){
 	
 	// twitter feed
 	$cjq.ajax({
-		url: 'http://api.twitter.com/1/statuses/user_timeline.json/',
+		url: 'https://api.twitter.com/1/statuses/user_timeline.json/',
 		type: 'GET',
 		dataType: 'jsonp',
 		data: {
