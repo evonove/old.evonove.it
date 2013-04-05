@@ -74,6 +74,18 @@ def strip_default_lang(url,conf):
     return url
 
 
+def strip_langs(url, lang):
+    """Strip the part of the url containing any language code
+
+    """
+    toks = url.split('/')
+    if lang in toks:
+        toks.remove(lang)
+
+    url = '/'.join(toks)
+    return url
+
+
 class E9Base(View):
     """Base class for views in this site.
 
@@ -88,6 +100,7 @@ class E9Base(View):
         self.template = template
         env.engine.jinja2.filters['date_format'] = date_format
         env.engine.jinja2.filters['strip_default_lang'] = strip_default_lang
+        env.engine.jinja2.filters['strip_langs'] = strip_langs
 
     def context(self, conf, env, request):
         """This method fills up translations variable in the request (like

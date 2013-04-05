@@ -93,7 +93,7 @@
                             <div class="nav-collapse">
 
                                 <ul class="nav nav-pills">
-                                    <li class="single{% if env.active_route=='/' %} active{% endif %}">
+                                    <li class="single{% if env.active_route | strip_langs(env.lang) =='/' %} active{% endif %}">
                                         <a href="/{{env.lang | strip_default_lang(conf)}}">
                                             HOME<i>127.0.0.1</i>
                                         </a>
@@ -136,7 +136,7 @@
                                     </li>
 
                                     {% set title = {'en': 'CONTACTS', 'it': "CONTATTI"} %}
-                                    <li class="single{% if env.active_route=='/contacts/' %} active{% endif %}">
+                                    <li class="single{% if env.active_route | strip_langs(env.lang) =='/contacts/' %} active{% endif %}">
                                         <a href="/contacts/{{env.lang | strip_default_lang(conf)}}">
                                             {{title[env.lang]}}<i>get in touch</i>
                                         </a>
