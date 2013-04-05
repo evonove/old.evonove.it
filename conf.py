@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-SITENAME = 'Evonove - Software'
+SITENAME = 'Evonove - '
 WWW_ROOT = 'http://evonove.it/'
 AUTHOR = 'staff'
 EMAIL = 'info@evonove.it'

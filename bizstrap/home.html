@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ conf.sitename }}{% endblock %}
+{% block title %}{{ conf.sitename }} {{ entry.title }}{% endblock %}
 
 {% block head %}
     {{- super() }}

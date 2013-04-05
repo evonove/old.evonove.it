@@ -1,5 +1,6 @@
 {% extends "left_column.html" %}
-{% block title %}{{ conf.sitename }}{% endblock %}
+
+{% block title %}{{ conf.sitename }} {{ entry.title }}{% endblock %}
 
 {% block head %}
     {{- super() }}
