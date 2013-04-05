@@ -67,6 +67,9 @@ def strip_default_lang(url,conf):
     toks = url.split('/')
     if conf.lang in toks:
         toks.remove(conf.lang)
+
+    if len(toks) == 1:
+        toks.append('')
     url = '/'.join(toks)
     return url
 
