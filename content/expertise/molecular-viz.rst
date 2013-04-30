@@ -1,5 +1,6 @@
 ---
 title: Molecular Visualization
+slug: molecular-visualization
 tagline: Soluzioni open source
 lang: it
 type: page

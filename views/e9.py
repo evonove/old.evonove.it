@@ -278,7 +278,7 @@ class E9Index(E9Base):
                     pass#entrylist.append(entry)
 
             paginator = paginate(entrylist, ipp, self.path, conf.default_orphans)
-            route = self.path
+            route = '/blog/'
 
             for (next, curr, prev), entries, modified in paginator:
                 # curr = current page, next = newer pages, prev = older pages

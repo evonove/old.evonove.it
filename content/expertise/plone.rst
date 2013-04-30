@@ -1,5 +1,6 @@
 ---
 title: Plone CMS
+slug: plone-cms
 tagline: Il CMS per l'enterprise.
 lang: it
 type: page

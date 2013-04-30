@@ -1,5 +1,6 @@
 ---
 title: Videomapping
+slug: videomapping
 tagline: Diamo vita alle superfici
 lang: it
 type: page

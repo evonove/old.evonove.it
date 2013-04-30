@@ -1,5 +1,6 @@
 ---
 title: Applicazioni Web
+slug: webapps
 tagline: HTML5, Javascript, Love
 lang: it
 type: page

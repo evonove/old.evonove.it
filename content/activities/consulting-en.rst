@@ -1,5 +1,6 @@
 ---
 title: Consulting
+slug: consulting
 lang: en
 type: page
 date: 01-01-2013

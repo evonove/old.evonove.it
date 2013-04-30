@@ -1,5 +1,6 @@
 ---
 title: Consulenza
+slug: consulting
 lang: it
 type: page
 date: 01-01-2013

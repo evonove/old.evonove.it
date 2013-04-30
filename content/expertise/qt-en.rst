@@ -1,5 +1,6 @@
 ---
 title: Qt
+slug: qt
 tagline: Run everywhere
 lang: en
 type: page

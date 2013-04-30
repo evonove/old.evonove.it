@@ -1,5 +1,6 @@
 ---
 title: Qt
+slug: qt
 tagline: Applicazioni portabili
 lang: it
 type: page

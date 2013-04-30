@@ -1,5 +1,6 @@
 ---
 title: Workshop
+slug: workshop
 lang: it
 type: page
 date: 01-01-2013

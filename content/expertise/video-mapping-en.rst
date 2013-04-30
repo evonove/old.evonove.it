@@ -1,5 +1,6 @@
 ---
 title: Videomapping
+slug: videomapping
 tagline: Living surfaces
 lang: en
 type: page

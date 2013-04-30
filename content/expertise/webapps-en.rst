@@ -1,5 +1,6 @@
 ---
 title: Rich Web Applications
+slug: webapps
 tagline: HTML5, Javascript, Love
 lang: en
 type: page

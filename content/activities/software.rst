@@ -1,5 +1,6 @@
 ---
 title: Software
+slug: software
 lang: it
 type: page
 date: 01-01-2013
