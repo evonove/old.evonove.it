@@ -49,9 +49,25 @@
                             <p>{{ env.license[env.lang].content }}</p>
                         </div>
                     </div>
-
+                    <!-- Disqus -->
+                    <div id="disqus_thread"></div>
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink"> powered by <span class="logo-disqus">Disqus</span></a>
+                    <!-- Disqus END -->
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="text/javascript">
+        var disqus_shortname = 'evonove';
+
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
 {% endblock %}
