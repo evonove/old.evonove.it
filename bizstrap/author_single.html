@@ -16,6 +16,13 @@
                 <div class="bordered-img"><img alt="" src="{{ entry.gravatar_big }}"></div>
                 <br />
                 <ul class="item-details">
+                    <li>
+                        <h4>{{ entry.jobtitle or '-' }}</h4>
+                    </li>
+                    <li>
+                        <em>{{ entry.experience or '-' }}</em>
+                    </li>
+
                     {% if entry.twitter %}
                     <li>
                         <i class="icon-twitter"></i><a href="http://twitter.com/{{entry.twitter}}">@{{entry.twitter}}</a>
