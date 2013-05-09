@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}{{ conf.sitename }} Blog Authors{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row show-grid">
+            <div class="span12">
+                <div class="row show-grid clear-both">
+    <!-- BEGIN MAIN/PRIMARY CONTENT AREA -->
+                    <div class="span12 main-column">
+                        <h1>{{ entry.title }}</h1>
+                        {% for a in env.authors %}
+                        {% set author = env.authors[a][env.lang] %}
+                        <div class="row show-grid team-member">
+                            <div class="span3 photo">
+                                <div class="bordered-img"><img alt="" src="{{ env.authors[a][env.lang].gravatar_big }}"></div>
+                            </div>
+                            <div class="span6">
+                                <h2><a href="/authors/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ env.authors[a][env.lang].title }}</a></h2>
+                                <h4>{{ author.jobtitle or '-' }}</h4>
+                                <p class="experience"><em>{{ author.experience }}</em></p>
+                                <p>{{ author.content }}</p>
+                            </div>
+                            <div class="member-divider">
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- END MAIN/PRIMARY CONTENT AREA -->
+    </div>
+{% endblock %}

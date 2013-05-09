@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{ conf.sitename }} Blog Authors{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="clear_both"></div>
+        <div class="row show-frid col-wrapper">
+            <div class="span8">
+                <h1>{{entry.title}}</h1>
+                <p>{{ entry.content }}</p>
+            </div>
+            <div class="span1"></div>
+
+            <div class="span3 portfolio-details">
+                <div class="bordered-img"><img alt="" src="{{ entry.gravatar_big }}"></div>
+                <br />
+                <ul class="item-details">
+                    {% if entry.twitter %}
+                    <li>
+                        <i class="icon-twitter"></i><a href="http://twitter.com/{{entry.twitter}}">@{{entry.twitter}}</a>
+                    </li>
+                    {% endif %}
+
+                    {% if entry.github %}
+                    <li>
+                        <i class="icon-github"></i><a href="http://github.com/{{entry.github}}">{{entry.github}}</a>
+                    </li>
+                    {% endif %}
+
+                    {% if entry.gplus %}
+                    <li>
+                        <i class="icon-google-plus"></i><a href="http://plus.google.com/{{entry.gplus}}">{{entry.gplus}}</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+                <br />
+
+                {% if entry.quote %}
+                <blockquote><p>{{entry.quote}}</p></blockquote>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
