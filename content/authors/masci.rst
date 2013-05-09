@@ -4,8 +4,10 @@ lang: it
 identifier: masci
 slug: masci
 date: 01-01-2013
-draft: True
 email: mpippi@gmail.com
+type: page
+jobtitle: Vegan Chef
+experience: Python developer and System integrator
 ---
 
 Inserisci una descrizione

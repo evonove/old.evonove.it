@@ -4,8 +4,9 @@ lang: it
 identifier: aliex
 slug: aliex
 date: 01-01-2013
-draft: True
+type: page
 email: alessandro.veracchi@evonove.it
+jobtitle:
 ---
 
 Inserisci una descrizione

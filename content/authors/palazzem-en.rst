@@ -4,8 +4,9 @@ lang: en
 identifier: palazzem
 slug: palazzem
 date: 01-01-2013
-draft: True
+type: page
 email: emanuele.palazzetti@evonove.it
+jobtitle: Roast Chef
 ---
 
 I'm a software developer but, first of all, a fan and supporter of everything that turns around computer science and open source software.
