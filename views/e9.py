@@ -86,6 +86,14 @@ def strip_langs(url, lang):
     return url
 
 
+def intro(content, maxparagraphs=1):
+    from acrylamid.filters.intro import Introducer
+    try:
+        return ''.join(Introducer(content, maxparagraphs).result)
+    except:
+        return content
+
+
 class E9Base(View):
     """Base class for views in this site.
 
@@ -101,6 +109,7 @@ class E9Base(View):
         env.engine.jinja2.filters['date_format'] = date_format
         env.engine.jinja2.filters['strip_default_lang'] = strip_default_lang
         env.engine.jinja2.filters['strip_langs'] = strip_langs
+        env.engine.jinja2.filters['intro'] = intro
 
     def context(self, conf, env, request):
         """This method fills up translations variable in the request (like

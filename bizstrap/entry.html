@@ -42,7 +42,7 @@
                         <div class="author-widget sidebar-block">
                             <h2>{{ env.authors[entry.author][env.lang].title }}</h2>
                             <img alt="" src="{{ env.authors[entry.author][env.lang].gravatar }}" />
-                            <p>{{ env.authors[entry.author][env.lang].content }}</p>
+                            <p>{{ env.authors[entry.author][env.lang].content | intro }}</p>
                         </div>
                         <div class="text-widget sidebar-block">
                             <h2>{{ env.license[env.lang].title }}</h2>
