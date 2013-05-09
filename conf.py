@@ -4,7 +4,7 @@ SITENAME = 'Evonove - '
 WWW_ROOT = 'http://evonove.it/'
 AUTHOR = 'staff'
 EMAIL = 'info@evonove.it'
-LANG = 'it'
+LANG = 'it_IT.utf-8'
 
 VIEWS = {
     '/:lang/': {
@@ -41,7 +41,7 @@ VIEWS = {
     # # '/:slug/' is a slugified url of your static page's title
     '/:slug/:lang/': {
         'view': 'pagebase',
-        'if': lambda e: all(x not in e.filename for x in ('expertise','activities')),
+        'if': lambda e: all(x not in e.filename for x in ('expertise','activities','authors')),
         'template': 'page_base.html'
     },
 
@@ -54,6 +54,17 @@ VIEWS = {
         'view': 'expertisepage',
         'template': 'page_expertise.html'
     },
+
+    '/authors/:lang/' : {
+        'view': 'authorsindex',
+        'template': 'authors.html',
+        'filters': 'intro',
+    },
+
+    '/authors/:slug/:lang/' : {
+        'view': 'authorpage',
+        'template': 'author_single.html'
+    }
 
     # # '/atom/full/' will give you a _complete_ feed of all your entries
     # '/atom/full/': {'filters': 'h2', 'view': 'atom', 'num_entries': 1000},
@@ -85,3 +96,4 @@ INTRO_LINK= ''
 # Custom configuration
 GRAVATAR_404 = 'http://beta.evonove.it/img/placeholder_60_60.png'
 GRAVATAR_SIZE = 60
+GRAVATAR_SIZE_BIG = 250

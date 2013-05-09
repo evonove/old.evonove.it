@@ -220,13 +220,16 @@ class E9Entry(E9Base):
     def context(self, conf, env, request):
         GRAVATAR_404 = conf['gravatar_404']
         GRAVATAR_SIZE = conf['gravatar_size']
+        GRAVATAR_SIZE_BIG = conf['gravatar_size_big']
 
         env = E9Base.context(self, conf, env, request)
 
         env['authors'] = Struct()
-        for draft in request['drafts'] + request['translations']:
+        for draft in request['pages'] + request['translations']:
             if 'authors' in draft.filename.split(os.path.sep):
-                draft.props['gravatar'] = 'https://www.gravatar.com/avatar/%s?s=%s&d=%s' % (md5(draft.props['email']).hexdigest(), GRAVATAR_SIZE, GRAVATAR_404)
+                digest = md5(draft.props['email']).hexdigest()
+                draft.props['gravatar'] = 'https://www.gravatar.com/avatar/%s?s=%s&d=%s' % (digest, GRAVATAR_SIZE, GRAVATAR_404)
+                draft.props['gravatar_big'] = 'https://www.gravatar.com/avatar/%s?s=%s&d=%s' % (digest, GRAVATAR_SIZE_BIG, GRAVATAR_404)
                 if not draft.props.identifier in env.authors:
                     env.authors[draft.props.identifier] = Struct()
                 env.authors[draft.props.identifier][draft.props.lang] = draft
@@ -459,3 +462,45 @@ class E9Home(PageBase):
         request['env']['hero_list'] = hero_list
         request['env']['latest'] = HashableList(latest_from_blog[:4])
         return pages
+
+
+class AuthorPage(PageBase):
+    """Renders the page type "Author"
+
+    Load contents from authors folder, we expect all valid contents are of
+    page type
+
+    """
+    def _get_page_list(self, request, lang):
+        pages = HashableList()
+        for entry in request['pages']:
+            if not 'authors' in entry.filename.split(os.path.sep):
+                continue
+            if entry.context.condition and not entry.context.condition(entry):
+                continue
+            try:
+                pages.append(entry_for_lang(request, lang, entry))
+            except TranslationNotFound:
+                pages.append(entry)
+
+        request['env']['authorslist'] = pages
+
+        return pages
+
+
+class AuthorsIndex(PageBase):
+    """
+
+    """
+    def _get_page_list(self, request, lang):
+        authors_page = HashableList()
+        for entry in request['pages']:
+            if entry.identifier == 'authors':
+                try:
+                    e = entry_for_lang(request, lang, entry)
+                except TranslationNotFound:
+                    e = entry
+                authors_page.append(e)
+                break
+
+        return authors_page
