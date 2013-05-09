@@ -28,7 +28,7 @@
                                     <li class="date">
                                         <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
                                     </li>
-                                    <li><p><i class="icon-user"></i>{{ entry.author }}</p></li>
+                                    <li><p><i class="icon-user"></i><a href="/authors/{{entry.author}}/{{env.lang | strip_default_lang(conf)}}">{{ entry.author }}</a></p></li>
                                     <li><p><i class="icon-tags"></i>
                                     {% for tag in entry.tags%}
                                         <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}

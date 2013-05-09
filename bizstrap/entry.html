@@ -40,8 +40,11 @@
                     </div>
                     <div id="right-sidebar" class="span3 sidebar">
                         <div class="author-widget sidebar-block">
-                            <h2>{{ env.authors[entry.author][env.lang].title }}</h2>
-                            <img class="bordered-img" alt="" src="{{ env.authors[entry.author][env.lang].gravatar }}" />
+                            {% set author = env.authors[entry.author][env.lang] %}
+                            <h2><a href="/authors/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ author.title }}</a></h2>
+                            <a href="/authors/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">
+                                <img class="bordered-img" alt="" src="{{ env.authors[entry.author][env.lang].gravatar }}" />
+                            </a>
                             <p>{{ env.authors[entry.author][env.lang].content | intro }}</p>
                         </div>
                         <div class="text-widget sidebar-block">
