@@ -1,7 +1,4 @@
-Jinja2==2.6
-Markdown==2.2.1
 Pygments==1.5
-acrylamid==0.6.7
+acrylamid==0.7.3
 docutils==0.10
 smartypants==1.6.0.3
-translitcodec==0.3
