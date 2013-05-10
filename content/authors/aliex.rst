@@ -8,7 +8,7 @@ type: page
 email: alessandro.veracchi@evonove.it
 jobtitle: Executive Chef
 experience: Python and Java developer
-quote: Gimo a tribolà con Fabio
+quote: Argimo a tribblè con Fabio
 twitter: Aliex75
 github: AlessandroVeracchi
 gplus: 102956713060030684424
