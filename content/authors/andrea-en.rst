@@ -1,7 +1,7 @@
 ---
 title: Andrea Veracchi
-lang: it
-identifier: andrea
+lang: en
+identifier: vero
 slug: andrea
 date: 01-01-2013
 type: page
