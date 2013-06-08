@@ -1,5 +1,5 @@
 ---
-lang: en
+lang: it
 title: DjangoCon Europe 2013 Wrap-up
 date: 20.05.2013, 08:19
 identifier: djangocon-europe-2013-wrap-up
