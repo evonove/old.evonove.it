@@ -20,10 +20,9 @@ superfici ed è ideale come strumento di advertising o entertaining.
 Tra i molteplici campi di applicazione delle tecniche di video mapping Evonove
 è specializzata nella proiezione su piccole e medie superfici, oggetti ed arredi
 in interni ed esterni.
-Sulla nostra `pagina Vimeo <http://vimeo.com/user11262087>`_ è possibile vedere
-alcuni dei progetti realizzati.
+La raccolta di alcuni dei show realizzati li troverete su `veedea.it <http://veedea.it>`_ o sulla nostra `pagina Vimeo <http://vimeo.com/user11262087>`_.
 
-.. vimeo:: 44155187
+.. vimeo:: 40283798
    :align: center
    :height: 375
    :width: 500

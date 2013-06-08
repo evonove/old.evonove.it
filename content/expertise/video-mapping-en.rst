@@ -18,9 +18,9 @@ screens. Through this technique we can add value to shapes and surfaces,
 perfectly fulfilling advertising and entertaining needs.
 
 We are specialized in mapping small and medium surfaces, goods and furnitures.
-Our `Vimeo pages <http://vimeo.com/user11262087>`_ shows some of our works.
+Some of our works can be found on `veedea.it <http://veedea.it>`_ and our `Vimeo pages <http://vimeo.com/user11262087>`_.
 
-.. vimeo:: 44155187
+.. vimeo:: 40283798
    :align: center
    :height: 375
    :width: 500
