@@ -14,7 +14,7 @@ github: AlessandroVeracchi
 gplus: 102956713060030684424
 ---
 
-Currently I am a Java and Python developer and software marketer at the IT company I founded in Perugia with a my friend in 2010, Evonove. Evonove was a new start point, changing my way to look at IT world completely.
+Currently I am a Java and Python developer and software marketer at the IT company I founded in Perugia with a friend of mine in 2010, Evonove. Evonove was a new start point, changing my way to look at IT world completely.
 We make little jewels, shining and functional: to let people happy.
 
 I founded Python User Group of Perugia. There, I met wonderful people, who share with me passion on IT. Now they work with me in Evonove.
