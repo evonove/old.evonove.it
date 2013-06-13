@@ -95,6 +95,12 @@ def intro(content, maxparagraphs=1):
         return content
 
 
+def get_current_commit():
+    import git
+    repo = git.Repo(os.path.curdir)
+    return repo.commit().hexsha
+
+
 class E9Base(View):
     """Base class for views in this site.
 
@@ -106,6 +112,7 @@ class E9Base(View):
         if not 'langs' in env:
             env['langs'] = HashableSet()
         env['lang'] = conf.lang_code
+        env['commit'] = get_current_commit()
         self.conf = conf
         self.template = template
         env.engine.jinja2.filters['date_format'] = date_format
