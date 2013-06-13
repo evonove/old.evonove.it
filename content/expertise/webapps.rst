@@ -9,7 +9,7 @@ image: /img/HTML5.png
 image_link: /img/HTML5.png
 identifier: rich_web_apps
 frontpage: 3
-permalink: /expertise/webapps/
+permalink: /expertise/webapps/it/
 filters: jinja2
 ---
 

@@ -9,7 +9,7 @@ image: /img/qt.png
 image_link: /img/qt.png
 identifier: qt
 frontpage: 5
-permalink: /expertise/qt/
+permalink: /expertise/qt/it/
 ---
 
 .. |qtlogo| image:: /img/qt-logo.jpg

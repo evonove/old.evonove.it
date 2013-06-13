@@ -9,7 +9,7 @@ image: /img/plone-logo.png
 image_link: /img/plone-logo.png
 identifier: plone
 frontpage: 4
-permalink: /expertise/plone-cms/en/
+permalink: /expertise/plone-cms/
 ---
 
 Plone is an Enterprise-level Web Content Management System which is perfectly

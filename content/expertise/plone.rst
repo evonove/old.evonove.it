@@ -9,7 +9,7 @@ image: /img/plone-logo.png
 image_link: /img/plone-logo.png
 identifier: plone
 frontpage: 4
-permalink: /expertise/plone-cms/
+permalink: /expertise/plone-cms/it/
 ---
 
 Plone è un CMS (Content Management System) Open Source di livello Enterprise,

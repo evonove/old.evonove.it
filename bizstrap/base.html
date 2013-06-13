@@ -69,12 +69,12 @@
                         <div class="span2">
                             <ul class="socials langlinks unstyled">
                                 <li>
-                                    <a href="{{ env.active_route | strip_langs(env.lang) }}">
+                                    <a href="{{ env.active_route | strip_langs(env.lang) + 'it' }}">
                                         <i class="icon-globe"></i>&nbsp;it
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ env.active_route | strip_langs(env.lang) + 'en' }}">en</a>
+                                    <a href="{{ env.active_route | strip_langs(env.lang) }}">en</a>
                                 </li>
                             </ul>
                         </div>

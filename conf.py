@@ -4,7 +4,8 @@ SITENAME = 'Evonove - '
 WWW_ROOT = 'http://evonove.it/'
 AUTHOR = 'staff'
 EMAIL = 'info@evonove.it'
-LANG = 'it_IT.utf-8'
+LANG = 'en_US.utf8'
+LANG_CODE = 'en'
 
 VIEWS = {
     '/:lang/': {
@@ -91,7 +92,7 @@ DATE_FORMAT = '%d.%m.%Y, %H:%M'
 STATIC = ['static']
 VIEWS_DIR = 'views'
 FILTERS = ['rst', 'h1']
-INTRO_LINK= ''
+INTRO_LINK = ''
 
 # Custom configuration
 GRAVATAR_404 = 'http://beta.evonove.it/img/placeholder_60_60.png'

@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
+import os
+import locale
+from datetime import datetime
 from collections import defaultdict
+from os.path import isfile
+from hashlib import md5
+
 from acrylamid import AcrylamidException
 from acrylamid.views.entry import View
 from acrylamid.helpers import union, joinurl, event, paginate, expand, link
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
 from acrylamid.refs import modified, references
-import os
-import locale
-from hashlib import md5
-from os.path import isfile
-from datetime import datetime
 from acrylamid import refs
 
 
@@ -54,7 +55,7 @@ def date_format(date, lang):
     return date.strftime('%d %b %Y')
 
 
-def strip_default_lang(url,conf):
+def strip_default_lang(url, conf):
     """Strip the part of the url containing default language code. In this
     way, default lang will not have postfix in urls (e.g. blog/ instead of
     /blog/it/)
@@ -65,8 +66,8 @@ def strip_default_lang(url,conf):
 
     """
     toks = url.split('/')
-    if conf.lang in toks:
-        toks.remove(conf.lang)
+    if conf.lang_code in toks:
+        toks.remove(conf.lang_code)
 
     if len(toks) == 1:
         toks.append('')
@@ -104,6 +105,7 @@ class E9Base(View):
     def init(self, conf, env, template='main.html'):
         if not 'langs' in env:
             env['langs'] = HashableSet()
+        env['lang'] = conf.lang_code
         self.conf = conf
         self.template = template
         env.engine.jinja2.filters['date_format'] = date_format
@@ -139,7 +141,7 @@ class E9Base(View):
 
                 translations[entry.props.identifier].append(entry)
                 env.langs.add(entry.props.lang)
-                if entry.props.lang != self.conf.lang:
+                if entry.props.lang != self.conf.lang_code:
                     # remove from original entrylist
                     request[key].remove(entry)
                     request['translations'].append(entry)
@@ -184,7 +186,7 @@ class E9Base(View):
                 route = strip_default_lang(expand(self.path, entry), self.conf)
                 if entry.hasproperty('permalink'):
                     path = joinurl(conf['output_dir'], entry.permalink)
-                elif lang == self.conf.lang:
+                elif lang == self.conf.lang_code:
                     path = joinurl(self.conf['output_dir'], route, '/')
                     entry.permalink = route
                 else:
@@ -365,7 +367,7 @@ class PageBase(E9Base):
 
                 if entry.hasproperty('permalink'):
                     path = joinurl(self.conf['output_dir'], entry.permalink)
-                elif lang == self.conf.lang:
+                elif lang == self.conf.lang_code:
                     path = joinurl(self.conf['output_dir'], route, '/')
                 else:
                     path = joinurl(self.conf['output_dir'], expand(self.path, entry))

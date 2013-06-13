@@ -9,7 +9,7 @@ image: /img/videomapping.jpg
 image_link: /img/videomapping.jpg
 identifier: videomapping
 frontpage: 1
-permalink: /expertise/videomapping/en/
+permalink: /expertise/videomapping/
 ---
 
 Videomapping is a projection technique used to display images on irregular

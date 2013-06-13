@@ -9,7 +9,7 @@ image: /img/pymol.jpg
 image_link: /img/pymol.jpg
 identifier: molecular_viz
 frontpage: 2
-permalink: /expertise/molecular-visualization/
+permalink: /expertise/molecular-visualization/it/
 ---
 
 .. |pymol| image:: /img/pymol2.png

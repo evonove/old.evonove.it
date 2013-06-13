@@ -9,7 +9,7 @@ image: /img/videomapping.jpg
 image_link: /img/videomapping.jpg
 identifier: videomapping
 frontpage: 1
-permalink: /expertise/videomapping/
+permalink: /expertise/videomapping/it/
 ---
 
 Il videomapping è una tecnica di proiezione in grado di visualizzare immagini
