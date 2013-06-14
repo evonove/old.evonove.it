@@ -10,9 +10,10 @@ image: /img/2013/oauthLogo.png
 intro.maxparagraphs: 2
 ---
 
-We just released the latest version of Django OAuth Toolkit, a library to add OAuth goodies to Django projects. The
-project is under active development, at the moment it offers fully-featured and RFC6749 compliant OAuth2 providers
-implementation and it runs on Django 1.4, 1.5 and 1.6a1 with Python 2.7 and 3.3.
+We just released the `latest version <https://pypi.python.org/pypi/django-oauth-toolkit/0.3.0>`_ of Django OAuth Toolkit,
+a library to add OAuth goodies to Django projects. The project is under active development, at the moment it offers
+fully-featured and RFC6749 compliant OAuth2 providers implementation and it runs on Django 1.4, 1.5 and 1.6a1 with
+Python 2.7 and 3.3.
 
 A brief history
 ===============
@@ -24,7 +25,7 @@ started to search for an alternative.
 
 Digging around we stumbled upon this blog post from Daniel Greenfeld:
 `The sorry state of Python OAuth providers <http://pydanny.com/the-sorry-state-of-python-oauth-providers.html>`_. Enough
-is enough but we were still not sure wheter starting another project from scratch or not, when we met Daniel at the Django
+is enough but we were still not sure whether starting another project from scratch or not, when we met Daniel at the Django
 Circus in Warsaw. We talked shortly about the topic but he was very convincing and we started coding as soon as we came
 back at work.
 
