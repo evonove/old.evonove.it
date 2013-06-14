@@ -2351,6 +2351,7 @@ div.alert {
 .twitter-wrapper {
     position: relative;
 	padding: 10px 0 10px 0;
+    min-height: 15px;
 }
 #nav_t {
     float: left;

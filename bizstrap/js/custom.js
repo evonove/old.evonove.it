@@ -192,8 +192,9 @@ $cjq(document).ready(function(){
 		}
 	}
     $cjq(".fancybox").fancybox();
-	
-	// twitter feed
+
+	// TODO: update to Twitter API 1.1
+	/* twitter feed
 	$cjq.ajax({
 		url: 'https://api.twitter.com/1/statuses/user_timeline.json/',
 		type: 'GET',
@@ -223,7 +224,7 @@ $cjq(document).ready(function(){
 			$cjq('.tweets-slide').flexslider({
 				animation: "slide",
 				keyboard: false,
-				controlNav: false, 
+				controlNav: false,
 				directionNav: true,
 				prevText: "Previous",
 				nextText: "Next",
@@ -236,8 +237,8 @@ $cjq(document).ready(function(){
 			$cjq("#nav_t").css('margin-top', Math.floor(((height_li - $cjq("#nav_t").outerHeight(true))/2)));
 			$cjq(".follow_img").css('margin-top', Math.floor(((height_li - $cjq(".follow_img").outerHeight(true))/2)));
 		}
-	});
-	
+	});*/
+
 });
 $cjq(window).bind('resize', function() {
 	if ($cjq(".tweets-slide ul li").length>0) {
