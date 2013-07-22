@@ -1,5 +1,5 @@
 ---
-title: Opensource
+title: Open Source
 lang: it
 draft: True
 date: 01-01-2013
@@ -8,6 +8,6 @@ identifier: hero-opensource
 lang: it
 ---
 
-Opensource
-----------
+Open Source
+-----------
 Soluzioni 100% Open!
