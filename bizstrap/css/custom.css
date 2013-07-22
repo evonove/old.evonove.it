@@ -1497,7 +1497,6 @@ input.btn {
 }
 .hero-list a {
     clear: both;
-    display: block;
     margin-top: 5px;
 }
 .hero-list p, .hero-list ul {
