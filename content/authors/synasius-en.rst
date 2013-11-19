@@ -6,7 +6,11 @@ slug: synasius
 date: 01-01-2013
 type: page
 email: federico.frenguelli@evonove.it
-jobtitle:
+jobtitle: Grill Chef
+experience: None is better Null
+quote: 
+twitter: synasius
+github: synasius
 ---
 
 Guess I should insert a bio ... but I have no time to waste!
