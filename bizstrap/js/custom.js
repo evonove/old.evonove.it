@@ -84,13 +84,14 @@ $cjq(document).ready(function(){
 	var $toggleBoxes = $cjq(".toggle-box");
     $toggleBoxes.find('.tbox-heading').children(".collapsed").parent().next(".tbox-inner").css('display', 'none');
 	
-	$cjq("a.thumbnail, a.fancy").fancybox({
+	/*$cjq("a.thumbnail, a.fancy").fancybox({
         'transitionIn'	:	'elastic',
         'transitionOut'	:	'elastic',
         'speedIn'		:	600, 
         'speedOut'		:	200, 
         'overlayShow'	:	false
     });
+	*/
 });
 
 $cjq(".toggle-box .tbox-heading a").click(function () {
@@ -191,7 +192,7 @@ $cjq(document).ready(function(){
 			});
 		}
 	}
-    $cjq(".fancybox").fancybox();
+    // $cjq(".fancybox").fancybox();
 
 	// TODO: update to Twitter API 1.1
 	/* twitter feed
