@@ -12,14 +12,32 @@ frontpage: 4
 permalink: /expertise/django/
 ---
 
-Plone is an Enterprise-level Web Content Management System which is perfectly
-suitable for building intranets, DMS and complex web portals. It allows
-non-technical people to easily create and manage content through a simple user
-interface and  provides administrators with a powerful set of workflow
-and group management tools.
+Django is a full stack, open source web framework written in Python 
+finalized to the development of complex web applications.
 
-Plone is the most secure CMS on the open source market (source: CVE) and it can
-integrate existing services lile Active Directory and LDAP.
+Evonove can help customers on planning and developing Django projects 
+and is active in the community by releasing the most of the code with 
+an open source license and participating in several open source projects.
 
-We can develop custom products, graphical themes and we can offer generic support
-for the Plone platform.
+Django OAuth Toolkit
+--------------------
+
+Django OAuth Toolkit can help you providing out of the box all the endpoints, 
+data and logic needed to add OAuth2 capabilities to your Django projects. 
+Django OAuth Toolkit makes extensive use of the excellent OAuthLib, so that 
+everything is rfc-compliant.
+Read the docs: `<https://django-oauth-toolkit.readthedocs.org/>`_
+
+Django Stored Messages
+----------------------
+
+The app integrates smoothly with Django's messages framework (django.contrib.messages), 
+but users can decide which messages have to be stored on the database backend and kept 
+available over sessions.
+Read the docs: `<https://django-stored-messages.readthedocs.org/>`_
+
+Django Money Rates
+------------------
+
+Currency conversion utilities for money.
+Read the docs: `<https://django-money-rates.readthedocs.org/>`_
