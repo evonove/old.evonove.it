@@ -35,7 +35,7 @@ VIEWS = {
         'filters': 'intro',
     },
 
-    '/sitemap.xml': {'view': 'sitemap'},
+    '/sitemap.xml': {'view': 'e9sitemap'},
 
     # Here are some more examples
 

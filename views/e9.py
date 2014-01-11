@@ -3,12 +3,13 @@ import os
 import locale
 from datetime import datetime
 from collections import defaultdict
-from os.path import isfile
+from os.path import isfile, exists, getmtime
 from hashlib import md5
 
 from acrylamid import AcrylamidException
 from acrylamid.views.entry import View
-from acrylamid.helpers import union, joinurl, event, paginate, expand, link
+from acrylamid.views.sitemap import Map, Sitemap
+from acrylamid.helpers import union, joinurl, event, paginate, expand, link, rchop
 from acrylamid.utils import Struct, HashableList, hash as acr_hash
 from acrylamid.refs import modified, references
 from acrylamid import refs
@@ -521,3 +522,30 @@ class StaffIndex(PageBase):
                 break
 
         return staff_page
+
+
+class E9SiteMap(Sitemap):
+    def generate(self, conf, env, data):
+        """In this step, we filter drafted entries (they should not be included into the
+        Sitemap) and write the pre-defined priorities to the map."""
+
+        path = joinurl(conf['output_dir'], self.path)
+        sm = Map()
+
+        if exists(path) and not self.modified:
+            event.skip('sitemap', path)
+            raise StopIteration
+
+        for ns, fname in self.files:
+
+            if ns == 'draft':
+                continue
+
+            url = conf['www_root'] + '/' + fname.replace(conf['output_dir'], '')
+            url = strip_default_lang(url, conf)
+            priority, changefreq = self.scores.get(ns, (0.5, 'weekly'))
+            sm.add(rchop(url, 'index.html'), getmtime(fname), changefreq, priority)
+
+        sm.finish()
+        yield sm, path
+
