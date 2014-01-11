@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}{{ conf.sitename }} Blog Authors{% endblock %}
+{% block title %}{{ conf.sitename }} Staff{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -10,14 +10,15 @@
     <!-- BEGIN MAIN/PRIMARY CONTENT AREA -->
                     <div class="span12 main-column">
                         <h1>{{ entry.title }}</h1>
-                        {% for a in env.authors %}
-                        {% set author = env.authors[a][env.lang] %}
+                        {{entry.content}}
+                        {% for a in env.staff %}
+                        {% set author = env.staff[a][env.lang] %}
                         <div class="row show-grid team-member">
                             <div class="span3 photo">
-                                <div class="bordered-img"><img alt="" src="{{ env.authors[a][env.lang].gravatar_big }}"></div>
+                                <div class="bordered-img"><img alt="" src="{{ env.staff[a][env.lang].gravatar_big }}"></div>
                             </div>
                             <div class="span6">
-                                <h2><a href="/authors/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ env.authors[a][env.lang].title }}</a></h2>
+                                <h2><a href="/staff/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ env.staff[a][env.lang].title }}</a></h2>
                                 <h4>{{ author.jobtitle or '-' }}</h4>
                                 <p class="experience"><em>{{ author.experience }}</em></p>
                                 <p>{{ author.content }}</p>

@@ -135,6 +135,12 @@
                                         </a>
                                     </li>
 
+                                    <li class="single{% if env.active_route.startswith('/staff') %} active{% endif %}">
+                                        <a class="single" href="/staff/{{env.lang | strip_default_lang(conf)}}">
+                                            STAFF<i>about us</i>
+                                        </a>
+                                    </li>
+
                                     {% set title = {'en': 'CONTACTS', 'it': "CONTATTI"} %}
                                     <li class="single{% if env.active_route | strip_langs(env.lang) =='/contacts/' %} active{% endif %}">
                                         <a href="/contacts/{{env.lang | strip_default_lang(conf)}}">

@@ -42,7 +42,7 @@ VIEWS = {
     # # '/:slug/' is a slugified url of your static page's title
     '/:slug/:lang/': {
         'view': 'pagebase',
-        'if': lambda e: all(x not in e.filename for x in ('expertise','activities','authors')),
+        'if': lambda e: all(x not in e.filename for x in ('expertise','activities','staff')),
         'template': 'page_base.html'
     },
 
@@ -56,15 +56,15 @@ VIEWS = {
         'template': 'page_expertise.html'
     },
 
-    '/authors/:lang/' : {
-        'view': 'authorsindex',
-        'template': 'authors.html',
+    '/staff/:lang/' : {
+        'view': 'staffindex',
+        'template': 'staff.html',
         'filters': 'intro',
     },
 
-    '/authors/:slug/:lang/' : {
-        'view': 'authorpage',
-        'template': 'author_single.html'
+    '/staff/:slug/:lang/' : {
+        'view': 'staffpage',
+        'template': 'staff_single.html'
     }
 
     # # '/atom/full/' will give you a _complete_ feed of all your entries
