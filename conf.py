@@ -4,7 +4,7 @@ SITENAME = 'Evonove - '
 WWW_ROOT = 'http://evonove.it/'
 AUTHOR = 'staff'
 EMAIL = 'info@evonove.it'
-LANG = 'en_US.utf8'
+LANG = 'en_US.utf-8' # this is for osx
 LANG_CODE = 'en'
 
 VIEWS = {
