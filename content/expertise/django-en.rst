@@ -1,15 +1,15 @@
 ---
-title: Plone CMS
-slug: plone-cms
-tagline: CMS for the enterprise.
+title: Django
+slug: django
+tagline: Web framework done right.
 lang: en
 type: page
 date: 01-01-2013
-image: /img/plone-logo.png
-image_link: /img/plone-logo.png
-identifier: plone
+image: /img/pony.png
+image_link: /img/pony.png
+identifier: django
 frontpage: 4
-permalink: /expertise/plone-cms/
+permalink: /expertise/django/
 ---
 
 Plone is an Enterprise-level Web Content Management System which is perfectly
