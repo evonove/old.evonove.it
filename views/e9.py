@@ -502,7 +502,6 @@ class StaffPage(PageBase):
                 pages.append(entry)
 
         request['env']['stafflist'] = pages
-
         return pages
 
 
