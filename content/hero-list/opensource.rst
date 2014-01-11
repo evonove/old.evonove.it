@@ -10,4 +10,4 @@ lang: it
 
 Open Source
 -----------
-Soluzioni 100% Open!
+Soluzioni 100% Open! Segui i nostri progetti su `GitHub! <https://github.com/evonove>`_
