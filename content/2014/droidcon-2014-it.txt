@@ -10,25 +10,24 @@ image: /img/2014/droidcon.jpg
 intro.maxparagraphs: 2
 ---
 
-After Amsterdam, Bangalore, Berlin, Brussels, London, Murcia and Tunis the
-`Droidcon <http://droidcon.com/>`_ arrives in Italy, `in Turin <http://it.droidcon.com/2014/>`_.
-It'll be three days of talks, workshops, showcases and even an Hackaton dedicated to one of the most
-widespread operating system in the world: Android.
+Dopo Amsterdam, Bangalore, Berlino, Brussels, Londra, Murcia e Tunisi la
+`Droidcon <http://droidcon.com/>`_ sbarca in Italia, precisamente `a Torino <http://it.droidcon.com/2014/>`_.
+Saranno due giorni di talk, workshop, esibizioni e anche una Hackaton, tutto dedicato ad uno dei
+sistemi operativi più diffusi nel pianeta: Android.
 
 .. image:: /img/2014/droidcon.jpg
     :alt: Droidcon Turin
     :align: center
     :class: bordered-img
 
-At Droidcon you can see Android in action in every field of application: mobile devices, of course,
-but even TV, cars, gaming and embedded systems. And we'll be there just to cover the latter: with
-a `Udoo board <http://www.udoo.org/>`_ attached to a custom motorized rover,
-`Emanuele </authors/palazzem>`_ is going to show off Android's potential pushing it beyond the
-comfort of mobile devices with the talk `Release the Kraken <http://it.droidcon.com/2014/lineup/>`_.
-The Internet of Things seems to be very attractive these days, people want to get their hands dirty
-with the bare metal and media grasped the potential of the makers revolution, as you can see on
-`this article <http://nova.ilsole24ore.com/esperienze/android-piu-open>`_ appeared on one of the
-most authoritative business newspaper (only available in italian).
-You can learn more on Emanuele's adventure at the Droidcon in
-`this interview <http://www.techmate.it/droidcon/>`_ (again, only in italian) published on the electronic
-magazine **Techmate**.
+Alla Droidcon è possibile vedere Android calato in ogni possibile contesto, dai device mobili (ovviamente)
+le TV, le automobili, il gaming fino all'embedded. E noi saremo là proprio per questo: armato di una
+`Udoo board <http://www.udoo.org/>`_ attaccata ad un rover motorizzato, `Emanuele </authors/palazzem>`_
+mostrerà il potenziale di Android portandolo oltre il noto utilizzo sugli smartphone con il suo talk
+`Release the Kraken UDOO porta Android dove nessuno smartphone potrebbe arrivare <http://it.droidcon.com/2014/lineup/>`_.
+La cosiddetta *Internet delle cose* sembra continuare ad attrarre pubblico, sempre più appassionati
+vogliono sporcarsi le mani sull'hardware ed anche i media hanno colto appieno lo spirito della
+*Makers Revolution*, come si evince anche da `questo articolo <http://nova.ilsole24ore.com/esperienze/android-piu-open>`_
+pubblicato nel supplemento online del Sole 24 Ore.
+Se volete saperne di più sull'avventura di Emanuele alla Droidcon potete leggere `questa intervista <http://www.techmate.it/droidcon/>`_
+pubblicata da Techmate.it oltre che andare a sentire il suo talk ovviamente!
