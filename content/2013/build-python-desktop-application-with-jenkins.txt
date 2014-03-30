@@ -10,7 +10,7 @@ intro.maxparagraphs: 2
 ---
 
 We recently started using `Jenkins <http://jenkins-ci.org/>`_, a well known system for Continuous Integration,
-and make it perform tasks not directly involved with CI: we make it build and package multiplatform desktop
+and make it perform tasks like build and package multiplatform desktop
 applications.
 
 We're currently in charge of developing a desktop application written in **Python** using the **Qt framework**.
