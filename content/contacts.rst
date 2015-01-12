@@ -1,10 +1,9 @@
 ---
-title: Contatti
-lang: it
+title: Contacts
+lang: en
 type: page
 date: 01-01-2013
 identifier: contacts
-slug: contacts
 ---
 
 .. raw:: html
@@ -17,7 +16,7 @@ slug: contacts
                 <!-- COMPANY ADDRESS -->
                 <address>
                     Via Fra' Filippo Longo 16/b,<br>
-                    Magione (PG)<br>
+                    Magione (PG) - ITALY<br>
                     Phone: +39 075 843667<br>
                     Fax: +39 075 843667<br>
                     Email: <a href="mailto:info@evonove.it">info@evonove.it</a><br>

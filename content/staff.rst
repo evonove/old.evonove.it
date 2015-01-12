@@ -1,9 +1,9 @@
 ---
 title: Staff
-lang: it
+lang: en
 type: page
 date: 01-01-2013
 identifier: staff
 ---
 
-Evonove è fatta di persone!
+You know, Evonove is made of people!

@@ -1,6 +1,6 @@
 ---
 title: Footer About
-lang: it
+lang: en
 draft: true
 date: 01-01-2013
 slug: footer_about
@@ -10,10 +10,10 @@ filters: nointro
 
 .. raw:: html
 
-    <h3 class="center-title">About E9</h3>
+    <h4 class="center-title">About E9</h4>
     <dl class="dl-horizontal">
-        <dt>Settore</dt>
-        <dd>Software e Infrastrutture IT.</dd>
-        <dt>Servizi offerti</dt>
-        <dd>Progettazione e sviluppo software, consulenza, formazione, coworking, workshop, stage universitari.</dd>
+        <dt>Sector</dt>
+        <dd>Software and IT Infrastructures.</dd>
+        <dt>Services</dt>
+        <dd>Software development, consultancy, formation, coworking, workshops, internships</dd>
     </dl>
