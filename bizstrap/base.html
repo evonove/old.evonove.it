@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ env.lang }}">
+<html lang="en">
     <head>
         {% block head -%}
         <!--  SEO STUFF START HERE -->
@@ -44,7 +44,7 @@
                 <div class="row">
                     <!-- HEADER: LOGO AREA -->
                     <div class="span4 logo">
-                        <a class="logo" href="/{{env.lang | strip_default_lang(conf)}}">
+                        <a class="logo" href="/">
                             <img alt="logo" title="bizstrap" src="/img/logo.png">
                         </a>
                     </div>
@@ -66,18 +66,6 @@
                                 <li><a class="gplus" href="https://plus.google.com/111644060204650622285/"></a></li>
                             </ul>
                         </div>
-                        <div class="span2">
-                            <ul class="socials langlinks unstyled">
-                                <li>
-                                    <a href="{{ env.active_route | strip_langs(env.lang) + 'it' }}">
-                                        <i class="icon-globe"></i>&nbsp;it
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{ env.active_route | strip_langs(env.lang) }}">en</a>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
                     
                 </div>
@@ -93,58 +81,49 @@
                             <div class="nav-collapse">
 
                                 <ul class="nav nav-pills">
-                                    <li class="single{% if env.active_route | strip_langs(env.lang) =='/' %} active{% endif %}">
-                                        <a href="/{{env.lang | strip_default_lang(conf)}}">
+                                    <li class="single{% if env.active_route =='/' %} active{% endif %}">
+                                        <a href="/">
                                             HOME<i>127.0.0.1</i>
                                         </a>
                                     </li>
 
-                                    {% if env.activities[env.lang] %}
-                                    {% set title = {'en': 'ACTIVITIES', 'it': "ATTIVITA'"} %}
-                                    {% set subtitle = {'en': 'what we do', 'it': 'cosa facciamo'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/activities') %} active{% endif %}">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-                                            {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
+                                            ACTIVITIES<i>what we do</i>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            {% for a in env.activities[env.lang] %}
-                                            <li><a href="{{a.permalink|strip_default_lang(conf)}}">{{a.title}}</a></li>
+                                            {% for a in env.activities['en'] %}
+                                            <li><a href="{{a.permalink}}">{{a.title}}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>
-                                    {% endif %}
 
-                                    {% if env.expertise[env.lang] %}
-                                    {% set title = {'en': 'EXPERTISE', 'it': "SPECIALIZZAZIONI"} %}
-                                    {% set subtitle = {'en': 'what we can do', 'it': 'cosa sappiamo fare'} %}
                                     <li class="dropdown{% if env.active_route.startswith('/expertise') %} active{% endif %}">
                                         <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
-                                            {{title[env.lang]}}<i>{{subtitle[env.lang]}}</i>
+                                            EXPERTISE<i>what we can do</i>
                                         </a>
                                         <ul class="dropdown-menu">
-                                            {% for e in env.expertise[env.lang].values() %}
+                                            {% for e in env.expertise['en'].values() %}
                                             <li><a href="{{e.permalink}}">{{e.title}}</a></li>
                                             {% endfor %}
                                         </ul>
                                     </li>
-                                    {% endif %}
 
                                     <li class="single{% if env.active_route.startswith('/blog') %} active{% endif %}">
-                                        <a class="single" href="/blog/{{env.lang | strip_default_lang(conf)}}">
+                                        <a class="single" href="/blog/">
                                             BLOG<i>e9 techies</i>
                                         </a>
                                     </li>
 
                                     <li class="single{% if env.active_route.startswith('/staff') %} active{% endif %}">
-                                        <a class="single" href="/staff/{{env.lang | strip_default_lang(conf)}}">
+                                        <a class="single" href="/staff/">
                                             STAFF<i>about us</i>
                                         </a>
                                     </li>
 
-                                    {% set title = {'en': 'CONTACTS', 'it': "CONTATTI"} %}
-                                    <li class="single{% if env.active_route | strip_langs(env.lang) =='/contacts/' %} active{% endif %}">
-                                        <a href="/contacts/{{env.lang | strip_default_lang(conf)}}">
-                                            {{title[env.lang]}}<i>get in touch</i>
+                                    <li class="single{% if env.active_route =='/contacts/' %} active{% endif %}">
+                                        <a href="/contacts/">
+                                            CONTACTS<i>get in touch</i>
                                         </a>
                                     </li>
                                 </ul>
@@ -185,11 +164,11 @@
                                 </div>
                                 <!-- FOOTER: ABOUT US -->
                                 <div class="span4 footer-center">
-                                    {{ env.footer_about[env.lang].content }}
+                                    {{ env.footer_about.content }}
                                 </div>
                                 <!-- FOOTER: NAVIGATION LINKS -->
                                 <div class="span4 footer-right">
-                                    {{ env.footer_navmenu[env.lang].content }}
+                                    {{ env.footer_navmenu.content }}
                                 </div>
                             </div>
                         </div>

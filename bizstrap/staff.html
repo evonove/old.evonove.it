@@ -12,13 +12,13 @@
                         <h1>{{ entry.title }}</h1>
                         {{entry.content}}
                         {% for a in env.staff %}
-                        {% set author = env.staff[a][env.lang] %}
+                        {% set author = env.staff[a]['en'] %}
                         <div class="row show-grid team-member">
                             <div class="span3 photo">
-                                <div class="bordered-img"><img alt="" src="{{ env.staff[a][env.lang].gravatar_big }}"></div>
+                                <div class="bordered-img"><img alt="" src="{{ author.gravatar_big }}"></div>
                             </div>
                             <div class="span6">
-                                <h2><a href="/staff/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ env.staff[a][env.lang].title }}</a></h2>
+                                <h2><a href="/staff/{{author.slug}}/">{{ author.title }}</a></h2>
                                 <h4>{{ author.jobtitle or '-' }}</h4>
                                 <p class="experience"><em>{{ author.experience }}</em></p>
                                 <p>{{ author.content }}</p>

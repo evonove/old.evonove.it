@@ -16,7 +16,7 @@
         <div class="bannercontainer" >
             <div class="banner" >
                 <ul>
-                    {% for banner in env.banners[env.lang] %}
+                    {% for banner in env.banners['en'] %}
                         {{banner.content}}
                     {% endfor %}
                 </ul>
@@ -72,7 +72,7 @@
             <div class="clear-both"></div>
             <div id="home_responsive" class="row show-grid isotope" style="position: relative; overflow: hidden; height: 360px;">
                 <!-- Expertise 1 -->
-                {% set e=env.expertise[env.lang][1] %}
+                {% set e=env.expertise['en'][1] %}
                 <div class="span3 tall hp-wrapper isotope-item">
                     <a class="top-link" href="{{ e.permalink }}"><img alt="" style="width: 220px; height: 340px;" src="{{ e.props.image }}"></a>
                     <div class="bottom-block">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <!-- Expertise 2 -->
-                {% set e=env.expertise[env.lang][2] %}
+                {% set e=env.expertise['en'][2] %}
                 <div class="span6 middle hp-wrapper isotope-item">
                     <a class="top-link" href="{{ e.permalink }}"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>
                     <div class="bottom-block">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <!-- Expertise 3 -->
-                {% set e=env.expertise[env.lang][3] %}
+                {% set e=env.expertise['en'][3] %}
                 <div class="span3 small hp-wrapper isotope-item">
                     <a class="top-link" href="{{ e.permalink }}"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>
                     <div class="bottom-block">
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <!-- Expertise 4 -->
-                {% set e=env.expertise[env.lang][4] %}
+                {% set e=env.expertise['en'][4] %}
                 <div class="span3 small hp-wrapper isotope-item">
                     <a class="top-link" href="{{ e.permalink }}"><img alt="" style="width: 220px; height: 160px;" src="{{ e.props.image }}"></a>
                     <div class="bottom-block">
@@ -108,7 +108,7 @@
                     </div>
                 </div>
                 <!-- Expertise 5 -->
-                {% set e=env.expertise[env.lang][5] %}
+                {% set e=env.expertise['en'][5] %}
                 <div class="span6 middle hp-wrapper isotope-item">
                     <a class="top-link" href="{{ e.permalink }}"><img alt="" style="width: 460px; height: 160px;" src="{{ e.props.image }}"></a>
                     <div class="bottom-block">
@@ -121,42 +121,17 @@
 
         <hr>
 
-        {% if env.lang == 'it' %}
-        <!-- NEWSLETTER - For the italian site only -->
-        <div class="main-block testimonials">
-            <div class="row show-grid">
-                <div class="span12 grey-box">
-                    <div class="hero-block3">
-                        <div class="row show-grid">
-                            <div class="span9">
-                                <div class="hero-content-3">
-                                    <h2>Iscriviti alla newsletter</h2>
-                                    <p>Tieniti informato circa le nostre iniziative: workshop gratuiti, corsi, eventi di interesse.</p>
-                                </div>
-                            </div>
-                            <div class="span3">
-                                <div class="tour-btn">
-                                    <a href="http://eepurl.com/dpdhT" target="_blank" class="btn btn-warning">Iscriviti Ora</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-
         <!-- MAIN CONTENT AREA: bizstrap CUSTOM - RECENT POSTS BLOCK (ORIGINALLY DESIGNED FOR HOME PAGE) -->
         <div class="main-block block-posts">
             <div class="title-wrapper">
-                <h2>Recent Posts</h2><a href="/blog/{{env.lang|strip_default_lang(conf)}}" class="all">Visit the full blog&nbsp;&raquo;</a>
+                <h2>Recent Posts</h2><a href="/blog/" class="all">Visit the full blog&nbsp;&raquo;</a>
             </div>
             <div class="row show-grid clear-both">
                 <div class="span12">
                     <div class="row show-grid">
                         {% for entry in env.latest %}
                         <div class="span3 {%if loop.last %}last{% endif %}">
-                            {% set href = entry.permalink + env.lang | strip_default_lang(conf) %}
+                            {% set href = entry.permalink %}
                             <a class="block-post-img" href="/blog{{href}}">
                                 {% if entry.image %}
                                 <div class="img-rounded" style="background-image: url('{{entry.image}}');"></div>​
@@ -165,10 +140,9 @@
                                 {% endif %}
                             </a>
                             <a class="block-post-title" href="/blog{{href}}">{{ entry.title }}</a>
-                            <p class="block-post-date">{{ entry.date|date_format(env.lang) }}</p>
+                            <p class="block-post-date">{{ entry.date|date_format('en') }}</p>
                             <p class="block-post-content">{{entry.content|truncate}}</p>
-                            {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
-                            <a class="block-post-more" href="/blog{{href}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
+                            <a class="block-post-more" href="/blog{{href}}">Continue Reading&nbsp;&raquo;</a>
                         </div>
                         {% endfor %}
                     </div>

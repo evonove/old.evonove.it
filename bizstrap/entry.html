@@ -13,9 +13,9 @@
                         <div class="post-item-panel">
                             <ul>
                                 <li class="date">
-                                    <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
+                                    <p><i class="icon-calendar"></i>{{ entry.date|date_format('en') }}</p>
                                 </li>
-                                <li><p><i class="icon-user"></i>{{ env.staff[entry.author][env.lang].title }}</p></li>
+                                <li><p><i class="icon-user"></i>{{ env.staff[entry.author]['en'].title }}</p></li>
                                 <li><p><i class="icon-tags"></i>
                                 {% for tag in entry.tags%}
                                     <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}
@@ -40,16 +40,16 @@
                     </div>
                     <div id="right-sidebar" class="span3 sidebar">
                         <div class="author-widget sidebar-block">
-                            {% set author = env.staff[entry.author][env.lang] %}
-                            <h2><a href="/staff/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">{{ author.title }}</a></h2>
-                            <a href="/staff/{{author.slug}}/{{env.lang | strip_default_lang(conf)}}">
-                                <img class="bordered-img" alt="" src="{{ env.staff[entry.author][env.lang].gravatar }}" />
+                            {% set author = env.staff[entry.author]['en'] %}
+                            <h2><a href="/staff/{{author.slug}}/">{{ author.title }}</a></h2>
+                            <a href="/staff/{{author.slug}}/">
+                                <img class="bordered-img" alt="" src="{{ env.staff[entry.author]['en'].gravatar }}" />
                             </a>
-                            <p>{{ env.staff[entry.author][env.lang].content | intro }}</p>
+                            <p>{{ env.staff[entry.author]['en'].content | intro }}</p>
                         </div>
                         <div class="text-widget sidebar-block">
-                            <h2>{{ env.license[env.lang].title }}</h2>
-                            <p>{{ env.license[env.lang].content }}</p>
+                            <h2>{{ env.license['en'].title }}</h2>
+                            <p>{{ env.license['en'].content }}</p>
                         </div>
                     </div>
                     <!-- Disqus -->

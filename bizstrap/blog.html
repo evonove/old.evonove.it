@@ -21,14 +21,13 @@
                             <div class="post-description justified">
                                 {{entry.content}}
                             </div>
-                            {% set continue = {'en': 'Continue Reading', 'it': 'Continua'} %}
-                            <a class="post-more" href="{{entry.permalink}}">{{continue[env.lang]}}&nbsp;&raquo;</a>
+                            <a class="post-more" href="{{entry.permalink}}">Continue Reading&nbsp;&raquo;</a>
                             <div class="post-item-panel">
                                 <ul>
                                     <li class="date">
-                                        <p><i class="icon-calendar"></i>{{ entry.date|date_format(env.lang) }}</p>
+                                        <p><i class="icon-calendar"></i>{{ entry.date|date_format('en') }}</p>
                                     </li>
-                                    <li><p><i class="icon-user"></i><a href="/staff/{{entry.author}}/{{env.lang | strip_default_lang(conf)}}">{{ entry.author }}</a></p></li>
+                                    <li><p><i class="icon-user"></i><a href="/staff/{{entry.author}}/">{{ entry.author }}</a></p></li>
                                     <li><p><i class="icon-tags"></i>
                                     {% for tag in entry.tags%}
                                         <a href="">{{tag}}</a>{% if not loop.last %},{% endif %}
@@ -41,15 +40,13 @@
                         <!-- END POSTS -->
 
                         {% if env.next or env.prev %}
-                        {% set older = {'en': 'Older', 'it': 'Precendenti'} %}
-                        {% set newer = {'en': 'Newer', 'it': 'Successivi'} %}
                         <div class="bs-docs-example">
                             <ul class="pager">
                                 {% if env.prev %}
-                                <li class="previous"><a href="{{ env.prev }}">← {{older[env.lang]}}</a></li>
+                                <li class="previous"><a href="{{ env.prev }}">← Older</a></li>
                                 {% endif %}
                                 {% if env.next is not none %}
-                                <li class="next"><a href="{{ env.next }}">{{newer[env.lang]}} →</a></li>
+                                <li class="next"><a href="{{ env.next }}">Newer →</a></li>
                                 {% endif %}
                             </ul>
                         </div>
@@ -66,8 +63,8 @@
                             </ul>
                         </div>
                         <div class="text-widget sidebar-block">
-                            <h2>{{ env.license[env.lang].title }}</h2>
-                            <p>{{ env.license[env.lang].content }}</p>
+                            <h2>{{ env.license['en'].title }}</h2>
+                            <p>{{ env.license['en'].content }}</p>
                         </div>
                     </div>
                 </div>
