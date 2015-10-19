@@ -1,0 +1,63 @@
+---
+lang: en
+title: PyCon Uk 15
+date: 19.10.2015, 17:34
+identifier: pycon-uk-2015
+slug: pycon-uk-2015
+author: palazzem
+tags: [python,pycon,uk,2015]
+intro.maxparagraphs: 4
+---
+
+We’re back from the exciting PyCon Uk 15 and we would like to tell you about our story there.
+
+The conference took place at the `Techno Centre <https://www.google.it/maps/uv?hl=it&pb=!1s0x48774bb7197d3e99:0x1ababcd19cc3fd93!2m5!2m2!1i80!2i80!3m1!2i100!3m1!7e1!4shttps://ssl.panoramio.com/photo/103704951!5sTechno+Centre+del+Coventry+University+Technology+Park+-+Cerca+con+Google&sa=X&ved=0CH0QoiowC2oVChMInY-Mosq9yAIVQVIaCh2_8QBb>`_, the amazing technology and research centre of the Coventry University Technology Park.
+
+There were three days full of inspiring talks, interesting people and pleasant moment in which we could also shared thoughts and ideas with the Community. This PyCon Uk edition had usefully merged the world of coding with data analysis and research, exploring interesting connections among subjects and languages.
+
+One of the most interesting speeches we attended to, was the one of Vince Knight, mathematician of the Cardiff University. With a powerful and effective speaking, he introduce the concept of collaboration into projects of developing or researching. We already saw him and we could not miss him! The Tit for Tat strategy is an efficient strategy to solve the Game Theory and Knight used it to demonstrate how powerful collaboration process are into research and developing projects. 
+
+
+Tit for Tat, Evolution, Game Theory and the Python Axelrod Library
+==================================================================
+
+.. youtube:: gbxv3pn9YB4
+   :align: center
+
+------------------------------------------------------------------
+
+`https://github.com/Axelrod-Python/Axelrod <https://github.com/Axelrod-Python/Axelrod>`_
+
+When we choose a talk to follow, we use to think about the content of course, but also to the speaker and Larry Hastin is one of our favourite! He is one of the first contributors of Python language and its speech called Python's Infamous GIL was about some hard languages' bugs. The subject is really difficult, but he was outstanding, explaining the arduous topic with simple and clear words, as usual.
+
+Python's Infamous GIL
+=====================
+
+.. youtube:: hx8PlltQYAM
+   :align: center
+
+---------------------
+
+Could be a commonplace, but the myth of Italian’s soul lives into Daniele Procida’s talks. He is always be invited to similar events to bring its deep speeches about the power of people’s relations into open source community, and it’s always a pleasure to listen to him.
+
+All I really want is power
+==========================
+
+.. youtube:: kntVob0GhyE
+   :align: center
+
+--------------------------
+
+Landing on a comet: From planning to reality was the super funny speech of Dr Simon Sherindan, Research Scientist at the European Space Agency. You can not imagine how many unexpected things could happened if you will try to land something on a comet! 
+
+Landing on a comet: From planning to reality
+============================================
+
+.. youtube:: zg6SdUF-BaM
+   :align: center
+
+--------------------------------------------
+
+We also took part to the Pylint Sprint session and we helped Claudiu Popa fixing some bugs on the Pylint Library. It was a real pleasure for us meet Claudiu and collaborate with the community on this project.
+
+The PyCon Uk is only one of the first meeting we planned to attend to. Evonove’s team has just collected another exciting experience in Berlin, but this is another story!
