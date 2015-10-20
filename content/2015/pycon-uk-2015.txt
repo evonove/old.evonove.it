@@ -23,6 +23,7 @@ Tit for Tat, Evolution, Game Theory and the Python Axelrod Library
 
 .. youtube:: gbxv3pn9YB4
    :align: center
+   :ssl:
 
 ------------------------------------------------------------------
 
@@ -35,6 +36,7 @@ Python's Infamous GIL
 
 .. youtube:: hx8PlltQYAM
    :align: center
+   :ssl:
 
 ---------------------
 
@@ -45,6 +47,7 @@ All I really want is power
 
 .. youtube:: kntVob0GhyE
    :align: center
+   :ssl:
 
 --------------------------
 
@@ -55,6 +58,7 @@ Landing on a comet: From planning to reality
 
 .. youtube:: zg6SdUF-BaM
    :align: center
+   :ssl:
 
 --------------------------------------------
 

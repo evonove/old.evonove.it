@@ -18,6 +18,7 @@ forma come si può osservare nel video.
    :align: center
    :height: 315
    :width: 420
+   :ssl:
 
 Il progetto finale vedrà una massiccia applicazione delle tecniche di projection
 mapping, nel video è stata utilizzata una semplice distorsione precalcolata
