@@ -6,7 +6,7 @@ identifier: pycon-uk-2015
 slug: pycon-uk-2015
 author: palazzem
 tags: [python,pycon,uk,2015]
-image: /img/2015/pycon_uk.gif
+image: /img/2015/pycon_uk.jpg
 intro.maxparagraphs: 4
 ---
 
