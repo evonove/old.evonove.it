@@ -7,23 +7,22 @@ slug: qtws-2015
 author: aliex
 tags: [qt,qtws,2015, qtws15]
 image: /img/2015/qtws15_intro.jpg
-intro.maxparagraphs: 6
+intro.maxparagraphs: 1
 ---
 
 Ladies and Gentlemen this was the location of the Qt World Summit 2015,
 the absolutely incredible Berlin Congress Centre!
 Here we attended to three days full of interesting talks about the latest developments in Qt world.
 
-.. image:: /img/2015/qtws15_content.jpg
-    :alt: Berlin Congress Centre
-    :align: center
-    :class: bordered-img
-
-
 It was our first time at the Qt World Summit and it turned out to be a great occasion to touch the future,
 discovering new technologies applications and features,
 meeting face-to-face with the people behind the Qt frameworks and libraries such as Alex Leutgöb e Chris Feldbacher,
 co-founders of V-Play.
+
+.. image:: /img/2015/qtws15_content.jpg
+    :alt: Berlin Congress Centre
+    :align: center
+    :class: bordered-img
 
 V-Play is a cross-platform development framework for multiple screen games and
 applications and we are really interested about it becouse we already worked on something similar.
