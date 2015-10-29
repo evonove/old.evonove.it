@@ -5,9 +5,11 @@
 #    pip-compile requirements.in
 #
 acrylamid==0.7.10
+docutils==0.12
 gitdb==0.6.4              # via gitpython
 gitpython==1.0.1
 Jinja2==2.6
-markdown==2.6.2           # via acrylamid
+markdown==2.6.3           # via acrylamid
+pygments==2.0.2
 smmap==0.9.0              # via gitdb
 translitcodec==0.4.0      # via acrylamid
