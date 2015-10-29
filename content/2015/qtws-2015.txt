@@ -1,0 +1,43 @@
+---
+lang: en
+title: Qt World Summit 2015
+date: 29.10.2015, 17:34
+identifier: qtws-2015
+slug: qtws-2015
+author: aliex
+tags: [qt,qtws,2015, qtws15]
+image: /img/2015/qtws15_intro.jpg
+intro.maxparagraphs: 6
+---
+
+Ladies and Gentlemen this was the location of the Qt World Summit 2015,
+the absolutely incredible Berlin Congress Centre!
+Here we attended to three days full of interesting talks about the latest developments in Qt world.
+
+.. image:: /img/2015/qtws15_content.jpg
+    :alt: Berlin Congress Centre
+    :align: center
+    :class: bordered-img
+
+
+It was our first time at the Qt World Summit and it turned out to be a great occasion to touch the future,
+discovering new technologies applications and features,
+meeting face-to-face with the people behind the Qt frameworks and libraries such as Alex Leutgöb e Chris Feldbacher,
+co-founders of V-Play.
+
+V-Play is a cross-platform development framework for multiple screen games and
+applications and we are really interested about it becouse we already worked on something similar.
+The QtWS15 was the occasion to share our competencies and points of view directly with Alex and
+Chris to be active contributors of their libs.
+
+Part of our work was concretely at the conference through the speech of `Massimiliano Pippi <http://dev.pippi.im/>`_
+How we stopped using the mouse and started drawing molecules with our fingertips: not the usual porting story.
+On his talk, our friend `Masci <http://dev.pippi.im/>`_ presented a project
+which let scientists take the advantages of a desktop scientific software application,
+into a usable mobile app context. Evonove contributed to achieve the goal helping him and
+developing two new Qt open source libraries.
+
+If you missed the event, `see here <http://blog.qt.io/blog/2015/10/12/watch-the-replay-of-qt-world-summit-2015-keynotes-right-now/?__hstc=128235859.e966b8bd633c13f3d86d7725e61e9bcf.1444138193054.1444399000358.1445007135851.4&__hssc=128235859.2.1445007135851&__hsfp=3871778950>`_.
+Well, it cannot be amazing as being there but, you’ll have the next 12 months to thinking about the next edition.
+
+Our next stop will be on November 1-5 at `Django under the Hood <http://www.djangounderthehood.com/>`_. Stay tuned!
