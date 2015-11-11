@@ -7,7 +7,7 @@ slug: qtws-2015
 author: aliex
 tags: [qt,qtws,2015, qtws15]
 image: /img/2015/qtws15_intro.jpg
-intro.maxparagraphs: 1
+intro.maxparagraphs: 4
 ---
 
 Ladies and Gentlemen this was the location of the Qt World Summit 2015,
@@ -25,7 +25,7 @@ co-founders of V-Play.
     :class: bordered-img
 
 V-Play is a cross-platform development framework for multiple screen games and
-applications and we are really interested about it becouse we already worked on something similar.
+applications and we are really interested about it because we already worked on something similar.
 The QtWS15 was the occasion to share our competencies and points of view directly with Alex and
 Chris to be active contributors of their libs.
 
